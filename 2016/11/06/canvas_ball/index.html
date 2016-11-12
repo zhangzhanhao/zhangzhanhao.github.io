@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="canvas," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。">
+<meta name="description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo next主题换背景">
-<meta property="og:url" content="http://yoursite.com/2015/03/23/next_bg/index.html">
+<meta property="og:title" content="用canvas绘制200个运动球">
+<meta property="og:url" content="http://yoursite.com/2016/11/06/canvas_ball/index.html">
 <meta property="og:site_name" content="张展豪的博客">
-<meta property="og:description" content="之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。">
-<meta property="og:updated_time" content="2016-11-12T11:55:46.000Z">
+<meta property="og:description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
+<meta property="og:updated_time" content="2016-11-12T13:10:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo next主题换背景">
-<meta name="twitter:description" content="之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。">
+<meta name="twitter:title" content="用canvas绘制200个运动球">
+<meta name="twitter:description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> hexo next主题换背景 | 张展豪的博客 </title>
+  <title> 用canvas绘制200个运动球 | 张展豪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                hexo next主题换背景
+                用canvas绘制200个运动球
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-23T00:00:00+08:00" content="2015-03-23">
-              2015-03-23
+            <time itemprop="dateCreated" datetime="2016-11-06T00:00:00+08:00" content="2016-11-06">
+              2016-11-06
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/23/next_bg/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/23/next_bg/" itemprop="commentsCount"></span>
+                <a href="/2016/11/06/canvas_ball/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/canvas_ball/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,9 +350,8 @@
       
 
       
-        <p>之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。<br><a id="more"></a></p>
-<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>首先找到一个背景图片放到 hexo– themes – next – source – images 的路径下；</p>
-<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p>hexo– themes – next – source – css – _schemes – Pisces（Mist和Muse也行），找到路径下的index.styl文件，在文件的最上方加上一代码 body { background:url(/images/你之前加的背景图片的名字);}<br>刷新页面背景图片就出来了</p>
+        <p>canvas是html5中绘制图片、动画的标签<br>本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。<br><a id="more"></a><br>采用面向对象的方法先定义球的属性（起点，半径，速度，颜色）<br>再定义球的方法（画球，运动）</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *&#123;</div><div class="line">            margin:0;</div><div class="line">            padding:0;</div><div class="line">        &#125;</div><div class="line">        canvas&#123;</div><div class="line">            display: block;</div><div class="line">            margin:0 auto;</div><div class="line">            border:1px red solid;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;canvas id=<span class="string">"canvas"</span>&gt;</div><div class="line">    xxxxx</div><div class="line">&lt;/canvas&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    var canvas = document.querySelector(<span class="string">"#canvas"</span>);</div><div class="line">    canvas.width = 800;</div><div class="line">    canvas.height = 600;</div><div class="line"></div><div class="line">    var onOff = <span class="literal">false</span>;</div><div class="line">    var ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">Arc</span></span>()&#123;</div><div class="line">        this.x = x;</div><div class="line">        this.y = y;</div><div class="line">        this.r = r;</div><div class="line">        this.color = color;</div><div class="line">        this.speedX = speedX;</div><div class="line">        this.speedY = speedY;</div><div class="line">     &#125;</div><div class="line">    Arc.prototype.drawArc = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        ctx.save();</div><div class="line">        ctx.beginPath();</div><div class="line">        ctx.fillStyle = this.color;</div><div class="line">        ctx.arc(this.x,this.y,this.r,0,Math.PI*2)</div><div class="line">        ctx.fill();</div><div class="line">        ctx.closePath();</div><div class="line">        ctx.restore();</div><div class="line">    &#125;</div><div class="line">    Arc.prototype.move = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        <span class="keyword">if</span>(this.x+this.speedX+this.r &gt; canvas.width || this.x+this.speedX-this.r &lt; 0)&#123;</div><div class="line">            this.speedX = -this.speedX;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(this.y+this.speedY+this.r &gt; canvas.height || this.y+this.speedY-this.r &lt; 0)&#123;</div><div class="line"></div><div class="line">            this.speedY = - this.speedY;</div><div class="line">        &#125;</div><div class="line">        this.x += this.speedX;</div><div class="line">        this.y += this.speedY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var arr = [];</div><div class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;200;i++)&#123;</div><div class="line">        var x = random(50,750);</div><div class="line">        var y = random(50,550);</div><div class="line">        var r = random(10,30);</div><div class="line">        var speedX = random(3,10);</div><div class="line">        var speedY = random(3,10);</div><div class="line">        var color = `rgb(<span class="variable">$&#123;random(0,255)&#125;</span>,<span class="variable">$&#123;random(0,255)&#125;</span>,<span class="variable">$&#123;random(0,255)&#125;</span>)`;</div><div class="line">        var obj = new Arc(x,y,r,color,speedX,speedY)</div><div class="line">        arr.push(obj);</div><div class="line">    &#125;</div><div class="line">    var timer = null;</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">ani</span></span>()&#123;</div><div class="line">        ctx.clearRect(0,0,canvas.width,canvas.height)</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">            arr[i].drawArc();</div><div class="line">            arr[i].move();</div><div class="line">            console.log(i)</div><div class="line">        &#125;</div><div class="line">        timer = window.requestAnimationFrame(ani);</div><div class="line">    &#125;</div><div class="line">    ani();</div><div class="line">    document.onclick = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        onOff = !onOff;</div><div class="line">        <span class="keyword">if</span>(onOff)&#123;</div><div class="line">            window.cancelAnimationFrame(timer);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            ani();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> random(a,b)&#123;</div><div class="line">        <span class="built_in">return</span> Math.ceil(Math.random() * (b<span class="_">-a</span>)+a+1);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,7 +373,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/canvas/" rel="tag">#canvas</a>
           
         </div>
       
@@ -383,16 +382,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/21/first-article/" rel="next" title="github搭建博客">
-                <i class="fa fa-chevron-left"></i> github搭建博客
+              <a href="/2016/05/20/hexo_talk/" rel="next" title="hexo next主题添加留言页面">
+                <i class="fa fa-chevron-left"></i> hexo next主题添加留言页面
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/20/hexo_talk/" rel="prev" title="hexo next主题添加留言页面">
-                hexo next主题添加留言页面 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/12/socket/" rel="prev" title="NodeJS+Socket.io搭建简易聊天室">
+                NodeJS+Socket.io搭建简易聊天室 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -408,10 +407,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/03/23/next_bg/"
-     data-title="hexo next主题换背景"
+        <div class="ds-share flat" data-thread-key="2016/11/06/canvas_ball/"
+     data-title="用canvas绘制200个运动球"
      data-content=""
-     data-url="http://yoursite.com/2015/03/23/next_bg/">
+     data-url="http://yoursite.com/2016/11/06/canvas_ball/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -438,8 +437,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/23/next_bg/"
-           data-title="hexo next主题换背景" data-url="http://yoursite.com/2015/03/23/next_bg/">
+      <div class="ds-thread" data-thread-key="2016/11/06/canvas_ball/"
+           data-title="用canvas绘制200个运动球" data-url="http://yoursite.com/2016/11/06/canvas_ball/">
       </div>
     
   </div>
@@ -541,7 +540,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
           </div>
         </section>
