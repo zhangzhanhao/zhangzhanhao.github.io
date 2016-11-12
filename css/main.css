@@ -1543,7 +1543,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #09509c;
+  background: #54ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2240,7 +2240,7 @@ hr {
   background: rgba(255,255,255,0.65);
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 550px;
   border-radius: initial;
 }
 @media (max-width: 767px) {

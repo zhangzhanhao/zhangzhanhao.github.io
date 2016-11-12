@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[NodeJS+Socket.io搭建简易聊天室]]></title>
+      <url>%2F2016%2F11%2F12%2Fsocket%2F</url>
+      <content type="text"><![CDATA[前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。 需要用到的插件mime1$ npm install mime socket.io1$ npm install socket.io socket.io根据官网代码分为 服务端12345678910111213141516171819202122232425var app = require('http').createServer(handler)var io = require('socket.io')(app);var fs = require('fs');app.listen(80);function handler (req, res) &#123; fs.readFile(__dirname + '/index.html', function (err, data) &#123; if (err) &#123; res.writeHead(500); return res.end('Error loading index.html'); &#125; res.writeHead(200); res.end(data); &#125;);&#125;io.on('connection', function (socket) &#123; socket.emit('news', &#123; hello: 'world' &#125;); socket.on('my other event', function (data) &#123; console.log(data); &#125;);&#125;); 客户端12345678&lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;&lt;script&gt; var socket = io('http://localhost'); socket.on('news', function (data) &#123; console.log(data); socket.emit('my other event', &#123; my: 'data' &#125;); &#125;);&lt;/script&gt; 参考官方代码我做了一个简易聊天室demo以下为我所实现的代码 服务端1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071//引入部分var http=require("http")var fs=require("fs")var mime=require("mime")var server=http.createServer(handle)//绑定服务器var io=require("socket.io")(server)function handle(req,res) &#123; var filepath="" if(req.url=="/")&#123; filepath="./public/html/index.html" &#125;else&#123; filepath="./public"+req.url &#125; serverStatic(res,filepath)&#125;function serverStatic(res,filepath) &#123; fs.exists(filepath,function (exists) &#123; if(exists)&#123; fs.readFile(filepath,function (err,data) &#123; if(err)&#123; send404(res) &#125; res.writeHead(200,&#123;"Content-Type":mime.lookup(filepath)&#125;) res.end(data) &#125;) &#125;else&#123; send404(res) &#125; &#125;)&#125;var num=0;io.on('connection', function (socket) &#123; //emit(事件名，&#123;发射主题&#125;) //on(事件名，接收回调) //服务端与客户端一一对应 num++; console.log(num) function fasong() &#123; fs.readFile("./tsconfig.json","utf-8",function (err,data) &#123; if(err)&#123;return&#125; var data=JSON.parse(data) io.sockets.emit('ret',&#123; hello: data.mesg ,num:num&#125;); &#125;) &#125; fasong() socket.on('message', function (info) &#123; fs.readFile("./tsconfig.json","utf-8",function (err,data) &#123; if(err)&#123;return&#125; var data=JSON.parse(data) data.mesg.push(info) fs.writeFile("./tsconfig.json",JSON.stringify(data),function () &#123; fasong() &#125;) &#125;) &#125;);&#125;);function send404(res) &#123; res.writeHead(404,&#123;"Content-Type":"text/plain"&#125;) res.end("404 NOT FOUND")&#125;server.listen(3000,function () &#123; &#125;) 需要解释一下的是，在connection事件的回调函数中，socket表示的是当前连接到服务器的那个客户端。所以代码socket.emit(‘foo’)则只有自己收得到这个事件，而socket.broadcast.emit(‘foo’)则表示向除自己外的所有人发送该事件，另外，上面代码中，io表示服务器整个socket连接，所以代码io.sockets.emit(‘foo’)表示所有人都可以收到该事件。 客户端JS1234567891011121314151617181920var socket = io('http://10.80.13.132:3000'); var mes=document.querySelector(".mes") var btn=document.querySelector(".btn") var ul=document.querySelector('ul') var chat=document.querySelector(".chat") btn.onclick=function (ev) &#123; ev.preventDefault(); var message=mes.value socket.emit('message', &#123; Info: message &#125;); &#125; socket.on('ret', function (data) &#123; ul.innerHTML='' for(var i=0;i&lt;data.hello.length;i++)&#123; var li=document.createElement("li") li.innerHTML=data.hello[i].Info ul.appendChild(li) document.querySelector('span').innerHTML=data.num &#125; console.log(data); &#125;); 主要的聊天记录都存放在了tsconfig.json文件中 每次会对该文件进行读写操作 源码：https://github.com/zhangzhanhao/socket-chat]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[hexo next主题添加留言页面]]></title>
+      <url>%2F2016%2F05%2F20%2Fhexo_talk%2F</url>
+      <content type="text"><![CDATA[留言板使博客看起来更加人性化，增进博主与游客的互动，NexT 主题官网有给出添加标签页、分类页的方法，其实添加留言本的方式异曲同工。方式稍微会有一点不同。 添加留言本 page进入到博客的根目录，运行命令：1$ hexo new page guestbook 留言本页面中添加多说访客代码上一步中使用 hexo 命令新建了一个 page，进入到博客的source目录，里面会多了一个gusetbook文件夹，里面有一个index.md文件，打开该文件编辑：1&lt;div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"&gt;&lt;/div&gt; 这段代码加到index.md底部就行。然后要登录自己多说的站点，进入设置-&gt;自定义CSS，添加：123456789101112131415161718#ds-reset .ds-avatar img,#ds-recent-visitors .ds-avatar img &#123; width: 54px; height: 54px; /*設置圖像的長和寬，這裏要根據自己的評論框情況更改*/ border-radius: 27px; /*設置圖像圓角效果,在這裏我直接設置了超過width/2的像素，即為圓形了*/ -webkit-border-radius: 27px; /*圓角效果：兼容webkit瀏覽器*/ -moz-border-radius: 27px; box-shadow: inset 0 -1px 0 #3333sf; /*設置圖像陰影效果*/ -webkit-box-shadow: inset 0 -1px 0 #3333sf;&#125;#ds-recent-visitors .ds-avatar &#123; float: left&#125;/*隱藏多說底部版權*/#ds-thread #ds-reset .ds-powered-by &#123; display: none;&#125; 菜单设置中添加留言本找到NexT主题设置的_config.yml文件里面的menu项添加 guestbook: /guestbook 添加多语言文件的值因为这里使用的是中文，找到languages文件夹里面的zh-Hans.yml文件，menu子项中添加留言： guestbook: 留言 原文地址：http://www.jianshu.com/p/f2cfc95cab4e]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[hexo next主题换背景]]></title>
+      <url>%2F2015%2F03%2F23%2Fnext_bg%2F</url>
+      <content type="text"><![CDATA[之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。 1首先找到一个背景图片放到 hexo– themes – next – source – images 的路径下； 2hexo– themes – next – source – css – _schemes – Pisces（Mist和Muse也行），找到路径下的index.styl文件，在文件的最上方加上一代码 body { background:url(/images/你之前加的背景图片的名字);}刷新页面背景图片就出来了]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[github搭建博客]]></title>
+      <url>%2F2015%2F03%2F21%2Ffirst-article%2F</url>
+      <content type="text"><![CDATA[Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话： 快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp; powerful blog framework, powered by Node.js.# NodeJS安装 NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS 测试安装成功后打开终端输入1$ node -v 安装hexo1$ npm install hexo -g 测试1$ hexo 创建目录并进入创建一个文件夹,cd 文件夹名/ 1$ hexo init 启动本地服务1$ hexo server 下载主题git clone下载主题文件，放在themes文件夹中 更改配置文件在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。 为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 更改站点配置文件title:博客名author：作者language:zh-Hans(根据主题文件夹下修改)theme：next（主题文件名）deploy： type:git repo:github的仓库克隆地址duoshuo_shortname:多说评论的shortname 更改主题配置文件以我使用的next主题为例 修改SchemeScheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是： Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 即可。 设置代码高亮主题NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如： # Code Highlight theme # Available value: normal | night | night eighties | night blue | night bright # https://github.com/chriskempson/tomorrow-theme highlight_theme: normal 还有很多配置可以修改，具体参考next主题官方网址 发布1$ npm install hexo-deployer-git - -save 编译1$ hexo g 发布1$ hexo d 使用next主题遇到的坑换过主题后在本地启动服务可以正常渲染，当上传到github上以后出现只有一个框架，没有任何文章及控制台大量报错的情况 解决办法把next主题下面的source/vendors文件名改成任意其他名字，如：VEN等，之后在配置文件_config.yml,下面，把vendors: 块，里面的_internal: vendors项改成前面重命名文件夹的名称,如_internal:VEN,保存，hexo clean ,hexo g ,hexo d,再试试看，亲测有效！！！]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2015%2F03%2F20%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
