@@ -84,12 +84,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="张展豪的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。
+需要用到的插件mime1$ npm install mime
+socket.io1$ npm install socket.io
+socket.io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJS+Socket.io搭建简易聊天室">
+<meta property="og:url" content="http://yoursite.com/2014/11/12/socket/index.html">
 <meta property="og:site_name" content="张展豪的博客">
+<meta property="og:description" content="前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。
+需要用到的插件mime1$ npm install mime
+socket.io1$ npm install socket.io
+socket.io">
+<meta property="og:updated_time" content="2016-11-12T02:34:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张展豪的博客">
+<meta name="twitter:title" content="NodeJS+Socket.io搭建简易聊天室">
+<meta name="twitter:description" content="前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。
+需要用到的插件mime1$ npm install mime
+socket.io1$ npm install socket.io
+socket.io">
 
 
 
@@ -107,7 +120,7 @@
   };
 </script>
 
-  <title> 张展豪的博客 </title>
+  <title> NodeJS+Socket.io搭建简易聊天室 | 张展豪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -128,9 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -229,10 +240,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2014/11/12/socket/" itemprop="url">
-                  NodeJS+Socket.io搭建简易聊天室
-                </a>
+                NodeJS+Socket.io搭建简易聊天室
               
             
           </h1>
@@ -279,9 +287,7 @@
       
 
       
-        
-          
-            <p>前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。</p>
+        <p>前端一直是一块充满惊喜的土地，不仅是那些富有创造性的页面，还有那些惊赞的效果及不断推出的新技术。像node.js这样的后端开拓者直接将前端人员的能力扩大到了后端。瞬间就有了一统天下的感觉，来往穿梭于前后端之间代码敲得飞起，从此由前端晋升为’前后端’。</p>
 <h1 id="需要用到的插件"><a href="#需要用到的插件" class="headerlink" title="需要用到的插件"></a>需要用到的插件</h1><h2 id="mime"><a href="#mime" class="headerlink" title="mime"></a>mime</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install mime</div></pre></td></tr></table></figure>
 <h2 id="socket-io"><a href="#socket-io" class="headerlink" title="socket.io"></a>socket.io</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install socket.io</div></pre></td></tr></table></figure>
 <h1 id="socket-io-1"><a href="#socket-io-1" class="headerlink" title="socket.io"></a>socket.io</h1><p>根据官网代码分为</p>
@@ -294,16 +300,19 @@
 <hr>
 <p>源码：<a href="https://github.com/zhangzhanhao/socket-chat" target="_blank" rel="external">https://github.com/zhangzhanhao/socket-chat</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -311,23 +320,32 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/03/21/first-article/" rel="next" title="github搭建博客">
+                <i class="fa fa-chevron-left"></i> github搭建博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -335,6 +353,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/11/12/socket/"
+           data-title="NodeJS+Socket.io搭建简易聊天室" data-url="http://yoursite.com/2014/11/12/socket/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -354,8 +380,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -402,6 +437,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要用到的插件"><span class="nav-number">1.</span> <span class="nav-text">需要用到的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mime"><span class="nav-number">1.1.</span> <span class="nav-text">mime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socket-io"><span class="nav-number">1.2.</span> <span class="nav-text">socket.io</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#socket-io-1"><span class="nav-number">2.</span> <span class="nav-text">socket.io</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端"><span class="nav-number">2.1.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">2.2.</span> <span class="nav-text">客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务端-1"><span class="nav-number">3.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端JS"><span class="nav-number">4.</span> <span class="nav-text">客户端JS</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -498,6 +544,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
