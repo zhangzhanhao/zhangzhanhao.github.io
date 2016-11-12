@@ -84,12 +84,37 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="张展豪的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS
+测试安装成功后打开终端输入1$ node -v
+安装hexo1$ npm install hexo -g
+测试1$ hexo
+创建目录并进入创建一个文件夹,cd 文件夹名/
+1$ hexo init
+启动本地服务1$ hexo server
+下载主题git clone下载主题文件，放在themes文件夹中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github搭建博客">
+<meta property="og:url" content="http://yoursite.com/2014/03/21/first-article/index.html">
 <meta property="og:site_name" content="张展豪的博客">
+<meta property="og:description" content="NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS
+测试安装成功后打开终端输入1$ node -v
+安装hexo1$ npm install hexo -g
+测试1$ hexo
+创建目录并进入创建一个文件夹,cd 文件夹名/
+1$ hexo init
+启动本地服务1$ hexo server
+下载主题git clone下载主题文件，放在themes文件夹中">
+<meta property="og:updated_time" content="2016-11-12T01:02:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张展豪的博客">
+<meta name="twitter:title" content="github搭建博客">
+<meta name="twitter:description" content="NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS
+测试安装成功后打开终端输入1$ node -v
+安装hexo1$ npm install hexo -g
+测试1$ hexo
+创建目录并进入创建一个文件夹,cd 文件夹名/
+1$ hexo init
+启动本地服务1$ hexo server
+下载主题git clone下载主题文件，放在themes文件夹中">
 
 
 
@@ -107,7 +132,7 @@
   };
 </script>
 
-  <title> 张展豪的博客 </title>
+  <title> github搭建博客 | 张展豪的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -128,9 +153,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -229,10 +252,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2014/03/21/first-article/" itemprop="url">
-                  github搭建博客
-                </a>
+                github搭建博客
               
             
           </h1>
@@ -279,9 +299,7 @@
       
 
       
-        
-          
-            <h1 id="NodeJS安装"><a href="#NodeJS安装" class="headerlink" title="NodeJS安装"></a>NodeJS安装</h1><h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a>下载相应版本的nodeJS</p>
+        <h1 id="NodeJS安装"><a href="#NodeJS安装" class="headerlink" title="NodeJS安装"></a>NodeJS安装</h1><h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a>下载相应版本的nodeJS</p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>安装成功后打开终端输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
 <h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo -g</div></pre></td></tr></table></figure>
 <h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo</div></pre></td></tr></table></figure>
@@ -307,16 +325,19 @@ highlight_theme: normal
 <h1 id="使用next主题遇到的坑"><a href="#使用next主题遇到的坑" class="headerlink" title="使用next主题遇到的坑"></a>使用next主题遇到的坑</h1><p>换过主题后在本地启动服务可以正常渲染，当上传到github上以后出现只有一个框架，没有任何文章及控制台大量报错的情况</p>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>把next主题下面的source/vendors文件名改成任意其他名字，如：VEN等，之后在配置文件_config.yml,下面，把vendors: 块，里面的_internal: vendors项改成前面重命名文件夹的名称,如_internal:VEN,保存，hexo clean ,hexo g ,hexo d,再试试看，亲测有效！！！</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -324,128 +345,32 @@ highlight_theme: normal
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2014/03/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2014/03/20/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-03-20T00:00:00+08:00" content="2014-03-20">
-              2014-03-20
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2014/03/20/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/03/20/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -453,6 +378,14 @@ highlight_theme: normal
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/03/21/first-article/"
+           data-title="github搭建博客" data-url="http://yoursite.com/2014/03/21/first-article/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -472,8 +405,17 @@ highlight_theme: normal
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -509,6 +451,17 @@ highlight_theme: normal
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NodeJS安装"><span class="nav-number">1.</span> <span class="nav-text">NodeJS安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网址"><span class="nav-number">1.1.</span> <span class="nav-text">网址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试-1"><span class="nav-number">2.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录并进入"><span class="nav-number">2.2.</span> <span class="nav-text">创建目录并进入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动本地服务"><span class="nav-number">2.2.1.</span> <span class="nav-text">启动本地服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载主题"><span class="nav-number">3.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改配置文件"><span class="nav-number">4.</span> <span class="nav-text">更改配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改站点配置文件"><span class="nav-number">4.1.</span> <span class="nav-text">更改站点配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改主题配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">更改主题配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Scheme"><span class="nav-number">4.2.1.</span> <span class="nav-text">修改Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置代码高亮主题"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置代码高亮主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">5.</span> <span class="nav-text">发布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">5.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布-1"><span class="nav-number">5.2.</span> <span class="nav-text">发布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用next主题遇到的坑"><span class="nav-number">6.</span> <span class="nav-text">使用next主题遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">6.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -605,6 +558,10 @@ highlight_theme: normal
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
