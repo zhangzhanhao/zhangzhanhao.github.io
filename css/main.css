@@ -1548,7 +1548,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e0883e;
+  background: #41cfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2132,10 +2132,13 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: #f5f5f5;
+  background: url("/images/bg.jpg") no-repeat;
+  height: 350px;
 }
 .header-inner {
-  padding: 25px 0 20px;
+  width: 700px;
+  margin: 0 auto;
+  padding: 100px 0 70px;
 }
 .header-inner:before,
 .header-inner:after {
@@ -2152,9 +2155,10 @@ hr {
     padding: 10px;
   }
 }
+.custom-logo-site-title {
+  text-align: center;
+}
 .site-meta {
-  float: left;
-  margin-left: -20px;
   line-height: normal;
 }
 @media (max-width: 767px) {
@@ -2175,8 +2179,10 @@ hr {
   display: none;
 }
 .site-meta .site-title {
-  font-size: 22px;
+  padding: 10px 0;
+  font-size: 50px;
   font-weight: bolder;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .site-meta .site-title {
@@ -2188,7 +2194,7 @@ hr {
   display: block;
   overflow: hidden;
   margin: 0 auto;
-  width: 75%;
+  width: 80%;
 }
 @media (max-width: 767px) {
   .logo-line-before,
@@ -2200,8 +2206,8 @@ hr {
 .logo-line-after i {
   position: relative;
   display: block;
-  height: 2px;
-  background: #222;
+  height: 3px;
+  background: #fff;
 }
 @media (max-width: 767px) {
   .logo-line-before i,
@@ -2223,8 +2229,13 @@ hr {
   float: right;
 }
 .menu {
-  float: right;
-  margin: 8px 0 0 0;
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: center;
+  background: rgba(255,255,255,0.65);
+  margin-left: auto;
+  margin-right: auto;
+  width: 440px;
 }
 @media (max-width: 767px) {
   .menu {
@@ -2244,19 +2255,27 @@ hr {
   }
 }
 .menu .menu-item a {
+  font-size: 18px;
+  display: block;
   padding: 0 10px;
   background: none;
   border: none;
+  height: 65px;
   border-radius: 2px;
   transition-property: background;
+  border-bottom: 1px solid transparent;
 }
 @media (max-width: 767px) {
   .menu .menu-item a {
     text-align: left;
   }
 }
+.menu .menu-item a .fa {
+  display: block;
+  margin: 10px auto;
+}
 .menu .menu-item a:hover {
-  background: #e1e1e1;
+  border-bottom: 1px solid #000;
 }
 .menu a::before {
   display: none;
