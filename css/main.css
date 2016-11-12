@@ -972,11 +972,6 @@ pre .javascript .function {
   display: inline-block;
   margin: 0 10px;
 }
-@media screen and (max-width: 767px) {
-  .menu .menu-item {
-    margin-top: 10px;
-  }
-}
 .menu .menu-item a {
   display: block;
   font-size: 13px;
@@ -1548,7 +1543,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5896ff;
+  background: #0ee26f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2135,6 +2130,11 @@ hr {
   background: url("/images/bg.jpg") no-repeat;
   height: 350px;
 }
+@media (max-width: 767px) {
+  .header {
+    height: 200px;
+  }
+}
 .header-inner {
   width: 700px;
   margin: 0 auto;
@@ -2189,6 +2189,11 @@ hr {
     line-height: 34px;
   }
 }
+.btn-bar {
+  background: #fff;
+!important
+}
+!important
 .logo-line-before,
 .logo-line-after {
   display: block;
@@ -2235,7 +2240,8 @@ hr {
   background: rgba(255,255,255,0.65);
   margin-left: auto;
   margin-right: auto;
-  width: 440px;
+  width: 500px;
+  border-radius: initial;
 }
 @media (max-width: 767px) {
   .menu {
@@ -2248,6 +2254,8 @@ hr {
 }
 .menu .menu-item {
   margin: 0;
+  display: inline-block;
+  margin: 0 10px;
 }
 @media (max-width: 767px) {
   .menu .menu-item {
@@ -2255,6 +2263,7 @@ hr {
   }
 }
 .menu .menu-item a {
+  text-transform: capitalize;
   font-size: 18px;
   display: block;
   padding: 0 10px;
@@ -2264,15 +2273,27 @@ hr {
   border-radius: 2px;
   transition-property: background;
   border-bottom: 1px solid transparent;
+  padding-top: 20px;
 }
 @media (max-width: 767px) {
   .menu .menu-item a {
+    display: inline-block;
     text-align: left;
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 0 0;
   }
 }
 .menu .menu-item a .fa {
+  margin-right: 0;
   display: block;
-  margin: 10px auto;
+  margin: auto;
+}
+@media (max-width: 767px) {
+  .menu .menu-item a .fa {
+    display: inline-block;
+  }
 }
 .menu .menu-item a:hover {
   border-bottom: 1px solid #000;
@@ -2288,7 +2309,21 @@ hr {
 @media (max-width: 767px) {
   .menu {
     float: none;
+    margin-top: 20px;
+    padding-left: 0;
+    text-align: center;
+    background: rgba(255,255,255,0.65);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 20;
   }
+!important
+!important
+!important
+!important
+!important
+!important
 }
 .site-search form {
   display: none;
