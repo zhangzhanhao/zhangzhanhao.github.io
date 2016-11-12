@@ -1543,7 +1543,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0ee26f;
+  background: #4b0e53;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2247,6 +2247,9 @@ hr {
   .menu {
     margin: 20px 0 0 0;
     padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
 .menu br {
