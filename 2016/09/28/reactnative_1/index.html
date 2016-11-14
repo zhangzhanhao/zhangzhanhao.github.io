@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="canvas," />
+  <meta name="keywords" content="React-Native," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
+<meta name="description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用canvas绘制200个运动球">
-<meta property="og:url" content="http://yoursite.com/2016/11/06/canvas_ball/index.html">
+<meta property="og:title" content="React-Native入门">
+<meta property="og:url" content="http://yoursite.com/2016/09/28/reactnative_1/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
-<meta property="og:updated_time" content="2016-11-12T13:10:25.000Z">
+<meta property="og:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta property="og:updated_time" content="2016-11-14T12:22:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用canvas绘制200个运动球">
-<meta name="twitter:description" content="canvas是html5中绘制图片、动画的标签本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。">
+<meta name="twitter:title" content="React-Native入门">
+<meta name="twitter:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> 用canvas绘制200个运动球 | 来一箱9˚ </title>
+  <title> React-Native入门 | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                用canvas绘制200个运动球
+                React-Native入门
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T00:00:00+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2016-09-28T00:00:00+08:00" content="2016-09-28">
+              2016-09-28
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/06/canvas_ball/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/canvas_ball/" itemprop="commentsCount"></span>
+                <a href="/2016/09/28/reactnative_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/reactnative_1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,8 +350,21 @@
       
 
       
-        <p>canvas是html5中绘制图片、动画的标签<br>本次使用canvas来绘制运动的小球使其在碰到四周时可以反弹。<br><a id="more"></a><br>采用面向对象的方法先定义球的属性（起点，半径，速度，颜色）<br>再定义球的方法（画球，运动）</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *&#123;</div><div class="line">            margin:0;</div><div class="line">            padding:0;</div><div class="line">        &#125;</div><div class="line">        canvas&#123;</div><div class="line">            display: block;</div><div class="line">            margin:0 auto;</div><div class="line">            border:1px red solid;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;canvas id=<span class="string">"canvas"</span>&gt;</div><div class="line">    xxxxx</div><div class="line">&lt;/canvas&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    var canvas = document.querySelector(<span class="string">"#canvas"</span>);</div><div class="line">    canvas.width = 800;</div><div class="line">    canvas.height = 600;</div><div class="line"></div><div class="line">    var onOff = <span class="literal">false</span>;</div><div class="line">    var ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">Arc</span></span>()&#123;</div><div class="line">        this.x = x;</div><div class="line">        this.y = y;</div><div class="line">        this.r = r;</div><div class="line">        this.color = color;</div><div class="line">        this.speedX = speedX;</div><div class="line">        this.speedY = speedY;</div><div class="line">     &#125;</div><div class="line">    Arc.prototype.drawArc = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        ctx.save();</div><div class="line">        ctx.beginPath();</div><div class="line">        ctx.fillStyle = this.color;</div><div class="line">        ctx.arc(this.x,this.y,this.r,0,Math.PI*2)</div><div class="line">        ctx.fill();</div><div class="line">        ctx.closePath();</div><div class="line">        ctx.restore();</div><div class="line">    &#125;</div><div class="line">    Arc.prototype.move = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        <span class="keyword">if</span>(this.x+this.speedX+this.r &gt; canvas.width || this.x+this.speedX-this.r &lt; 0)&#123;</div><div class="line">            this.speedX = -this.speedX;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(this.y+this.speedY+this.r &gt; canvas.height || this.y+this.speedY-this.r &lt; 0)&#123;</div><div class="line"></div><div class="line">            this.speedY = - this.speedY;</div><div class="line">        &#125;</div><div class="line">        this.x += this.speedX;</div><div class="line">        this.y += this.speedY;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var arr = [];</div><div class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;200;i++)&#123;</div><div class="line">        var x = random(50,750);</div><div class="line">        var y = random(50,550);</div><div class="line">        var r = random(10,30);</div><div class="line">        var speedX = random(3,10);</div><div class="line">        var speedY = random(3,10);</div><div class="line">        var color = `rgb(<span class="variable">$&#123;random(0,255)&#125;</span>,<span class="variable">$&#123;random(0,255)&#125;</span>,<span class="variable">$&#123;random(0,255)&#125;</span>)`;</div><div class="line">        var obj = new Arc(x,y,r,color,speedX,speedY)</div><div class="line">        arr.push(obj);</div><div class="line">    &#125;</div><div class="line">    var timer = null;</div><div class="line">    <span class="keyword">function</span> <span class="function"><span class="title">ani</span></span>()&#123;</div><div class="line">        ctx.clearRect(0,0,canvas.width,canvas.height)</div><div class="line">        <span class="keyword">for</span>(<span class="built_in">let</span> i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">            arr[i].drawArc();</div><div class="line">            arr[i].move();</div><div class="line">            console.log(i)</div><div class="line">        &#125;</div><div class="line">        timer = window.requestAnimationFrame(ani);</div><div class="line">    &#125;</div><div class="line">    ani();</div><div class="line">    document.onclick = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        onOff = !onOff;</div><div class="line">        <span class="keyword">if</span>(onOff)&#123;</div><div class="line">            window.cancelAnimationFrame(timer);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            ani();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">function</span> random(a,b)&#123;</div><div class="line">        <span class="built_in">return</span> Math.ceil(Math.random() * (b<span class="_">-a</span>)+a+1);</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。<br>该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。<br>RN运行时包含一个原生的主线程和一个JS线程，JS线程执行JS代码，负责界面布局和业务逻辑处理，原生线程负责界面渲染和原生组件的执行。RN里面尽量使用原生组件，避免重复造轮子。这样的好处，一是可以利用现有的大量的原生组件，降低入门门槛；二是可以达到跟原生应用一样的性能；三是通过JS封装过后的组件，可以支持跨平台。<br>JS在RN里面的作用类似于Python这样的支持调用原生C库的脚本语言，都是起着“胶水”的作用。复杂计算和底层功能都通过调用原生接口来完成，流程控制和业务逻辑则在“胶水”语言里完成。这样既提高了开发效率，又兼顾了性能。<br><a id="more"></a><br>作者：Jagger Wang<br>来源：知乎</p>
+<hr>
+<p>最近React Native越来越火，它的设计初衷是实现一套代码，全平台试用，使前端走向了移动端APP的制作，也让越来越多的从事IOS、Android的同学感到恐慌，当然流畅性稍稍不如，但随着React Native的发展这个问题页终将会被解决，总的来说是技术上的突破。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew, Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
+<p>homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
+<h2 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure>
+<p>如果你看到EACCES: permission denied这样的权限报错 运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
+<h2 id="Watchman工具"><a href="#Watchman工具" class="headerlink" title="Watchman工具"></a>Watchman工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
+<h1 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line"><span class="built_in">cd</span> AwesomeProject</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
+<h1 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h1><p>以IOS端为例，找到index.ios.js<br>根据历史悠久的“传统”，我们也来写一个“Hello World”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</div><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line">class HelloWorldApp extends Component &#123;</div><div class="line">  <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注意，这里用引号括起来的<span class="string">'HelloWorldApp'</span>必须和你init创建的项目名一致，箭头后面的‘HelloWorldApp’和类名一致</div><div class="line">AppRegistry.registerComponent(<span class="string">'HelloWorldApp'</span>, () =&gt; HelloWorldApp);</div></pre></td></tr></table></figure></p>
+<p>⌘-R刷新</p>
+<h1 id="遇到的坑和解决办法"><a href="#遇到的坑和解决办法" class="headerlink" title="遇到的坑和解决办法"></a>遇到的坑和解决办法</h1><h2 id="项目初始化失败"><a href="#项目初始化失败" class="headerlink" title="项目初始化失败"></a>项目初始化失败</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>修复权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 777 ~/.babel.json</div></pre></td></tr></table></figure></p>
+<h2 id="跑当前程序却运行以前的程序"><a href="#跑当前程序却运行以前的程序" class="headerlink" title="跑当前程序却运行以前的程序"></a>跑当前程序却运行以前的程序</h2><h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>清除watchman监控列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">watchman watch-del-all</div></pre></td></tr></table></figure></p>
+<h2 id="引入外部http请求"><a href="#引入外部http请求" class="headerlink" title="引入外部http请求"></a>引入外部http请求</h2><h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要用xcode打开本地info.plist<br>把App Transport Security Settings 点开后的  Allow Arbitrary Loads     改成YES</p>
+<h1 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h1><p>任何组件在使用前要先引用例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -373,7 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/canvas/" rel="tag">#canvas</a>
+            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
           
         </div>
       
@@ -382,16 +395,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/28/reactnative_1/" rel="next" title="React-Native入门">
-                <i class="fa fa-chevron-left"></i> React-Native入门
+              <a href="/2016/05/20/hexo_talk/" rel="next" title="hexo next主题添加留言页面">
+                <i class="fa fa-chevron-left"></i> hexo next主题添加留言页面
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/12/socket/" rel="prev" title="NodeJS+Socket.io搭建简易聊天室">
-                NodeJS+Socket.io搭建简易聊天室 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/06/canvas_ball/" rel="prev" title="用canvas绘制200个运动球">
+                用canvas绘制200个运动球 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -407,10 +420,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/06/canvas_ball/"
-     data-title="用canvas绘制200个运动球"
+        <div class="ds-share flat" data-thread-key="2016/09/28/reactnative_1/"
+     data-title="React-Native入门"
      data-content=""
-     data-url="http://yoursite.com/2016/11/06/canvas_ball/">
+     data-url="http://yoursite.com/2016/09/28/reactnative_1/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -437,8 +450,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/canvas_ball/"
-           data-title="用canvas绘制200个运动球" data-url="http://yoursite.com/2016/11/06/canvas_ball/">
+      <div class="ds-thread" data-thread-key="2016/09/28/reactnative_1/"
+           data-title="React-Native入门" data-url="http://yoursite.com/2016/09/28/reactnative_1/">
       </div>
     
   </div>
@@ -540,7 +553,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">1.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native介绍"><span class="nav-number">1.</span> <span class="nav-text">React Native介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">2.2.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchman工具"><span class="nav-number">2.3.</span> <span class="nav-text">Watchman工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试安装"><span class="nav-number">3.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写Hello-World"><span class="nav-number">4.</span> <span class="nav-text">编写Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑和解决办法"><span class="nav-number">5.</span> <span class="nav-text">遇到的坑和解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化失败"><span class="nav-number">5.1.</span> <span class="nav-text">项目初始化失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑当前程序却运行以前的程序"><span class="nav-number">5.2.</span> <span class="nav-text">跑当前程序却运行以前的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入外部http请求"><span class="nav-number">5.3.</span> <span class="nav-text">引入外部http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">6.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
             
           </div>
         </section>
