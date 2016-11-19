@@ -1,0 +1,852 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/VEN/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/VEN/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="NodeJS,Mongodb," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJS+Mongodb小项目">
+<meta property="og:url" content="http://yoursite.com/2016/11/19/nodejsObj/index.html">
+<meta property="og:site_name" content="来一箱9˚">
+<meta property="og:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+<meta property="og:updated_time" content="2016-11-19T06:05:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJS+Mongodb小项目">
+<meta name="twitter:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6336038395373946000,
+      author: '博主大人'
+    }
+  };
+</script>
+
+  <title> NodeJS+Mongodb小项目 | 来一箱9˚ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">来一箱9˚</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NodeJS+Mongodb小项目
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-19T00:00:00+08:00" content="2016-11-19">
+              2016-11-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/19/nodejsObj/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/19/nodejsObj/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。<br><a id="more"></a></p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>web开发框架我使用Express，数据库mongodb，服务端nodejs，前端布局使用jade，用到的其他插件：mongoose实现与数据库的连接，supervisor实时监控代码更新，express-session做登录控制。<br>环境的配置和插件的安装在这里就不细说了。百度一下安装方法很详细。</p>
+<h1 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h1><h2 id="主文件"><a href="#主文件" class="headerlink" title="主文件"></a>主文件</h2><p>项目目录下终端运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ express MyApp</div><div class="line">$ <span class="built_in">cd</span> MyApp</div><div class="line">$ npm install</div><div class="line">$ supervisor bin/www</div></pre></td></tr></table></figure></p>
+<p>这四步运行完之后网页打开127.0.0.1:3000 就可以看到nodeJS已经开始工作了。</p>
+<h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><p>由于各个页面都有相同的头部和底部，所以在views目录下创建header.jade和foot.jade这样在每个页面就都可以引入，不用写很多遍。<br>创建课程页class.jade直播和点播都在这个页面<br>创建登录页login.jade和注册页reg.jade<br>创建课程管理页setclass.jade<br>这里说下class.jade布局的写法，因为所有课程都是从数据库吐出来的，所以在渲染课程list时要根据数据的个数，动态渲染list有多少条，在jade中可以使用each in来遍历数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">div.kecheng</div><div class="line">            ul</div><div class="line">                <span class="keyword">if</span>(data)</div><div class="line">                    -each item,index <span class="keyword">in</span> data</div><div class="line">                        li.listone</div><div class="line">                            div.img.fl</div><div class="line">                            p.fl= item.title</div><div class="line">                            p.fl= item.des</div><div class="line">                            p.fl</div><div class="line">                                span ￥</div><div class="line">                                span= item.price</div></pre></td></tr></table></figure></p>
+<p>其他页面具体的布局就不细说了，大家可以下载我的源文件查看，</p>
+<h2 id="设置路由"><a href="#设置路由" class="headerlink" title="设置路由"></a>设置路由</h2><p>在app.js中引入两个路由文件并设置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var index = require(<span class="string">'./routes/index'</span>);</div><div class="line">var ke = require(<span class="string">'./routes/class'</span>)</div><div class="line">·······</div><div class="line">app.use(<span class="string">'/'</span>, index);</div><div class="line">app.use(<span class="string">'/class'</span>,ke)</div></pre></td></tr></table></figure></p>
+<h3 id="class-js"><a href="#class-js" class="headerlink" title="class.js"></a>class.js</h3><p>在routes文件夹下创建另一个路由class.js<br>由于直播和点播在一个页面,所以在链接时我给的是/class/type=1和/class/type=2，class.js代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var express = require(<span class="string">'express'</span>);</div><div class="line">var router = express.Router();</div><div class="line">var mongo = require(<span class="string">"../model/db"</span>);</div><div class="line"></div><div class="line">router.get(<span class="string">'/type=1'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">    mongo.kecheng.find(&#123;<span class="string">"type"</span>:<span class="string">"直播"</span>&#125;,<span class="keyword">function</span> (err,data) &#123;     </div><div class="line">        res.render(<span class="string">'class'</span>, &#123; title: <span class="string">"直播"</span> , data:data&#125;);</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;);</div><div class="line">router.get(<span class="string">'/type=2'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">    mongo.kecheng.find(&#123;<span class="string">"type"</span>:<span class="string">"点播"</span>&#125;,<span class="keyword">function</span> (err,data) &#123;</div><div class="line">        res.render(<span class="string">'class'</span>, &#123; title: <span class="string">'点播'</span> ,data:data&#125;);</div><div class="line">    &#125;)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = router</div></pre></td></tr></table></figure></p>
+<p>里面关于数据库的操作我们后面再说，这里主要get到/type=1或/type=2都响应一个class页面。</p>
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><p>get各个字段，响应不同页面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">  res.render(<span class="string">'index'</span>, &#123; title: <span class="string">'首页'</span> &#125;);</div><div class="line">&#125;);</div><div class="line">router.get(<span class="string">'/login'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">  res.render(<span class="string">'login'</span>, &#123; title: <span class="string">'登录'</span> &#125;);</div><div class="line">&#125;);</div><div class="line">router.get(<span class="string">'/reg'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">  res.render(<span class="string">'reg'</span>, &#123; title: <span class="string">'注册'</span> &#125;);</div><div class="line">&#125;);</div><div class="line">router.get(<span class="string">'/setclass'</span>, <span class="keyword">function</span>(req, res, next) &#123;</div><div class="line">    res.render(<span class="string">'setclass'</span>, &#123; title: <span class="string">'上传课程'</span> &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><p>本地终端找到数据库文件后启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./mongod</div></pre></td></tr></table></figure></p>
+<p>在项目目录下创建model文件夹用来放置连接数据库文件，文件夹下创建db.js。使用插件monngoose来对数据库进行操作<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var mongoose = require(<span class="string">"mongoose"</span>);</div><div class="line"></div><div class="line">mongoose.connect(<span class="string">"mongodb://127.0.0.1/user"</span>);</div><div class="line"></div><div class="line">var userSchema = new mongoose.Schema(&#123;</div><div class="line">    username: String,</div><div class="line">    password: String,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">var classSchema = new mongoose.Schema(&#123;</div><div class="line">    title: String,</div><div class="line">    des: String,</div><div class="line">    <span class="built_in">type</span>: String,</div><div class="line">    price: String</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports=&#123;kecheng:mongoose.model(<span class="string">"class"</span>,classSchema,<span class="string">"class"</span>),</div><div class="line">                user:mongoose.model(<span class="string">"userMo"</span>,userSchema,<span class="string">"userMo"</span>)</div><div class="line">                &#125;</div></pre></td></tr></table></figure></p>
+<p>数据库下我们一共有两个大集合userSchema和classSchema，一个用来存储用户名和密码，一个用来存储课程信息。</p>
+<h1 id="登录验证"><a href="#登录验证" class="headerlink" title="登录验证"></a>登录验证</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var mongo = require(<span class="string">"../model/db"</span>)  //引入操作数据库文件</div><div class="line">     .</div><div class="line">     .</div><div class="line">     .</div><div class="line">router.post(<span class="string">'/login_k'</span>,<span class="keyword">function</span> (req,res,next) &#123;</div><div class="line">    var username=req.body.username</div><div class="line">    var password=req.body.password</div><div class="line">    mongo.user.findOne(&#123;<span class="string">"username"</span>:username&#125;,<span class="keyword">function</span> (err,user) &#123;</div><div class="line">        console.log(user)</div><div class="line">        <span class="keyword">if</span>(user)&#123;</div><div class="line">            <span class="keyword">if</span>(user.password==password)&#123;</div><div class="line">                req.session.user = 1,</div><div class="line">                res.send(&#123;</div><div class="line">                    req:req.session,</div><div class="line">                    success:1,</div><div class="line">                    info:<span class="string">"登录成功"</span></div><div class="line">                &#125;)</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                res.send(&#123;</div><div class="line">                    success:0,</div><div class="line">                    info:<span class="string">"用户名或密码错误"</span></div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            res.send(&#123;</div><div class="line">                success:0,</div><div class="line">                info:<span class="string">"用户不存在"</span></div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当服务器post到/login_k后取出参数字段在数据库中查找username是否有该用户，没有该用户就返回success:0,info:”用户不存在”，用户存在就检测密码，密码一致返回session和succsee:1,info:”登录成功”，前端在获取success:1时就会在浏览器种下cookie为期半个小时，期间用户再次进入时就不需要登录，头部右侧也会由登录注册变成注销按键。密码不一致则返回success:0,info:”用户名或密码错误”</p>
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/login_reg'</span>,<span class="keyword">function</span> (req,res,next) &#123;</div><div class="line">    var username=req.body.username</div><div class="line">    var password=req.body.password</div><div class="line">    mongo.user.findOne(&#123;<span class="string">"username"</span>:username&#125;,<span class="keyword">function</span>(err,user)&#123;</div><div class="line">        <span class="keyword">if</span>(err)&#123;</div><div class="line">            res.send(&#123;</div><div class="line">                success:0,</div><div class="line">                info:<span class="string">"注册失败"</span></div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(user)&#123;</div><div class="line">            res.send(&#123;</div><div class="line">                success:0,</div><div class="line">                info:<span class="string">"用户已存在"</span></div><div class="line">            &#125;)</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            mongo.user.create(&#123;</div><div class="line">                username:username,</div><div class="line">                password:password</div><div class="line">            &#125;,<span class="keyword">function</span> (err,data) &#123;</div><div class="line">                <span class="keyword">if</span>(err)&#123;</div><div class="line">                    res.send(&#123;</div><div class="line">                        success:0,</div><div class="line">                        info:<span class="string">"注册失败"</span></div><div class="line">                    &#125;)</div><div class="line">                &#125;</div><div class="line">                res.send(&#123;</div><div class="line">                    success:1,</div><div class="line">                    info:<span class="string">"注册成功"</span></div><div class="line">                &#125;)</div><div class="line"></div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>与登录的原理基本相同，检测到用户名就会显示用户名已存在，没有该用户，则会在数据库中创建一个这个用户，这里需要注意<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mongo.user.create(&#123;</div><div class="line">                username:username,</div><div class="line">                password:password</div><div class="line">            &#125;,<span class="keyword">function</span> (err,data) &#123;</div><div class="line">            ……</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">……</div><div class="line">var userSchema = new mongoose.Schema(&#123;</div><div class="line">    username: String,</div><div class="line">    password: String,</div><div class="line">&#125;);</div><div class="line">……</div></pre></td></tr></table></figure>
+<p>创建用户时使用的字段（冒号前面的username）要和数据库操作文件中的username相同。</p>
+<h1 id="课程管理"><a href="#课程管理" class="headerlink" title="课程管理"></a>课程管理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">router.post(<span class="string">'/setclass'</span>,<span class="keyword">function</span> (req,res,next) &#123;</div><div class="line">        var title=req.body.title</div><div class="line">        var <span class="built_in">type</span>=req.body.type</div><div class="line">        var des=req.body.des</div><div class="line">        var price=req.body.price</div><div class="line">        mongo.kecheng.create(&#123;</div><div class="line">            title: title,</div><div class="line">            des: des,</div><div class="line">            <span class="built_in">type</span>: <span class="built_in">type</span>,</div><div class="line">            price: price</div><div class="line">        &#125;,<span class="keyword">function</span> (err,data) &#123;</div><div class="line">            <span class="keyword">if</span>(err)&#123;<span class="built_in">return</span>&#125;</div><div class="line">            res.send(&#123;</div><div class="line">                success:1,</div><div class="line">                info:<span class="string">"上传成功"</span></div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>同样也需要注意到使用字段和数据库操作文件中相一致。</p>
+<h1 id="class页"><a href="#class页" class="headerlink" title="class页"></a>class页</h1><p>因为直播和点播使用的是同一个页面，所以在点直播时要显示直播的list，点点播时要显示点播的list，细心人可能发现了，我在上传课程时有一个type字段，会设置是直播还是点播。当然在点直播点播页面时也就会到数据库中查找相应的type，mongo.kecheng.find（{……})找到所有符合要求的信息返回前端渲染页面。</p>
+<h1 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h1><h2 id="数据库操作文件"><a href="#数据库操作文件" class="headerlink" title="数据库操作文件"></a>数据库操作文件</h2><h3 id="坑点"><a href="#坑点" class="headerlink" title="坑点"></a>坑点</h3><p>之前在model文件夹下创建了两个数据库操作文件，想一个用来登录注册，一个用来管理课程，但在第二个数据库操作文件引入的时候就会报错。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>把两个文件合并成一个，最后以对象的形式暴露出去。</p>
+<h2 id="class-jade"><a href="#class-jade" class="headerlink" title="class.jade"></a>class.jade</h2><h3 id="坑点-1"><a href="#坑点-1" class="headerlink" title="坑点"></a>坑点</h3><p>当直播课程为空时，网页无法渲染，会报错。</p>
+<h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>加入if判断</p>
+<h2 id="数据库占用"><a href="#数据库占用" class="headerlink" title="数据库占用"></a>数据库占用</h2><h3 id="坑点-2"><a href="#坑点-2" class="headerlink" title="坑点"></a>坑点</h3><p>有时数据库进程被关闭后，重新启动时会显示0.0.0.0：27017已经被占用。</p>
+<h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>重新开一个终端输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps aux|grep mongod</div></pre></td></tr></table></figure></p>
+<p>找到对应进程id杀死<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">kill</span> -9 pid</div></pre></td></tr></table></figure></p>
+<h2 id="项目始终被监控"><a href="#项目始终被监控" class="headerlink" title="项目始终被监控"></a>项目始终被监控</h2><h3 id="坑点-3"><a href="#坑点-3" class="headerlink" title="坑点"></a>坑点</h3><p>刚开始做时每次运行express myApp都会报错，而且发现jade文件被自动转换成了html又没有开任何进程。</p>
+<h3 id="解决办法-3"><a href="#解决办法-3" class="headerlink" title="解决办法"></a>解决办法</h3><p>发现这个是webstorm的问题，把整个webstorm软件关掉，再重新开启一遍就好了。</p>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NodeJS/" rel="tag">#NodeJS</a>
+          
+            <a href="/tags/Mongodb/" rel="tag">#Mongodb</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/12/socket/" rel="next" title="NodeJS+Socket.io搭建简易聊天室">
+                <i class="fa fa-chevron-left"></i> NodeJS+Socket.io搭建简易聊天室
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/19/nodejsObj/"
+     data-title="NodeJS+Mongodb小项目"
+     data-content=""
+     data-url="http://yoursite.com/2016/11/19/nodejsObj/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/19/nodejsObj/"
+           data-title="NodeJS+Mongodb小项目" data-url="http://yoursite.com/2016/11/19/nodejsObj/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="张展豪" />
+          <p class="site-author-name" itemprop="name">张展豪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangzhanhao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件配置"><span class="nav-number">2.</span> <span class="nav-text">文件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主文件"><span class="nav-number">2.1.</span> <span class="nav-text">主文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Views"><span class="nav-number">2.2.</span> <span class="nav-text">Views</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置路由"><span class="nav-number">2.3.</span> <span class="nav-text">设置路由</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class-js"><span class="nav-number">2.3.1.</span> <span class="nav-text">class.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-js"><span class="nav-number">2.3.2.</span> <span class="nav-text">index.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接数据库"><span class="nav-number">2.4.</span> <span class="nav-text">连接数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录验证"><span class="nav-number">3.</span> <span class="nav-text">登录验证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册"><span class="nav-number">4.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程管理"><span class="nav-number">5.</span> <span class="nav-text">课程管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class页"><span class="nav-number">6.</span> <span class="nav-text">class页</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑"><span class="nav-number">7.</span> <span class="nav-text">遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库操作文件"><span class="nav-number">7.1.</span> <span class="nav-text">数据库操作文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坑点"><span class="nav-number">7.1.1.</span> <span class="nav-text">坑点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">7.1.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class-jade"><span class="nav-number">7.2.</span> <span class="nav-text">class.jade</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坑点-1"><span class="nav-number">7.2.1.</span> <span class="nav-text">坑点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">7.2.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库占用"><span class="nav-number">7.3.</span> <span class="nav-text">数据库占用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坑点-2"><span class="nav-number">7.3.1.</span> <span class="nav-text">坑点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">7.3.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目始终被监控"><span class="nav-number">7.4.</span> <span class="nav-text">项目始终被监控</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坑点-3"><span class="nav-number">7.4.1.</span> <span class="nav-text">坑点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-3"><span class="nav-number">7.4.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张展豪</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/VEN/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/VEN/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangzhanhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/VEN/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
