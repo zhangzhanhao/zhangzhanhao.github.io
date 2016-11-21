@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+<meta name="description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、list页的筛选功能、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeJS+Mongodb小项目">
 <meta property="og:url" content="http://yoursite.com/2016/11/19/nodejsObj/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
-<meta property="og:updated_time" content="2016-11-19T06:18:46.000Z">
+<meta property="og:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、list页的筛选功能、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+<meta property="og:updated_time" content="2016-11-21T11:37:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJS+Mongodb小项目">
-<meta name="twitter:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
+<meta name="twitter:description" content="这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、list页的筛选功能、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。">
 
 
 
@@ -350,7 +350,7 @@
       
 
       
-        <p>这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。<br><a id="more"></a></p>
+        <p>这个小项目我们实现一个类似慕课网的常见的网络学习平台，这次主要实现了路由跳转、注册、登录、登录状态保存、课程管理、list页的筛选功能、连接数据库实现前后端交互。有一些地方的样式和布局没有细做还望见谅。<br><a id="more"></a></p>
 <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><p>web开发框架我使用Express，数据库mongodb，服务端nodejs，前端布局使用jade，用到的其他插件：mongoose实现与数据库的连接，supervisor实时监控代码更新，express-session做登录控制。<br>环境的配置和插件的安装在这里就不细说了。百度一下安装方法很详细。</p>
 <h1 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h1><h2 id="主文件"><a href="#主文件" class="headerlink" title="主文件"></a>主文件</h2><p>项目目录下终端运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ express MyApp</div><div class="line">$ <span class="built_in">cd</span> MyApp</div><div class="line">$ npm install</div><div class="line">$ supervisor bin/www</div></pre></td></tr></table></figure></p>
 <p>这四步运行完之后网页打开127.0.0.1:3000 就可以看到nodeJS已经开始工作了。</p>
