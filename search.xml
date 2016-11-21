@@ -59,6 +59,13 @@
 
     
     <entry>
+      <title><![CDATA[javascript基础（一）]]></title>
+      <url>%2F2015%2F05%2F25%2Fjavascript%E5%9F%BA%E7%A1%801%2F</url>
+      <content type="text"><![CDATA[基础数据类型 String --字符串类型 Number -- 数值类型 Undefined -- undefined（未知）类型 Null -- null（空）类型 Boolean -- 布尔类型 声明变量用var声明的变量会存在变量提升。 保留字、关键字保留字关键字 复合运算符123++ 前置先运算再赋值 和 后置先赋值再运算-- 前置先运算再赋值 和 后置先赋值再运算!! 可以将任何类型的数据转换成布尔类型 数据类型转换toString(); 转换成字符字符串与字符串相加 得到字符串拼接字符串与任意类型相加 得到也是字符串拼接字符串与字符串-/%* 得到的是NaN字符串的特性是 不能修改!! Number();转换成数字true = 1; false = 0; ‘’=0; “44”=44; ‘sdf34’=NaN; Boolean();转换成布尔值true 非空字符串 非零字符（不包含NaN）false 空字符串 0数值和NaN undefined null; isNaN()判断是否是非数NaN的数据类型是number parseInt()截取字符串整数位 （以数字开头） parseFloat()截取字符串小数位 （以数字开头）]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[margin:auto的作用]]></title>
       <url>%2F2015%2F04%2F05%2Fcss1%2F</url>
       <content type="text"><![CDATA[我们都知道当给一个块级元素设置了宽高以后，给他一个margin:0 auto；就可以左右居中。其实margin:auto; 还有一些其他作用。 margin—left:auto当一个块级元素设置完宽高后，它会默认靠近父容器的左侧，这时无论怎么设置margin-right的值，这个块级元素的位置都不会变化。但如果我们希望他距离父容器右侧50像素，又不借助定位和浮动，这时就可以用到margin—left:auto； 给他设置12margin-right:50px;margin-left:auto; 他就会移动到距离父容器右侧50像素的位置。 margin:auto实现上下左右居中 margin:auto可以实现左右居中的原因是，块级元素本来是横向填满父容器的，当给他设置了宽以后，其他区域就被强制覆盖掉了，这时设置margin:auto;被强制覆盖掉的区域就会平均分布在这个块级元素的左右，这样就实现了左右居中。 但是，因为块级元素没有默认上下也填充满父级容器的属性，所以这时margin:auto对纵向是不生效的，但是我们依然可以利用类似左右居中的方法来实现上下居中。 12345678910111213141516 .father&#123; height: 600px; position: relative; background-color: lightgray;&#125; .son&#123; background-color: blue; position: absolute; top:0; bottom: 0; left: 0; right: 0; height: 300px; width: 300px; margin: auto;&#125; 原理是子级元素相对父级元素定位设置top:0;bottom: 0;left: 0;right: 0; 这时，子级元素就会继承父级元素的宽高，然后我们在给子级元素设置宽高。这时，子级元素的宽高强行被改变，就在横向和纵向都留出来了一个被覆盖掉的区域，这时给子级元素margin:auto四周遍都有效了，也就实现了子级元素相对父级元素的上下左右居中。]]></content>
