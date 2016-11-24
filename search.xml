@@ -59,6 +59,13 @@
 
     
     <entry>
+      <title><![CDATA[javascript基础（二）]]></title>
+      <url>%2F2015%2F05%2F27%2Fjavascript%E5%9F%BA%E7%A1%802%2F</url>
+      <content type="text"><![CDATA[常用字符串方法 字符串函数查找方法字符方法charAt()功能：返回字符串中第n个字符参数：超出范围返回空字符串返回值：sting中第n个字符的实际值 charCodeAt()功能：返回字符串中第n个字符的代码参数：超出范围返回NaN返回值：sting中第n个字符的Unicode编码 位置方法indexOf()从前向后检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 lastindexOf()从后向前检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 匹配方法match()找到一个或多个正则表达式的匹配 search()检索字符串与正则表达式匹配的子串 replace()替换一个与正则表达式匹配的子串 2个参数 split()根据指定分隔符将字符串分割成多个子串，并返回成数组 操作方法拼接方法concat()连接字符串 截取方法slice()根据下标截取子串正数：下标向后截取负数：从后向前数x个，向后截取 substring()根据下标截取子串 负值参数转换为0 substr()根据长度截取子串第一个参数起始下标第二个参数截取长度 空格处理trim清除前后空格 trimLeft清除前置空格 trimRight清除后置空格 编码方法URI字符串编码与解码encodeURI()decodeURI() 转换方法大小写转换toUpperCase()转为大写 toLowerCase()转为小写 PS：纯手打。。累死我了^_^。。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[javascript基础（一）]]></title>
       <url>%2F2015%2F05%2F25%2Fjavascript%E5%9F%BA%E7%A1%801%2F</url>
       <content type="text"><![CDATA[基础数据类型 String --字符串类型 Number -- 数值类型 Undefined -- undefined（未知）类型 Null -- null（空）类型 Boolean -- 布尔类型 声明变量用var声明的变量会存在变量提升。 保留字、关键字保留字关键字 复合运算符123++ 前置先运算再赋值 和 后置先赋值再运算-- 前置先运算再赋值 和 后置先赋值再运算!! 可以将任何类型的数据转换成布尔类型 数据类型转换toString(); 转换成字符字符串与字符串相加 得到字符串拼接字符串与任意类型相加 得到也是字符串拼接字符串与字符串-/%* 得到的是NaN字符串的特性是 不能修改!! Number();转换成数字true = 1; false = 0; ‘’=0; “44”=44; ‘sdf34’=NaN; Boolean();转换成布尔值true 非空字符串 非零字符（不包含NaN）false 空字符串 0数值和NaN undefined null; isNaN()判断是否是非数NaN的数据类型是number parseInt()截取字符串整数位 （以数字开头） parseFloat()截取字符串小数位 （以数字开头）]]></content>
