@@ -59,6 +59,13 @@
 
     
     <entry>
+      <title><![CDATA[javascript基础（三）]]></title>
+      <url>%2F2015%2F05%2F30%2Fjavascript%E5%9F%BA%E7%A1%803%2F</url>
+      <content type="text"><![CDATA[一些常用的数组方法 创建方法空数组1var Obj = new Array(); 指定长度数组1var Obj = new Array(Size); 指定元素数组1var Obj = new Array(元素1,元素2……); 单维数组1var Obj = [元素1,元素2……]; 多维数组1var a = new Array([数组序列1],[数组序列2]……); 数组属性constructor引用数组对象的构造函数 length返回数组长度 prototype通过增加属性和方法扩展数组定义 操作数组添加push()数组末尾添加 unshift()数组头部添加 concat()合并两个数组 删除pop()删除并返回数组的最后一个元素 shift()删除并返回数组的第一个元素 子数组spilce()删除任意数量的项 下标 项数指定位置插入指定的项 下标 0 插入的项替换任意数量的项 下标 要删除的项数 要插入的项 slice()从已有数组中选取部分元素构成新数组 数组排序sort()排序–例如：1arr.sort(function(a,b)&#123;return a-b&#125;) reverse()点到数组中元素的顺序 数组转换toSring()转换为字符串并返回 附数组去重办法12345678910var test = [1,2,3,4,5,6,7,7,1,8,8,9]; for (var i = 0; i &lt; test.length; i++) &#123; for (var j=i+1; j &lt; test.length; j++) &#123; if (test[i]===test[j]) &#123; test.splice(j,1); j--; &#125; &#125; &#125; console.log(test); 运用扩展数组去重123456789101112131415161718Array.prototype.unique1 = function()&#123; var res = [this[0]]; for(var i = 1; i &lt; this.length; i++)&#123; var repeat = false; for(var j = 0; j &lt; res.length; j++)&#123; if(this[i] == res[j])&#123; repeat = true; break; &#125; &#125; if(!repeat)&#123; res.push(this[i]); &#125; &#125; return res;&#125;var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1,1,12,3,5,6,5,5,8]console.log(arr.unique1());]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[javascript基础（二）]]></title>
       <url>%2F2015%2F05%2F27%2Fjavascript%E5%9F%BA%E7%A1%802%2F</url>
       <content type="text"><![CDATA[常用字符串方法 字符串函数查找方法字符方法charAt()功能：返回字符串中第n个字符参数：超出范围返回空字符串返回值：sting中第n个字符的实际值 charCodeAt()功能：返回字符串中第n个字符的代码参数：超出范围返回NaN返回值：sting中第n个字符的Unicode编码 位置方法indexOf()从前向后检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 lastindexOf()从后向前检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 匹配方法match()找到一个或多个正则表达式的匹配 search()检索字符串与正则表达式匹配的子串 replace()替换一个与正则表达式匹配的子串 2个参数 split()根据指定分隔符将字符串分割成多个子串，并返回成数组 操作方法拼接方法concat()连接字符串 截取方法slice()根据下标截取子串正数：下标向后截取负数：从后向前数x个，向后截取 substring()根据下标截取子串 负值参数转换为0 substr()根据长度截取子串第一个参数起始下标第二个参数截取长度 空格处理trim清除前后空格 trimLeft清除前置空格 trimRight清除后置空格 编码方法URI字符串编码与解码encodeURI()decodeURI() 转换方法大小写转换toUpperCase()转为大写 toLowerCase()转为小写 PS：纯手打。。累死我了^_^。。]]></content>
