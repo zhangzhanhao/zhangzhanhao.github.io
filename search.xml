@@ -87,6 +87,13 @@
 
     
     <entry>
+      <title><![CDATA[opcity和rgba]]></title>
+      <url>%2F2015%2F04%2F14%2Fcss3%2F</url>
+      <content type="text"><![CDATA[例如我们手机微信拆红包时会出现一个半透明层上面有个红包，怎么制作这个透明层呢。。 opcity当给一个元素设置opcity时，这个元素和所在他区域内的其他元素都会变成半透明的样式，所以用这个是无法实现微信红包效果或者底部半透明层上写一个正常不变颜色的字这样的效果，但opcity可以用来实现过度隐藏效果，现在很多网站的轮播图都用到了这个效果。 rgba这个样式的前三个参数是0~255的数字，来确定颜色值，第四个参数是0~1的数字，来确定透明度。这里的透明度的设置不会影响到除它自身外的其他元素，所以用这个样式可以实现微信抢红包的界面。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[margin-top]]></title>
       <url>%2F2015%2F04%2F10%2Fcss2%2F</url>
       <content type="text"><![CDATA[margin-top有一些坑,记下来。。。 1当给盒子中的第一个元素margin-top的值是，会遇到盒子和这个元素一个向下移动。这是因为盒子没有触发BFC属性。 解决办法1.给盒子加边框2.盒子position:absolute;3.自身浮动4.父级元素overflow:hidden; 2margin-top和上面元素的margin—bottom不会叠加，而会取较大值作为间距，但当这两个元素左右排列时（没有浮动）margin-left和margin-right是可以叠加的。]]></content>
