@@ -59,6 +59,13 @@
 
     
     <entry>
+      <title><![CDATA[base64]]></title>
+      <url>%2F2015%2F06%2F04%2Fbase64%2F</url>
+      <content type="text"><![CDATA[在我们访问一个网站时，常常会遇到网站内的图片加载速度非常缓慢，从而影响到我们浏览网页时的用户体验Base64是网络上最常见的用于传输8Bit字节代码的编码方式之一，大家可以查看RFC2045～RFC2049，上面有MIME的详细规范。Base64编码可用于在HTTP环境下传递较长的标识信息。例如，在Java Persistence系统Hibernate中，就采用了Base64来将一个较长的唯一标识符（一般为128-bit的UUID）编码为一个字符串，用作HTTP表单和HTTP GET URL中的参数。在其他应用程序中，也常常需要把二进制数据编码为适合放在URL（包括隐藏表单域）中的形式。此时，采用Base64编码具有不可读性，即所编码的数据不会被人用肉眼所直接看到。 —转自百度百科 我们可以把图片转换成base64编码，再进行传输，这样就会是图片加载变快提升用户体验。 我常用的网站http://tool.css-js.com/base64.html]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[javascript基础（三）]]></title>
       <url>%2F2015%2F05%2F30%2Fjavascript%E5%9F%BA%E7%A1%803%2F</url>
       <content type="text"><![CDATA[一些常用的数组方法 创建方法空数组1var Obj = new Array(); 指定长度数组1var Obj = new Array(Size); 指定元素数组1var Obj = new Array(元素1,元素2……); 单维数组1var Obj = [元素1,元素2……]; 多维数组1var a = new Array([数组序列1],[数组序列2]……); 数组属性constructor引用数组对象的构造函数 length返回数组长度 prototype通过增加属性和方法扩展数组定义 操作数组添加push()数组末尾添加 unshift()数组头部添加 concat()合并两个数组 删除pop()删除并返回数组的最后一个元素 shift()删除并返回数组的第一个元素 子数组spilce()删除任意数量的项 下标 项数指定位置插入指定的项 下标 0 插入的项替换任意数量的项 下标 要删除的项数 要插入的项 slice()从已有数组中选取部分元素构成新数组 数组排序sort()排序–例如：1arr.sort(function(a,b)&#123;return a-b&#125;) reverse()点到数组中元素的顺序 数组转换toSring()转换为字符串并返回 附数组去重办法12345678910var test = [1,2,3,4,5,6,7,7,1,8,8,9]; for (var i = 0; i &lt; test.length; i++) &#123; for (var j=i+1; j &lt; test.length; j++) &#123; if (test[i]===test[j]) &#123; test.splice(j,1); j--; &#125; &#125; &#125; console.log(test); 运用扩展数组去重123456789101112131415161718Array.prototype.unique1 = function()&#123; var res = [this[0]]; for(var i = 1; i &lt; this.length; i++)&#123; var repeat = false; for(var j = 0; j &lt; res.length; j++)&#123; if(this[i] == res[j])&#123; repeat = true; break; &#125; &#125; if(!repeat)&#123; res.push(this[i]); &#125; &#125; return res;&#125;var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1,1,12,3,5,6,5,5,8]console.log(arr.unique1());]]></content>
@@ -76,6 +83,13 @@
       <title><![CDATA[javascript基础（一）]]></title>
       <url>%2F2015%2F05%2F25%2Fjavascript%E5%9F%BA%E7%A1%801%2F</url>
       <content type="text"><![CDATA[基础数据类型 String --字符串类型 Number -- 数值类型 Undefined -- undefined（未知）类型 Null -- null（空）类型 Boolean -- 布尔类型 声明变量用var声明的变量会存在变量提升。 保留字、关键字保留字关键字 复合运算符123++ 前置先运算再赋值 和 后置先赋值再运算-- 前置先运算再赋值 和 后置先赋值再运算!! 可以将任何类型的数据转换成布尔类型 数据类型转换toString(); 转换成字符字符串与字符串相加 得到字符串拼接字符串与任意类型相加 得到也是字符串拼接字符串与字符串-/%* 得到的是NaN字符串的特性是 不能修改!! Number();转换成数字true = 1; false = 0; ‘’=0; “44”=44; ‘sdf34’=NaN; Boolean();转换成布尔值true 非空字符串 非零字符（不包含NaN）false 空字符串 0数值和NaN undefined null; isNaN()判断是否是非数NaN的数据类型是number parseInt()截取字符串整数位 （以数字开头） parseFloat()截取字符串小数位 （以数字开头）]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[margin-top]]></title>
+      <url>%2F2015%2F04%2F10%2Fcss2%2F</url>
+      <content type="text"><![CDATA[margin-top有一些坑,记下来。。。 1当给盒子中的第一个元素margin-top的值是，会遇到盒子和这个元素一个向下移动。这是因为盒子没有触发BFC属性。 解决办法1.给盒子加边框2.盒子position:absolute;3.自身浮动4.父级元素overflow:hidden; 2margin-top和上面元素的margin—bottom不会叠加，而会取较大值作为间距，但当这两个元素左右排列时（没有浮动）margin-left和margin-right是可以叠加的。]]></content>
     </entry>
 
     
