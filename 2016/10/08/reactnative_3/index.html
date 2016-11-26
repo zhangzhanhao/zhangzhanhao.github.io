@@ -1,0 +1,833 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/VEN/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/VEN/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React-Native," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本篇博客将会讲解app中的列表制作和用第三方图标在工程开发中的使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Native组件之ListView和使用第三方icon">
+<meta property="og:url" content="http://yoursite.com/2016/10/08/reactnative_3/index.html">
+<meta property="og:site_name" content="来一箱9˚">
+<meta property="og:description" content="本篇博客将会讲解app中的列表制作和用第三方图标在工程开发中的使用。">
+<meta property="og:updated_time" content="2016-11-26T03:14:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-Native组件之ListView和使用第三方icon">
+<meta name="twitter:description" content="本篇博客将会讲解app中的列表制作和用第三方图标在工程开发中的使用。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6336038395373946000,
+      author: '博主大人'
+    }
+  };
+</script>
+
+  <title> React-Native组件之ListView和使用第三方icon | 来一箱9˚ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">来一箱9˚</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React-Native组件之ListView和使用第三方icon
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-08T00:00:00+08:00" content="2016-10-08">
+              2016-10-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/08/reactnative_3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/08/reactnative_3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本篇博客将会讲解app中的列表制作和用第三方图标在工程开发中的使用。<br><a id="more"></a></p>
+<h1 id="Icon"><a href="#Icon" class="headerlink" title="Icon"></a>Icon</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先打开终端进入到我们的工程文件夹下, (不会创建工程的请参考:<a href="http://blog.csdn.net/margaret_mo/article/details/51304062" target="_blank" rel="external">http://blog.csdn.net/margaret_mo/article/details/51304062</a>)<br>输入: npm install react-native-vector-icons –save (回车)<br>输入: npm install rnpm -g<br>输入: rnpm link (回车)<br>这些执行完以后再xcode打开项目的Info.plist文件 会在最下面看到引入了很多字体文件。  </p>
+<p>icon的github网址<br><a href="https://github.com/oblador/react-native-vector-icons" target="_blank" rel="external">https://github.com/oblador/react-native-vector-icons</a><br>根据下边   Bundled Icon Sets 选择要使用的图标<br>工程开头引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var Icon = require(<span class="string">'react-native-vector-icons/FontAwesome'</span>);</div></pre></td></tr></table></figure></p>
+<p>后面这个FontAwesome可以根据需要引入不同的图标文件</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Icon</div><div class="line">      name=<span class="string">"rocket"</span>   //图片名连接,可以到这个网址搜索:http://ionicons.com/, 使用时:去掉前面的 <span class="string">"icon-"</span> !!!!</div><div class="line">      size=&#123;30&#125;       //图片大小</div><div class="line">      color=<span class="string">"red"</span>     //图片颜色</div><div class="line">/&gt;</div></pre></td></tr></table></figure>
+<p>如果遇到刚使用icon就报错的情况结束进程重新启动项目即可解决<br>使用Icon的TabBarIOS:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">&lt;TabBarIOS&gt;</div><div class="line">            &lt;Icon.TabBarItemIOS</div><div class="line">                title=<span class="string">"首页"</span></div><div class="line">                iconName=<span class="string">"home"</span></div><div class="line">                selected=&#123;this.state.select==<span class="string">"index"</span>&#125;</div><div class="line">                onPress=&#123;</div><div class="line">                    ()=&gt;&#123;</div><div class="line">                        this.setState(&#123;</div><div class="line">                            select:<span class="string">"index"</span></div><div class="line">                        &#125;)</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &gt;</div><div class="line">                &lt;Index/&gt;</div><div class="line">            &lt;/Icon.TabBarItemIOS&gt;</div><div class="line">            &lt;Icon.TabBarItemIOS</div><div class="line">                title=<span class="string">"新闻"</span></div><div class="line">                iconName=<span class="string">"star"</span></div><div class="line">                selected=&#123;this.state.select==<span class="string">"news"</span>&#125;</div><div class="line">                onPress=&#123;</div><div class="line">                    ()=&gt;&#123;</div><div class="line">                        this.setState(&#123;</div><div class="line">                            select:<span class="string">"news"</span></div><div class="line">                        &#125;)</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &gt;</div><div class="line">                &lt;News/&gt;</div><div class="line">            &lt;/Icon.TabBarItemIOS&gt;</div><div class="line">            &lt;Icon.TabBarItemIOS</div><div class="line">                title=<span class="string">"设置"</span></div><div class="line">                iconName=<span class="string">"cog"</span></div><div class="line">                selected=&#123;this.state.select==<span class="string">"setting"</span>&#125;</div><div class="line">                onPress=&#123;</div><div class="line">                    ()=&gt;&#123;</div><div class="line">                        this.setState(&#123;</div><div class="line">                            select:<span class="string">"setting"</span></div><div class="line">                        &#125;)</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &gt;</div><div class="line">                &lt;Setting/&gt;</div><div class="line">            &lt;/Icon.TabBarItemIOS&gt;</div><div class="line">&lt;/TabBarIOS&gt;</div></pre></td></tr></table></figure></p>
+<p>使用上和原生的TabBarIOS基本相同只是有了更多的图标可以使用。</p>
+<h1 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h1><p>ListView - 一个核心组件，用于高效地显示一个可以垂直滚动的变化的数据列表。最基本的使用方式就是创建一个ListView.DataSource数据源，然后给它传递一个普通的数据数组，再使用数据源来实例化一个ListView组件，并且定义它的renderRow回调函数，这个函数会接受数组中的每个数据作为参数，返回一个可渲染的组件（作为listview的每一行）。<br>由于ListView继承了ScrollView，所以它可以使用所有ScrollView的属性，具体见官方文档上ScrollView的方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div></pre></td><td class="code"><pre><div class="line">import React,&#123;Component&#125; from <span class="string">'react'</span>;</div><div class="line">import &#123;</div><div class="line">    Text,</div><div class="line">    View,</div><div class="line">    StyleSheet,</div><div class="line">    ListView,</div><div class="line">    Image,</div><div class="line">&#125; from <span class="string">'react-native'</span>;</div><div class="line">const data=[&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;,&#123;</div><div class="line">    title:<span class="string">"aaaa"</span>,</div><div class="line">    link:<span class="string">""</span>,</div><div class="line">    pic:<span class="string">"http://img.taopic.com/uploads/allimg/121209/234928-12120Z0543764.jpg"</span>,</div><div class="line">    from:<span class="string">"上海"</span>,</div><div class="line">    time:20,</div><div class="line">    talk:10,</div><div class="line">    link:<span class="string">"http://www.toutiao.com/i6340576938020569601/?channel=news_society#channel=news_society"</span></div><div class="line">&#125;]</div><div class="line">class Index extends  Component&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        super(props);</div><div class="line">        var ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</div><div class="line">        this.state = &#123;</div><div class="line">            dataSource: ds.cloneWithRows(data),</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    _render(rowData)&#123;</div><div class="line">        <span class="built_in">return</span>(</div><div class="line">            &lt;View style=&#123;styles.one&#125;&gt;</div><div class="line">                &lt;Text&gt;&#123;rowData.title&#125;&lt;/Text&gt;</div><div class="line">                &lt;View style=&#123;&#123;flexDirection:<span class="string">"row"</span>,justifyContent:<span class="string">"space-around"</span>&#125;&#125;&gt;</div><div class="line">                    &lt;Image <span class="built_in">source</span>=&#123;&#123;uri:rowData.pic&#125;&#125; style=&#123;&#123;width:100,height:100&#125;&#125;/&gt;</div><div class="line">                    &lt;Image <span class="built_in">source</span>=&#123;&#123;uri:rowData.pic&#125;&#125; style=&#123;&#123;width:100,height:100&#125;&#125;/&gt;</div><div class="line">                    &lt;Image <span class="built_in">source</span>=&#123;&#123;uri:rowData.pic&#125;&#125; style=&#123;&#123;width:100,height:100&#125;&#125;/&gt;</div><div class="line">                &lt;/View&gt;</div><div class="line">                &lt;Text&gt;&#123;rowData.from&#125; 评论 &#123;rowData.talk&#125; &#123;rowData.time&#125; 分钟前&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">        <span class="built_in">return</span> (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;View style=&#123;styles.head&#125;&gt;</div><div class="line">                    &lt;Text style=&#123;&#123;color:<span class="string">"white"</span>,fontSize:24,textAlign:<span class="string">"center"</span>,lineHeight:50&#125;&#125;&gt;今日头条&lt;/Text&gt;</div><div class="line">                &lt;/View&gt;</div><div class="line">                &lt;ListView style=&#123;&#123;height:605&#125;&#125;</div><div class="line">                          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">                          renderRow=&#123;this._render.bind(this)&#125;</div><div class="line">                          //horizontal=&#123;<span class="literal">true</span>&#125;              //可以设置横向滚动 默认<span class="literal">false</span></div><div class="line">                          //centerContent=&#123;<span class="literal">true</span>&#125;         //当值为<span class="literal">true</span>时，如果滚动视图的内容比视图本身小，则会自动把内容居中放置.</div><div class="line">                /&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">const styles=StyleSheet.create(&#123;</div><div class="line">    head:&#123;</div><div class="line">        height:50,</div><div class="line">        backgroundColor:<span class="string">"red"</span>,</div><div class="line">        marginTop:20,</div><div class="line">    &#125;,</div><div class="line">    one:&#123;</div><div class="line">        height:150,</div><div class="line">        paddingLeft:20,</div><div class="line">        paddingRight:20,</div><div class="line">        borderBottomColor:<span class="string">"red"</span>,</div><div class="line">        borderBottomWidth:1,</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = Index;</div></pre></td></tr></table></figure></p>
+<p>这里我们写了一个死的数据来看listview的呈现效果。<br>想去除右边的滚动条可以将showsVerticalScrollIndicator 属性写为false<br>我们会发现底部的TabBarIOS会挡住最后一个数据一半，这时因为listview顶部默认会留一段空白，解决办法是设置automaticallyAdjustContentInsets={false}</p>
+<hr>
+<p>这样我们就可以做出一个像新闻页一样的list列表了^_^</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/30/reactnative_2/" rel="next" title="React-Native组件之TabBarIOS和WebView">
+                <i class="fa fa-chevron-left"></i> React-Native组件之TabBarIOS和WebView
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/06/canvas_ball/" rel="prev" title="用canvas绘制200个运动球">
+                用canvas绘制200个运动球 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/08/reactnative_3/"
+     data-title="React-Native组件之ListView和使用第三方icon"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/08/reactnative_3/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/08/reactnative_3/"
+           data-title="React-Native组件之ListView和使用第三方icon" data-url="http://yoursite.com/2016/10/08/reactnative_3/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="张展豪" />
+          <p class="site-author-name" itemprop="name">张展豪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangzhanhao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Icon"><span class="nav-number">1.</span> <span class="nav-text">Icon</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ListView"><span class="nav-number">2.</span> <span class="nav-text">ListView</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张展豪</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/VEN/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/VEN/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangzhanhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/VEN/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
