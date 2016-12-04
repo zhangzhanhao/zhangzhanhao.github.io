@@ -1,0 +1,831 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/VEN/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/VEN/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React-Native," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="例如今日头条这样的app有一个新闻list页，它开始只是向我们展示一定数量的新闻(例如二十条),当用户看完这20条新闻后，再向上拉时就会继续加载20条，当用户在最顶部向下拉时，就会刷新新闻列表，呈现最新的新闻，今天就配合mockjs实现这样一个效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Native下拉刷新和上拉加载">
+<meta property="og:url" content="http://yoursite.com/2016/10/13/reactnative_5/index.html">
+<meta property="og:site_name" content="来一箱9˚">
+<meta property="og:description" content="例如今日头条这样的app有一个新闻list页，它开始只是向我们展示一定数量的新闻(例如二十条),当用户看完这20条新闻后，再向上拉时就会继续加载20条，当用户在最顶部向下拉时，就会刷新新闻列表，呈现最新的新闻，今天就配合mockjs实现这样一个效果。">
+<meta property="og:updated_time" content="2016-12-04T13:07:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-Native下拉刷新和上拉加载">
+<meta name="twitter:description" content="例如今日头条这样的app有一个新闻list页，它开始只是向我们展示一定数量的新闻(例如二十条),当用户看完这20条新闻后，再向上拉时就会继续加载20条，当用户在最顶部向下拉时，就会刷新新闻列表，呈现最新的新闻，今天就配合mockjs实现这样一个效果。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6336038395373946000,
+      author: '博主大人'
+    }
+  };
+</script>
+
+  <title> React-Native下拉刷新和上拉加载 | 来一箱9˚ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">来一箱9˚</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React-Native下拉刷新和上拉加载
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-13T00:00:00+08:00" content="2016-10-13">
+              2016-10-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/13/reactnative_5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/reactnative_5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>例如今日头条这样的app有一个新闻list页，它开始只是向我们展示一定数量的新闻(例如二十条),当用户看完这20条新闻后，再向上拉时就会继续加载20条，当用户在最顶部向下拉时，就会刷新新闻列表，呈现最新的新闻，今天就配合mockjs实现这样一个效果。<br><a id="more"></a></p>
+<h1 id="首先有两种loading小菊花"><a href="#首先有两种loading小菊花" class="headerlink" title="首先有两种loading小菊花"></a>首先有两种loading小菊花</h1><h2 id="RefreshControl"><a href="#RefreshControl" class="headerlink" title="RefreshControl"></a>RefreshControl</h2><p>这一组件可以用在ScrollView或ListView内部，为其添加下拉刷新的功能。当ScrollView处于竖直方向的起点位置（scrollY: 0），此时下拉会触发一个onRefresh事件。</p>
+<h2 id="ActivityIndicator"><a href="#ActivityIndicator" class="headerlink" title="ActivityIndicator"></a>ActivityIndicator</h2><p>显示一个圆形的loading提示符号。</p>
+<h1 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;ListView</div><div class="line">                          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">                          renderRow=&#123;this._render.bind(this)&#125;     //主要数据</div><div class="line">                          renderFooter=&#123;this._footer.bind(this)&#125;  //底部要显示的内容</div><div class="line">                          showsVerticalScrollIndicator=&#123;<span class="literal">false</span>&#125;   //是否显示竖直滚动条</div><div class="line">                          automaticallyAdjustContentInsets=&#123;<span class="literal">false</span>&#125; //是否去除顶部空白</div><div class="line">                          <span class="built_in">enable</span>EmptySections=&#123;<span class="literal">true</span>&#125;              //去除空白数据的警告</div><div class="line">                          onEndReachedThreshold=&#123;5&#125;       //当距离底部5像素时执行onEndReached的函数</div><div class="line">                          onEndReached=&#123;this._fetchMoreData.bind(this,<span class="literal">true</span>)&#125; //执行的函数</div><div class="line"></div><div class="line">                            //下拉刷新</div><div class="line">                          refreshControl=&#123;</div><div class="line">                              this.state.havedata?</div><div class="line">                              &lt;RefreshControl</div><div class="line">                                  refreshing=&#123;this.state.isRefreshing&#125;</div><div class="line">                                  onRefresh=&#123;this._fetchMoreData.bind(this,<span class="literal">false</span>)&#125;</div><div class="line">                                  tintColor=<span class="string">"#000"</span></div><div class="line">                                  title=<span class="string">"Loading..."</span></div><div class="line">                                  titleColor=<span class="string">"#000"</span></div><div class="line">                                  progressBackgroundColor=<span class="string">"#ffff00"</span></div><div class="line">                              /&gt;</div><div class="line">                              :</div><div class="line">                              &lt;RefreshControl</div><div class="line">                                  refreshing=&#123;this.state.isRefreshing&#125;</div><div class="line">                                  onRefresh=&#123;this._fetchMoreData.bind(this,<span class="literal">false</span>)&#125;</div><div class="line">                                  tintColor=<span class="string">"#000"</span></div><div class="line">                                  title=<span class="string">"没有数据了"</span></div><div class="line">                                  titleColor=<span class="string">"#000"</span></div><div class="line">                                  progressBackgroundColor=<span class="string">"#ffff00"</span></div><div class="line">                              /&gt;</div><div class="line"></div><div class="line">                          &#125;</div><div class="line">                /&gt;</div></pre></td></tr></table></figure>
+<p>该写的注释基本都写了,这里有一个havedata来判断是显示‘loading…’还是‘没有数据了’</p>
+<h1 id="底部的loading"><a href="#底部的loading" class="headerlink" title="底部的loading"></a>底部的loading</h1><p>主要是上拉加载时显示出来。<br>上面的listview属性中可以看到renderFooter={this._footer.bind(this)}<br>这个是在listview的下面加了一个部分并展示出来<br>onEndReachedThreshold={5}当距离底部5像素时执行onEndReached的函数<br>onEndReached={this._fetchMoreData.bind(this,true)}执行的函数<br>这样我们就可以执行请求函数来请求数据了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">_footer</span></span>()&#123;</div><div class="line">                <span class="keyword">if</span>(this.state.havedata)&#123;</div><div class="line">                    <span class="built_in">return</span>(</div><div class="line">                        &lt;View&gt;</div><div class="line">                            &lt;ActivityIndicator            //旋转的loading</div><div class="line">                                style=&#123;[styles.centering, &#123;height: 45&#125;]&#125;</div><div class="line">                                size=<span class="string">"small"</span></div><div class="line">                            /&gt;</div><div class="line">                            &lt;Text style=&#123;&#123;textAlign:<span class="string">"center"</span>&#125;&#125;&gt;加载中...&lt;/Text&gt;</div><div class="line">                        &lt;/View&gt;</div><div class="line">                    )</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span>&#123;</div><div class="line">                    <span class="built_in">return</span>(</div><div class="line">                        &lt;View style=&#123;styles.nodata&#125;&gt;</div><div class="line">                            &lt;Text&gt;没有新内容了&lt;/Text&gt;</div><div class="line">                        &lt;/View&gt;</div><div class="line">                    )</div><div class="line">                &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="请求数据"><a href="#请求数据" class="headerlink" title="请求数据"></a>请求数据</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">_fetchMoreData(up)&#123;</div><div class="line">        <span class="keyword">if</span>(this.state.totle==this.state.totles&amp;&amp;this.state.totle!=0)&#123;</div><div class="line">            this.setState(&#123;</div><div class="line">                havedata:<span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="built_in">return</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> (up) &#123;      //上拉加载</div><div class="line">                <span class="built_in">return</span> fetch(<span class="string">'http://rap.taobao.org/mockjs/8599/api/homepage?pagenum=a'</span>)</div><div class="line">                    .then((response) =&gt; response.json())</div><div class="line">                    .then((responseJson) =&gt; &#123;</div><div class="line">                        <span class="built_in">let</span> data = Mock.mock(responseJson); //获得与网页上 Mock数据 一样的数据</div><div class="line">                        <span class="keyword">if</span> (data.state) &#123;</div><div class="line">                            this.state.arr=this.state.arr.concat(data.data);</div><div class="line">                            this.state.totle=this.state.totle + data.data.length;</div><div class="line">                            this.setState(&#123;</div><div class="line">                                // arr:this.state.arr.concat(data.data),</div><div class="line">                                // totle:this.state.totle + data.data.length,</div><div class="line">                                totles:data.lg,</div><div class="line">                                dataSource: ds.cloneWithRows(this.state.arr),</div><div class="line">                            &#125;)</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line">                    .catch((error) =&gt; &#123;</div><div class="line">                        console.error(error);</div><div class="line">                    &#125;);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;       //下拉刷新</div><div class="line">                console.log(this.state.arr)</div><div class="line">                <span class="built_in">return</span> fetch(<span class="string">'http://rap.taobao.org/mockjs/8599/api/homepage?pagenum=a'</span>)</div><div class="line">                    .then((response) =&gt; response.json())</div><div class="line">                    .then((responseJson) =&gt; &#123;</div><div class="line">                        <span class="built_in">let</span> data = Mock.mock(responseJson); //获得与网页上 Mock数据 一样的数据</div><div class="line">                        <span class="keyword">if</span> (data.state) &#123;</div><div class="line">                            this.state.arr=data.data.concat(this.state.arr);</div><div class="line">                            this.state.totle=this.state.totle + data.data.length;</div><div class="line">                            this.setState(&#123;</div><div class="line">                                dataSource: ds.cloneWithRows(this.state.arr),</div><div class="line"></div><div class="line">                            &#125;)</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line">                    .catch((error) =&gt; &#123;</div><div class="line">                        console.error(error);</div><div class="line">                    &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>通过判断up的值来判断是用户是上来了，还是下拉了，因为mock数据传过来的数据中我设置了一个值来控制新闻的条数，所以当下拉刷新时数据的长度不会改变，上来加载时长度会向上加，这样到最后就会显示没有数据了。</p>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Created by lanou on 16/10/13.</div><div class="line"> */</div><div class="line">import React,&#123;Component&#125; from <span class="string">'react'</span>;</div><div class="line">import &#123;</div><div class="line">    Text,</div><div class="line">    View,</div><div class="line">    StyleSheet,</div><div class="line">    ListView,</div><div class="line">    Image,</div><div class="line">    Dimensions,</div><div class="line">    TouchableOpacity,</div><div class="line">    ActivityIndicator,</div><div class="line">    RefreshControl</div><div class="line">&#125; from <span class="string">'react-native'</span>;</div><div class="line">var Icon = require(<span class="string">'react-native-vector-icons/FontAwesome'</span>);</div><div class="line">var width= Dimensions.get(<span class="string">'window'</span>).width;</div><div class="line">var height=Dimensions.get(<span class="string">'window'</span>).height;</div><div class="line"><span class="built_in">let</span> Mock=require(<span class="string">"mockjs"</span>)</div><div class="line"></div><div class="line"></div><div class="line">class Index extends  Component&#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">        super(props);</div><div class="line">        ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</div><div class="line">        this.state = &#123;</div><div class="line">            dataSource: ds.cloneWithRows([]),</div><div class="line"></div><div class="line">            isRefreshing:<span class="literal">false</span>,       //下拉刷新时loading最后是否消失 <span class="literal">false</span>消失</div><div class="line">            havedata:<span class="literal">true</span>,             //控制上方是显示loading 还是 没有数据了  //控制底部显示状态</div><div class="line">            arr:[],</div><div class="line">            totle:0,</div><div class="line">            totles:0,</div><div class="line">        &#125;;</div><div class="line">       this._fetchMoreData(<span class="literal">true</span>)    //先加载一遍</div><div class="line">    &#125;</div><div class="line">        //请求数据的方法</div><div class="line">    _fetchMoreData(up)&#123;</div><div class="line">        <span class="keyword">if</span>(this.state.totle==this.state.totles&amp;&amp;this.state.totle!=0)&#123;</div><div class="line">            this.setState(&#123;</div><div class="line">                havedata:<span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="built_in">return</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> (up) &#123;      //上拉加载</div><div class="line">                <span class="built_in">return</span> fetch(<span class="string">'http://rap.taobao.org/mockjs/8599/api/homepage?pagenum=a'</span>)</div><div class="line">                    .then((response) =&gt; response.json())</div><div class="line">                    .then((responseJson) =&gt; &#123;</div><div class="line">                        <span class="built_in">let</span> data = Mock.mock(responseJson); //获得与网页上 Mock数据 一样的数据</div><div class="line">                        <span class="keyword">if</span> (data.state) &#123;</div><div class="line">                            this.state.arr=this.state.arr.concat(data.data);</div><div class="line">                            this.state.totle=this.state.totle + data.data.length;</div><div class="line">                            this.setState(&#123;</div><div class="line">                                // arr:this.state.arr.concat(data.data),</div><div class="line">                                // totle:this.state.totle + data.data.length,</div><div class="line">                                totles:data.lg,</div><div class="line">                                dataSource: ds.cloneWithRows(this.state.arr),</div><div class="line">                            &#125;)</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line">                    .catch((error) =&gt; &#123;</div><div class="line">                        console.error(error);</div><div class="line">                    &#125;);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;       //下拉刷新</div><div class="line">                console.log(this.state.arr)</div><div class="line">                <span class="built_in">return</span> fetch(<span class="string">'http://rap.taobao.org/mockjs/8599/api/homepage?pagenum=a'</span>)</div><div class="line">                    .then((response) =&gt; response.json())</div><div class="line">                    .then((responseJson) =&gt; &#123;</div><div class="line">                        <span class="built_in">let</span> data = Mock.mock(responseJson); //获得与网页上 Mock数据 一样的数据</div><div class="line">                        <span class="keyword">if</span> (data.state) &#123;</div><div class="line">                            this.state.arr=data.data.concat(this.state.arr);</div><div class="line">                            this.state.totle=this.state.totle + data.data.length;</div><div class="line">                            this.setState(&#123;</div><div class="line">                                dataSource: ds.cloneWithRows(this.state.arr),</div><div class="line"></div><div class="line">                            &#125;)</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line">                    .catch((error) =&gt; &#123;</div><div class="line">                        console.error(error);</div><div class="line">                    &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    show(text)&#123;</div><div class="line">        alert(text)</div><div class="line">        this.state.color=<span class="string">"red"</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line">    _render(rowData)&#123;</div><div class="line">        <span class="built_in">return</span>(</div><div class="line">        &lt;TouchableOpacity</div><div class="line">            onPress=&#123;this.show.bind(this,rowData.title)&#125;</div><div class="line">        &gt;</div><div class="line">            &lt;View style=&#123;styles.box&#125;&gt;</div><div class="line">                &lt;View style=&#123;styles.class&#125;&gt;</div><div class="line">                    &lt;View style=&#123;styles.pic&#125;&gt;</div><div class="line">                        &lt;Image <span class="built_in">source</span>=&#123;&#123;uri:rowData.img&#125;&#125; style=&#123;styles.pics&#125;/&gt;</div><div class="line">                    &lt;/View&gt;</div><div class="line">                    &lt;View style=&#123;styles.right&#125;&gt;</div><div class="line">                        &lt;Text style=&#123;[styles.classtitle,&#123;color:this.state.color&#125;]&#125;&gt;&#123;rowData.title&#125;&lt;/Text&gt;</div><div class="line">                        &lt;View style=&#123;styles.info&#125;&gt;</div><div class="line">                            &lt;View style=&#123;styles.look&#125;&gt;</div><div class="line">                                &lt;Icon name=<span class="string">"users"</span>/&gt;</div><div class="line">                                &lt;Text&gt;&#123;rowData.look&#125;&lt;/Text&gt;</div><div class="line">                            &lt;/View&gt;</div><div class="line">                            &lt;View style=&#123;styles.time&#125;&gt;</div><div class="line">                                &lt;Icon name=<span class="string">"clock-o"</span>/&gt;</div><div class="line">                                &lt;Text&gt;&#123;rowData.time&#125;小时&lt;/Text&gt;</div><div class="line">                            &lt;/View&gt;</div><div class="line">                        &lt;/View&gt;</div><div class="line">                    &lt;/View&gt;</div><div class="line">                &lt;/View&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        &lt;/TouchableOpacity&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="title">_footer</span></span>()&#123;</div><div class="line">                <span class="keyword">if</span>(this.state.havedata)&#123;</div><div class="line">                    <span class="built_in">return</span>(</div><div class="line">                        &lt;View&gt;</div><div class="line">                            &lt;ActivityIndicator            //旋转的loading</div><div class="line">                                style=&#123;[styles.centering, &#123;height: 45&#125;]&#125;</div><div class="line">                                size=<span class="string">"small"</span></div><div class="line">                            /&gt;</div><div class="line">                            &lt;Text style=&#123;&#123;textAlign:<span class="string">"center"</span>&#125;&#125;&gt;加载中...&lt;/Text&gt;</div><div class="line">                        &lt;/View&gt;</div><div class="line">                    )</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span>&#123;</div><div class="line">                    <span class="built_in">return</span>(</div><div class="line">                        &lt;View style=&#123;styles.nodata&#125;&gt;</div><div class="line">                            &lt;Text&gt;没有新内容了&lt;/Text&gt;</div><div class="line">                        &lt;/View&gt;</div><div class="line">                    )</div><div class="line">                &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="title">render</span></span>()&#123;</div><div class="line">        <span class="built_in">return</span>(</div><div class="line">            &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">                &lt;View style=&#123;styles.header&#125;&gt;</div><div class="line">                    &lt;Text style=&#123;styles.title&#125;&gt;全部课程&lt;/Text&gt;</div><div class="line">                    &lt;Icon</div><div class="line">                        name=<span class="string">"arrow-circle-o-down"</span></div><div class="line">                        style=&#123;styles.down&#125;</div><div class="line">                    /&gt;</div><div class="line">                &lt;/View&gt;</div><div class="line">                &lt;ListView</div><div class="line">                          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">                          renderRow=&#123;this._render.bind(this)&#125;     //主要数据</div><div class="line">                          renderFooter=&#123;this._footer.bind(this)&#125;  //底部要显示的内容</div><div class="line">                          showsVerticalScrollIndicator=&#123;<span class="literal">false</span>&#125;   //是否显示竖直滚动条</div><div class="line">                          automaticallyAdjustContentInsets=&#123;<span class="literal">false</span>&#125; //是否去除顶部空白</div><div class="line">                          <span class="built_in">enable</span>EmptySections=&#123;<span class="literal">true</span>&#125;              //去除空白数据的警告</div><div class="line">                          onEndReachedThreshold=&#123;5&#125;       //当距离底部5像素时执行onEndReached的函数</div><div class="line">                          onEndReached=&#123;this._fetchMoreData.bind(this,<span class="literal">true</span>)&#125; //执行的函数</div><div class="line"></div><div class="line">                            //下拉刷新</div><div class="line">                          refreshControl=&#123;</div><div class="line">                              this.state.havedata?</div><div class="line">                              &lt;RefreshControl</div><div class="line">                                  refreshing=&#123;this.state.isRefreshing&#125;</div><div class="line">                                  onRefresh=&#123;this._fetchMoreData.bind(this,<span class="literal">false</span>)&#125;</div><div class="line">                                  tintColor=<span class="string">"#000"</span></div><div class="line">                                  title=<span class="string">"Loading..."</span></div><div class="line">                                  titleColor=<span class="string">"#000"</span></div><div class="line">                                  progressBackgroundColor=<span class="string">"#ffff00"</span></div><div class="line">                              /&gt;</div><div class="line">                              :</div><div class="line">                              &lt;RefreshControl</div><div class="line">                                  refreshing=&#123;this.state.isRefreshing&#125;</div><div class="line">                                  onRefresh=&#123;this._fetchMoreData.bind(this,<span class="literal">false</span>)&#125;</div><div class="line">                                  tintColor=<span class="string">"#000"</span></div><div class="line">                                  title=<span class="string">"没有数据了"</span></div><div class="line">                                  titleColor=<span class="string">"#000"</span></div><div class="line">                                  progressBackgroundColor=<span class="string">"#ffff00"</span></div><div class="line">                              /&gt;</div><div class="line"></div><div class="line">                          &#125;</div><div class="line">                /&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">let</span> styles = StyleSheet.create(&#123;</div><div class="line">    container:&#123;</div><div class="line">        flex:1</div><div class="line">    &#125;,</div><div class="line">    header:&#123;</div><div class="line">        height:60,</div><div class="line">        backgroundColor:<span class="string">"red"</span>,</div><div class="line">        justifyContent:<span class="string">"center"</span>,</div><div class="line">        alignItems:<span class="string">"center"</span>,</div><div class="line">        flexDirection:<span class="string">"row"</span></div><div class="line">    &#125;,</div><div class="line">    title:&#123;</div><div class="line">        color:<span class="string">"white"</span>,</div><div class="line">        fontSize:20</div><div class="line">    &#125;,</div><div class="line">    down:&#123;</div><div class="line">        color:<span class="string">"white"</span>,</div><div class="line">        fontSize:16,</div><div class="line">        paddingLeft:10</div><div class="line">    &#125;,</div><div class="line">    right:&#123;</div><div class="line">        height:height*0.12,</div><div class="line">        width:width*0.5,</div><div class="line">        justifyContent:<span class="string">"space-between"</span></div><div class="line">    &#125;,</div><div class="line">    classtitle:&#123;</div><div class="line">        fontSize:20</div><div class="line">    &#125;,</div><div class="line">    pics:&#123;</div><div class="line">        width:width*0.4,</div><div class="line">        height:height*0.12</div><div class="line">    &#125;,</div><div class="line">    look:&#123;</div><div class="line">        flexDirection:<span class="string">"row"</span>,</div><div class="line">        paddingRight:20,</div><div class="line">    &#125;,</div><div class="line">    time:&#123;</div><div class="line">        flexDirection:<span class="string">"row"</span>,</div><div class="line">    &#125;,</div><div class="line">    info:&#123;</div><div class="line">        flexDirection:<span class="string">"row"</span>,</div><div class="line">    &#125;,</div><div class="line">    class:&#123;</div><div class="line">        width:width*0.95,</div><div class="line">        height:height*0.14,</div><div class="line">        flexDirection:<span class="string">"row"</span>,</div><div class="line">        borderBottomWidth:1,</div><div class="line">        justifyContent:<span class="string">"space-between"</span>,</div><div class="line">        borderBottomColor:<span class="string">"lightgray"</span>,</div><div class="line">        padding:5</div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    box:&#123;</div><div class="line">        width:width,</div><div class="line">        alignItems:<span class="string">"center"</span></div><div class="line">    &#125;,</div><div class="line">    centering:&#123;&#125;,</div><div class="line">    nodata:&#123;</div><div class="line">        alignItems:<span class="string">"center"</span>,</div><div class="line">        height:45,</div><div class="line">        justifyContent:<span class="string">"center"</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">module.exports = Index;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/11/mockjs/" rel="next" title="MockJS">
+                <i class="fa fa-chevron-left"></i> MockJS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/06/canvas_ball/" rel="prev" title="用canvas绘制200个运动球">
+                用canvas绘制200个运动球 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/13/reactnative_5/"
+     data-title="React-Native下拉刷新和上拉加载"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/13/reactnative_5/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/13/reactnative_5/"
+           data-title="React-Native下拉刷新和上拉加载" data-url="http://yoursite.com/2016/10/13/reactnative_5/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="张展豪" />
+          <p class="site-author-name" itemprop="name">张展豪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangzhanhao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先有两种loading小菊花"><span class="nav-number">1.</span> <span class="nav-text">首先有两种loading小菊花</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RefreshControl"><span class="nav-number">1.1.</span> <span class="nav-text">RefreshControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActivityIndicator"><span class="nav-number">1.2.</span> <span class="nav-text">ActivityIndicator</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ListView"><span class="nav-number">2.</span> <span class="nav-text">ListView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#底部的loading"><span class="nav-number">3.</span> <span class="nav-text">底部的loading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求数据"><span class="nav-number">4.</span> <span class="nav-text">请求数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整代码"><span class="nav-number">5.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张展豪</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/VEN/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/VEN/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangzhanhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/VEN/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
