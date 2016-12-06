@@ -1,0 +1,827 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/VEN/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/VEN/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端优化,JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="图片懒加载一般运用到图片较多的页面，电商类的页面一般都有图片懒加载处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片懒加载">
+<meta property="og:url" content="http://yoursite.com/2015/09/13/lazyimg/index.html">
+<meta property="og:site_name" content="来一箱9˚">
+<meta property="og:description" content="图片懒加载一般运用到图片较多的页面，电商类的页面一般都有图片懒加载处理。">
+<meta property="og:updated_time" content="2016-12-06T15:23:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片懒加载">
+<meta name="twitter:description" content="图片懒加载一般运用到图片较多的页面，电商类的页面一般都有图片懒加载处理。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6336038395373946000,
+      author: '博主大人'
+    }
+  };
+</script>
+
+  <title> 图片懒加载 | 来一箱9˚ </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">来一箱9˚</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-paper-plane-o"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                图片懒加载
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-13T00:00:00+08:00" content="2015-09-13">
+              2015-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/13/lazyimg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/lazyimg/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>图片懒加载一般运用到图片较多的页面，电商类的页面一般都有图片懒加载处理。<br><a id="more"></a></p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="1-将要懒加载的网页中的图片都设为同一张loading图片；"><a href="#1-将要懒加载的网页中的图片都设为同一张loading图片；" class="headerlink" title="1.将要懒加载的网页中的图片都设为同一张loading图片；"></a>1.将要懒加载的网页中的图片都设为同一张loading图片；</h2><h2 id="2-给图片设置data-src的属性，保存图片的真实地址；"><a href="#2-给图片设置data-src的属性，保存图片的真实地址；" class="headerlink" title="2.给图片设置data-src的属性，保存图片的真实地址；"></a>2.给图片设置data-src的属性，保存图片的真实地址；</h2><h2 id="3-当图片滚动到可视区域时，将图片src替换为真实地址。"><a href="#3-当图片滚动到可视区域时，将图片src替换为真实地址。" class="headerlink" title="3.当图片滚动到可视区域时，将图片src替换为真实地址。"></a>3.当图片滚动到可视区域时，将图片src替换为真实地址。</h2><h1 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *&#123;</div><div class="line">            margin: 0;</div><div class="line">            padding:0;</div><div class="line">        &#125;</div><div class="line">        ul&#123;</div><div class="line">            min-height: 100vh;</div><div class="line">            list-style: none;</div><div class="line">        &#125;</div><div class="line">        li&#123;</div><div class="line">            box-sizing: border-box;</div><div class="line">            <span class="built_in">float</span>: left;</div><div class="line">            width: 25%;</div><div class="line">            border: 1px solid white;</div><div class="line">            /*background: dodgerblue;*/</div><div class="line">        &#125;</div><div class="line">        img&#123;</div><div class="line">            height: 300px;</div><div class="line">            width: 100%;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;a href=<span class="string">""</span>&gt;</div><div class="line">                &lt;img data-src=<span class="string">"http://img5.imgtn.bdimg.com/it/u=2293326281,3636697318&amp;fm=21&amp;gp=0.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    &lt;script&gt;</div><div class="line">    //        document.images 获取文档所有img标签，返回数组</div><div class="line">    //  img支持name属性</div><div class="line">        var img=document.querySelectorAll(<span class="string">'img'</span>)</div><div class="line">        var scrolltop=document.body.scrollTop;</div><div class="line">        var windowheight=window.innerHeight;</div><div class="line">        var height=document.body.scrollHeight;</div><div class="line">        var src=img[0].getAttribute(<span class="string">"data-src"</span>)</div><div class="line">        <span class="keyword">for</span>(var i=0;i&lt;img.length;i++)&#123;</div><div class="line">            <span class="keyword">if</span>(img[i].offsetTop&lt;windowheight)&#123;</div><div class="line">                img[i].src=src;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        window.onscroll=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">            var img=document.querySelectorAll(<span class="string">'img'</span>)</div><div class="line">            var scrolltop=document.body.scrollTop;</div><div class="line">            var windowheight=window.innerHeight;</div><div class="line">            var height=document.body.scrollHeight;</div><div class="line">            var src=img[0].getAttribute(<span class="string">"data-src"</span>)</div><div class="line">            <span class="keyword">for</span>(var i=0;i&lt;img.length;i++)&#123;</div><div class="line">                <span class="keyword">if</span>(img[i].offsetTop&lt;=windowheight+scrolltop &amp;&amp; !img[i].src)&#123;</div><div class="line">                    img[i].src=src;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>这样做的好处是页面加载变快，使用户先看到上面的图片，不用等整个网站的图片都加载完成之后再浏览网页，提升了用户体验</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端优化/" rel="tag">#前端优化</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/10/meta/" rel="next" title="常见meta标签以及浏览器私有meta">
+                <i class="fa fa-chevron-left"></i> 常见meta标签以及浏览器私有meta
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/20/hexo_talk/" rel="prev" title="hexo next主题添加留言页面">
+                hexo next主题添加留言页面 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/09/13/lazyimg/"
+     data-title="图片懒加载"
+     data-content=""
+     data-url="http://yoursite.com/2015/09/13/lazyimg/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/09/13/lazyimg/"
+           data-title="图片懒加载" data-url="http://yoursite.com/2015/09/13/lazyimg/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="张展豪" />
+          <p class="site-author-name" itemprop="name">张展豪</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhangzhanhao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-将要懒加载的网页中的图片都设为同一张loading图片；"><span class="nav-number">1.1.</span> <span class="nav-text">1.将要懒加载的网页中的图片都设为同一张loading图片；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-给图片设置data-src的属性，保存图片的真实地址；"><span class="nav-number">1.2.</span> <span class="nav-text">2.给图片设置data-src的属性，保存图片的真实地址；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-当图片滚动到可视区域时，将图片src替换为真实地址。"><span class="nav-number">1.3.</span> <span class="nav-text">3.当图片滚动到可视区域时，将图片src替换为真实地址。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上代码"><span class="nav-number">2.</span> <span class="nav-text">上代码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张展豪</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/VEN/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/VEN/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/VEN/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhangzhanhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/VEN/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+
+</body>
+</html>
