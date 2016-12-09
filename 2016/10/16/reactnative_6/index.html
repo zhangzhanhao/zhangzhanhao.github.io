@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="React-Native," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="我们都知道当给一个块级元素设置了宽高以后，给他一个margin:0 auto；就可以左右居中。其实margin:auto; 还有一些其他作用。">
+<meta name="description" content="首先来说一下app上的轮播图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="margin:auto的作用">
-<meta property="og:url" content="http://yoursite.com/2015/04/05/css1/index.html">
+<meta property="og:title" content="React-Native组件之navigator">
+<meta property="og:url" content="http://yoursite.com/2016/10/16/reactnative_6/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="我们都知道当给一个块级元素设置了宽高以后，给他一个margin:0 auto；就可以左右居中。其实margin:auto; 还有一些其他作用。">
-<meta property="og:updated_time" content="2016-11-19T08:49:42.000Z">
+<meta property="og:description" content="首先来说一下app上的轮播图">
+<meta property="og:updated_time" content="2016-12-09T13:32:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="margin:auto的作用">
-<meta name="twitter:description" content="我们都知道当给一个块级元素设置了宽高以后，给他一个margin:0 auto；就可以左右居中。其实margin:auto; 还有一些其他作用。">
+<meta name="twitter:title" content="React-Native组件之navigator">
+<meta name="twitter:description" content="首先来说一下app上的轮播图">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> margin:auto的作用 | 来一箱9˚ </title>
+  <title> React-Native组件之navigator | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                margin:auto的作用
+                React-Native组件之navigator
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-05T00:00:00+08:00" content="2015-04-05">
-              2015-04-05
+            <time itemprop="dateCreated" datetime="2016-10-16T00:00:00+08:00" content="2016-10-16">
+              2016-10-16
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/04/05/css1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/05/css1/" itemprop="commentsCount"></span>
+                <a href="/2016/10/16/reactnative_6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/16/reactnative_6/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,11 +350,16 @@
       
 
       
-        <p>我们都知道当给一个块级元素设置了宽高以后，给他一个margin:0 auto；就可以左右居中。其实margin:auto; 还有一些其他作用。<br><a id="more"></a></p>
-<h1 id="margin—left-auto"><a href="#margin—left-auto" class="headerlink" title="margin—left:auto"></a>margin—left:auto</h1><p>当一个块级元素设置完宽高后，它会默认靠近父容器的左侧，这时无论怎么设置margin-right的值，这个块级元素的位置都不会变化。但如果我们希望他距离父容器右侧50像素，又不借助定位和浮动，这时就可以用到margin—left:auto； 给他设置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">margin-right:50px;</div><div class="line">margin-left:auto;</div></pre></td></tr></table></figure></p>
-<p>他就会移动到距离父容器右侧50像素的位置。</p>
-<h1 id="margin-auto实现上下左右居中"><a href="#margin-auto实现上下左右居中" class="headerlink" title="margin:auto实现上下左右居中"></a>margin:auto实现上下左右居中</h1><p> margin:auto可以实现左右居中的原因是，块级元素本来是横向填满父容器的，当给他设置了宽以后，其他区域就被强制覆盖掉了，这时设置margin:auto;被强制覆盖掉的区域就会平均分布在这个块级元素的左右，这样就实现了左右居中。<br> 但是，因为块级元素没有默认上下也填充满父级容器的属性，所以这时margin:auto对纵向是不生效的，但是我们依然可以利用类似左右居中的方法来实现上下居中。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> .father&#123;</div><div class="line">	height: 600px;</div><div class="line">	position: relative;</div><div class="line">	background-color: lightgray;</div><div class="line">&#125;	</div><div class="line">.son&#123;</div><div class="line">		background-color: blue;</div><div class="line">		position: absolute;</div><div class="line">		top:0;</div><div class="line">		bottom: 0;</div><div class="line">		left: 0;</div><div class="line">		right: 0;</div><div class="line">		height: 300px;</div><div class="line">		width: 300px;</div><div class="line">		margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>原理是子级元素相对父级元素定位设置top:0;bottom: 0;left: 0;right: 0; 这时，子级元素就会继承父级元素的宽高，然后我们在给子级元素设置宽高。这时，子级元素的宽高强行被改变，就在横向和纵向都留出来了一个被覆盖掉的区域，这时给子级元素margin:auto四周遍都有效了，也就实现了子级元素相对父级元素的上下左右居中。</p>
+        <p>首先来说一下app上的轮播图<br><a id="more"></a></p>
+<h1 id="react-native-swiper"><a href="#react-native-swiper" class="headerlink" title="react-native-swiper"></a>react-native-swiper</h1><p>我使用第三方的插件制作轮播图，十分方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i react-native-swiper --save</div></pre></td></tr></table></figure></p>
+<h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><p><a href="https://github.com/leecade/react-native-swiper" target="_blank" rel="external">https://github.com/leecade/react-native-swiper</a><br>里面有很多例子基本上还是先引入，然后在Swiper标签里面写要展示的内容，Swiper里面还有很多配置项可以改 例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;Swiper style=&#123;styles.wrapper&#125;</div><div class="line">                        showsButtons=&#123;<span class="literal">false</span>&#125;    //是否显示按钮</div><div class="line">                        autoplay=&#123;<span class="literal">true</span>&#125;               //是否自动播放</div><div class="line">                        height=&#123;200&#125;             //属性设置</div><div class="line">                        autoplayDirection=&#123;<span class="literal">false</span>&#125;</div><div class="line">                        //没有选中点的样式</div><div class="line">                        dot=&#123;&lt;View style=&#123;&#123;backgroundColor: <span class="string">'rgba(0,0,0,.2)'</span>, width: 5, height: 5, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3&#125;&#125; /&gt;&#125;</div><div class="line">                        //选中点的样式</div><div class="line">                        activeDot=&#123;&lt;View style=&#123;&#123;backgroundColor: <span class="string">'#000'</span>, width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3&#125;&#125; /&gt;&#125;</div><div class="line">                        //点的位置</div><div class="line">                    //    paginationStyle=&#123;&#123;</div><div class="line">                    //        bottom: 10, left: 50, right: 10</div><div class="line">                    //    &#125;&#125;</div><div class="line">                        //回调函数 返回轮播当前的下标</div><div class="line">                        onMomentumScrollEnd=&#123;(e, state, context) =&gt; console.log(<span class="string">'index:'</span>, state.index)&#125;</div><div class="line">                &gt;</div><div class="line">                    &lt;View style=&#123;styles.slide1&#125;&gt;</div><div class="line">                        &lt;Text style=&#123;styles.text&#125;&gt;Hello Swiper&lt;/Text&gt;</div><div class="line">                    &lt;/View&gt;</div><div class="line">                    &lt;View style=&#123;styles.slide2&#125;&gt;</div><div class="line">                        &lt;Text style=&#123;styles.text&#125;&gt;Beautiful&lt;/Text&gt;</div><div class="line">                    &lt;/View&gt;</div><div class="line">                    &lt;View style=&#123;styles.slide3&#125;&gt;</div><div class="line">                        &lt;Text style=&#123;styles.text&#125;&gt;And simple&lt;/Text&gt;</div><div class="line">                    &lt;/View&gt;</div><div class="line">                &lt;/Swiper&gt;</div></pre></td></tr></table></figure></p>
+<p>基本就是这样了</p>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p>使用导航器可以让你在应用的不同场景（页面）间进行切换。导航器通过路由对象来分辨不同的场景。利用renderScene方法，导航栏可以根据指定的路由来渲染场景。</p>
+<p>一般情况下只在主入口设置一个Navigator<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;Navigator</div><div class="line">                    //初始化</div><div class="line">                    initialRoute=&#123;&#123;</div><div class="line">                        name: <span class="string">"list"</span>,</div><div class="line">                        component: News      //默认展示的页面</div><div class="line">                    &#125;&#125;</div><div class="line">                    configureScene=&#123;(route)=&gt;&#123;</div><div class="line">                                var conf = Navigator.SceneConfigs.HorizontalSwipeJump;  //动画效果</div><div class="line">                                conf.gestures = null; // 禁用手势左右滑动</div><div class="line">                                <span class="built_in">return</span> conf;</div><div class="line">                            &#125;&#125;</div><div class="line">                    renderScene=&#123;(route,navigator)=&gt;&#123;         //渲染页面 route指initialRoute|navigator指整个组件</div><div class="line">                        <span class="built_in">let</span> Component=route.component         //指News</div><div class="line">                        <span class="built_in">return</span>(</div><div class="line">                                     //  传递参数            传递组件使子页面也有这个方法</div><div class="line">                            &lt;Component &#123;...route.params&#125; navigator=&#123;navigator&#125;/&gt;</div><div class="line">                        )</div><div class="line">                    &#125;&#125;</div><div class="line">                /&gt;</div></pre></td></tr></table></figure></p>
+<p>比如我这个主入口加载了一个News组件，在这个组件里面通过this.props就能找到传过去的navigator方法，如果这个News组件里面又想跳转下一个页面，就通过触发一个方法然后使用this.props.navigator.push()就可以跳到下一个组件 例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">show(data)&#123;</div><div class="line">        //console.log(this.props)</div><div class="line">        this.props.navigator.push(&#123;</div><div class="line">            name:<span class="string">"详情"</span>,</div><div class="line">            component:Detail,       //跳转一个Detail组件</div><div class="line">            params:data             //把数据传过去</div><div class="line"></div><div class="line">        &#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>News组件内部点击触发show(),并把数据传到下一个组件(Detail)中</p>
+<p>Detail又可以通过this.props拿到数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Detail extends Component&#123;</div><div class="line">    <span class="function"><span class="title">back</span></span>()&#123;</div><div class="line">        //console.log(this.props)</div><div class="line">        this.props.navigator.pop()    //把现在显示的组件删除</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="title">render</span></span>()&#123;</div><div class="line">       // console.log(this.props)</div><div class="line">        <span class="built_in">return</span>(</div><div class="line">            &lt;View style=&#123;&#123;flex:1,justifyContent:<span class="string">"center"</span>,alignItems:<span class="string">"center"</span>&#125;&#125;&gt;</div><div class="line">                &lt;Text style=&#123;&#123;color:<span class="string">"blue"</span>,fontSize:50&#125;&#125;</div><div class="line">                    onPress=&#123;this.back.bind(this)&#125;</div><div class="line">                &gt;&#123;this.props.title&#125;&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然想返回上一个组件只要通过this.props.navigator.pop() 把当前组件卸载掉就可以了。</p>
 
       
     </div>
@@ -376,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
           
         </div>
       
@@ -385,16 +390,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/23/next_bg/" rel="next" title="hexo next主题换背景">
-                <i class="fa fa-chevron-left"></i> hexo next主题换背景
+              <a href="/2016/10/13/reactnative_5/" rel="next" title="React-Native下拉刷新和上拉加载">
+                <i class="fa fa-chevron-left"></i> React-Native下拉刷新和上拉加载
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/10/css2/" rel="prev" title="margin-top">
-                margin-top <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/06/canvas_ball/" rel="prev" title="用canvas绘制200个运动球">
+                用canvas绘制200个运动球 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -410,10 +415,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/04/05/css1/"
-     data-title="margin:auto的作用"
+        <div class="ds-share flat" data-thread-key="2016/10/16/reactnative_6/"
+     data-title="React-Native组件之navigator"
      data-content=""
-     data-url="http://yoursite.com/2015/04/05/css1/">
+     data-url="http://yoursite.com/2016/10/16/reactnative_6/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -440,8 +445,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/04/05/css1/"
-           data-title="margin:auto的作用" data-url="http://yoursite.com/2015/04/05/css1/">
+      <div class="ds-thread" data-thread-key="2016/10/16/reactnative_6/"
+           data-title="React-Native组件之navigator" data-url="http://yoursite.com/2016/10/16/reactnative_6/">
       </div>
     
   </div>
@@ -543,7 +548,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#margin—left-auto"><span class="nav-number">1.</span> <span class="nav-text">margin—left:auto</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#margin-auto实现上下左右居中"><span class="nav-number">2.</span> <span class="nav-text">margin:auto实现上下左右居中</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-native-swiper"><span class="nav-number">1.</span> <span class="nav-text">react-native-swiper</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网址"><span class="nav-number">1.1.</span> <span class="nav-text">网址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigator"><span class="nav-number">2.</span> <span class="nav-text">Navigator</span></a></li></ol></div>
             
           </div>
         </section>
