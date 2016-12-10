@@ -115,16 +115,16 @@
 
     
     <entry>
-      <title><![CDATA[javascript基础（四）]]></title>
-      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%804%2F</url>
-      <content type="text"><![CDATA[流程语句。 循环语句while123while(条件表达式)&#123; 循环执行代码段&#125; 先检查后执行 do-while123do&#123;循环执行的代码段&#125;while(条件表达式) 先执行一次循环体，再判断 for例：123for(var i = 0;i&lt;20;i++)&#123;循环代码段&#125; for-in123for(声明变量 in 对象)&#123;代码段&#125; 枚举对象属性 跳出语句return终止函数体的运行，并返回一个值 break终止整个循环，不再进行判断 continue结束本次循环，接着去判断是否执行下次循环 选择语句if1234567if(条件一)&#123;代码段1&#125;else if(条件二)&#123;代码段2&#125;else&#123;代码段3&#125; switch12345678switch(条件表达式)&#123;case 标签1: 代码段1; break; …… default: 代码段n;&#125; 异常处理语句好像不是很常用 throw主动抛出异常 try指向需要处理的代码段 catch捕获异常 finally后期处理]]></content>
+      <title><![CDATA[javascript基础（三）]]></title>
+      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%803%2F</url>
+      <content type="text"><![CDATA[一些常用的数组方法 创建方法空数组1var Obj = new Array(); 指定长度数组1var Obj = new Array(Size); 指定元素数组1var Obj = new Array(元素1,元素2……); 单维数组1var Obj = [元素1,元素2……]; 多维数组1var a = new Array([数组序列1],[数组序列2]……); 数组属性constructor引用数组对象的构造函数 length返回数组长度 prototype通过增加属性和方法扩展数组定义 操作数组添加push()数组末尾添加 unshift()数组头部添加 concat()合并两个数组 删除pop()删除并返回数组的最后一个元素 shift()删除并返回数组的第一个元素 子数组spilce()删除任意数量的项 下标 项数指定位置插入指定的项 下标 0 插入的项替换任意数量的项 下标 要删除的项数 要插入的项 slice()从已有数组中选取部分元素构成新数组 数组排序sort()排序–例如：1arr.sort(function(a,b)&#123;return a-b&#125;) reverse()点到数组中元素的顺序 数组转换toSring()转换为字符串并返回 附数组去重办法12345678910var test = [1,2,3,4,5,6,7,7,1,8,8,9]; for (var i = 0; i &lt; test.length; i++) &#123; for (var j=i+1; j &lt; test.length; j++) &#123; if (test[i]===test[j]) &#123; test.splice(j,1); j--; &#125; &#125; &#125; console.log(test); 运用扩展数组去重123456789101112131415161718Array.prototype.unique1 = function()&#123; var res = [this[0]]; for(var i = 1; i &lt; this.length; i++)&#123; var repeat = false; for(var j = 0; j &lt; res.length; j++)&#123; if(this[i] == res[j])&#123; repeat = true; break; &#125; &#125; if(!repeat)&#123; res.push(this[i]); &#125; &#125; return res;&#125;var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1,1,12,3,5,6,5,5,8]console.log(arr.unique1());]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[javascript基础（三）]]></title>
-      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%803%2F</url>
-      <content type="text"><![CDATA[一些常用的数组方法 创建方法空数组1var Obj = new Array(); 指定长度数组1var Obj = new Array(Size); 指定元素数组1var Obj = new Array(元素1,元素2……); 单维数组1var Obj = [元素1,元素2……]; 多维数组1var a = new Array([数组序列1],[数组序列2]……); 数组属性constructor引用数组对象的构造函数 length返回数组长度 prototype通过增加属性和方法扩展数组定义 操作数组添加push()数组末尾添加 unshift()数组头部添加 concat()合并两个数组 删除pop()删除并返回数组的最后一个元素 shift()删除并返回数组的第一个元素 子数组spilce()删除任意数量的项 下标 项数指定位置插入指定的项 下标 0 插入的项替换任意数量的项 下标 要删除的项数 要插入的项 slice()从已有数组中选取部分元素构成新数组 数组排序sort()排序–例如：1arr.sort(function(a,b)&#123;return a-b&#125;) reverse()点到数组中元素的顺序 数组转换toSring()转换为字符串并返回 附数组去重办法12345678910var test = [1,2,3,4,5,6,7,7,1,8,8,9]; for (var i = 0; i &lt; test.length; i++) &#123; for (var j=i+1; j &lt; test.length; j++) &#123; if (test[i]===test[j]) &#123; test.splice(j,1); j--; &#125; &#125; &#125; console.log(test); 运用扩展数组去重123456789101112131415161718Array.prototype.unique1 = function()&#123; var res = [this[0]]; for(var i = 1; i &lt; this.length; i++)&#123; var repeat = false; for(var j = 0; j &lt; res.length; j++)&#123; if(this[i] == res[j])&#123; repeat = true; break; &#125; &#125; if(!repeat)&#123; res.push(this[i]); &#125; &#125; return res;&#125;var arr = [1, 'a', 'a', 'b', 'd', 'e', 'e', 1,1,12,3,5,6,5,5,8]console.log(arr.unique1());]]></content>
+      <title><![CDATA[javascript基础（四）]]></title>
+      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%804%2F</url>
+      <content type="text"><![CDATA[流程语句。 循环语句while123while(条件表达式)&#123; 循环执行代码段&#125; 先检查后执行 do-while123do&#123;循环执行的代码段&#125;while(条件表达式) 先执行一次循环体，再判断 for例：123for(var i = 0;i&lt;20;i++)&#123;循环代码段&#125; for-in123for(声明变量 in 对象)&#123;代码段&#125; 枚举对象属性 跳出语句return终止函数体的运行，并返回一个值 break终止整个循环，不再进行判断 continue结束本次循环，接着去判断是否执行下次循环 选择语句if1234567if(条件一)&#123;代码段1&#125;else if(条件二)&#123;代码段2&#125;else&#123;代码段3&#125; switch12345678switch(条件表达式)&#123;case 标签1: 代码段1; break; …… default: 代码段n;&#125; 异常处理语句好像不是很常用 throw主动抛出异常 try指向需要处理的代码段 catch捕获异常 finally后期处理]]></content>
     </entry>
 
     
@@ -143,9 +143,9 @@
 
     
     <entry>
-      <title><![CDATA[用js停止一个css3动画]]></title>
-      <url>%2F2016%2F08%2F15%2Fcss4%2F</url>
-      <content type="text"><![CDATA[主要是用到了dom操作的classList属性,这个属性用起来十分方便，不像className属性会影响全部的类名，它可以删除，添加一个类名又不影响其他类名下的样式效果，但针对IE10以下不兼容。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;style type="text/css"&gt;.div &#123; width: 100px; height: 100px; background: blue; animation: moveto 4s infinite both;&#125; .stop &#123; animation-play-state: paused;&#125;@keyframes moveto &#123; 0% &#123; transform: translate(0px,0px); &#125; 25% &#123; transform: translate(100px,0px); &#125; 50% &#123; transform: translate(100px,100px); &#125; 75%&#123; transform: translate(0px,100px); &#125; 100%&#123; transform: translate(0px,0px); &#125;&#125;&lt;/style&gt;&lt;body&gt;&lt;div class="div" id="div"&gt;&lt;/div&gt;&lt;p style="margin-top:110px;"&gt;&lt;input type="button" id="testBtn" value="暂停"&gt;&lt;/p&gt;&lt;script type="text/javascript"&gt; var div = document.getElementById("div"), button = document.getElementById("testBtn"); if (div.classList &amp;&amp; div &amp;&amp; button) &#123; button.onclick = function() &#123; if (this.value == '暂停') &#123; div.classList.add('stop'); this.value = '播放'; &#125; else &#123; div.classList.remove('stop'); this.value = '暂停'; &#125; &#125;; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <title><![CDATA[margin-top]]></title>
+      <url>%2F2016%2F08%2F15%2Fcss2%2F</url>
+      <content type="text"><![CDATA[margin-top有一些坑,记下来。。。 1当给盒子中的第一个元素margin-top的值是，会遇到盒子和这个元素一个向下移动。这是因为盒子没有触发BFC属性。 解决办法1.给盒子加边框2.盒子position:absolute;3.自身浮动4.父级元素overflow:hidden; 2margin-top和上面元素的margin—bottom不会叠加，而会取较大值作为间距，但当这两个元素左右排列时（没有浮动）margin-left和margin-right是可以叠加的。]]></content>
     </entry>
 
     
@@ -157,9 +157,9 @@
 
     
     <entry>
-      <title><![CDATA[margin-top]]></title>
-      <url>%2F2016%2F08%2F15%2Fcss2%2F</url>
-      <content type="text"><![CDATA[margin-top有一些坑,记下来。。。 1当给盒子中的第一个元素margin-top的值是，会遇到盒子和这个元素一个向下移动。这是因为盒子没有触发BFC属性。 解决办法1.给盒子加边框2.盒子position:absolute;3.自身浮动4.父级元素overflow:hidden; 2margin-top和上面元素的margin—bottom不会叠加，而会取较大值作为间距，但当这两个元素左右排列时（没有浮动）margin-left和margin-right是可以叠加的。]]></content>
+      <title><![CDATA[用js停止一个css3动画]]></title>
+      <url>%2F2016%2F08%2F15%2Fcss4%2F</url>
+      <content type="text"><![CDATA[主要是用到了dom操作的classList属性,这个属性用起来十分方便，不像className属性会影响全部的类名，它可以删除，添加一个类名又不影响其他类名下的样式效果，但针对IE10以下不兼容。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;style type="text/css"&gt;.div &#123; width: 100px; height: 100px; background: blue; animation: moveto 4s infinite both;&#125; .stop &#123; animation-play-state: paused;&#125;@keyframes moveto &#123; 0% &#123; transform: translate(0px,0px); &#125; 25% &#123; transform: translate(100px,0px); &#125; 50% &#123; transform: translate(100px,100px); &#125; 75%&#123; transform: translate(0px,100px); &#125; 100%&#123; transform: translate(0px,0px); &#125;&#125;&lt;/style&gt;&lt;body&gt;&lt;div class="div" id="div"&gt;&lt;/div&gt;&lt;p style="margin-top:110px;"&gt;&lt;input type="button" id="testBtn" value="暂停"&gt;&lt;/p&gt;&lt;script type="text/javascript"&gt; var div = document.getElementById("div"), button = document.getElementById("testBtn"); if (div.classList &amp;&amp; div &amp;&amp; button) &#123; button.onclick = function() &#123; if (this.value == '暂停') &#123; div.classList.add('stop'); this.value = '播放'; &#125; else &#123; div.classList.remove('stop'); this.value = '暂停'; &#125; &#125;; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
     </entry>
 
     
@@ -185,9 +185,9 @@
 
     
     <entry>
-      <title><![CDATA[github搭建博客]]></title>
-      <url>%2F2016%2F08%2F10%2Ffirst-article%2F</url>
-      <content type="text"><![CDATA[Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话： 快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp; powerful blog framework, powered by Node.js.# NodeJS安装 NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS 测试安装成功后打开终端输入1$ node -v 安装hexo1$ npm install hexo -g 测试1$ hexo 创建目录并进入创建一个文件夹,cd 文件夹名/ 1$ hexo init 启动本地服务1$ hexo server 下载主题git clone下载主题文件，放在themes文件夹中 更改配置文件在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。 为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 更改站点配置文件title:博客名author：作者language:zh-Hans(根据主题文件夹下修改)theme：next（主题文件名）deploy： type:git repo:github的仓库克隆地址duoshuo_shortname:多说评论的shortname 更改主题配置文件以我使用的next主题为例 修改SchemeScheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是： Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 即可。 设置代码高亮主题NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如： # Code Highlight theme # Available value: normal | night | night eighties | night blue | night bright # https://github.com/chriskempson/tomorrow-theme highlight_theme: normal 还有很多配置可以修改，具体参考next主题官方网址 发布1$ npm install hexo-deployer-git - -save 编译1$ hexo g 发布1$ hexo d 使用next主题遇到的坑换过主题后在本地启动服务可以正常渲染，当上传到github上以后出现只有一个框架，没有任何文章及控制台大量报错的情况 解决办法把next主题下面的source/vendors文件名改成任意其他名字，如：VEN等，之后在配置文件_config.yml,下面，把vendors: 块，里面的_internal: vendors项改成前面重命名文件夹的名称,如_internal:VEN,保存，hexo clean ,hexo g ,hexo d,再试试看，亲测有效！！！]]></content>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2016%2F08%2F10%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
     </entry>
 
     
@@ -199,9 +199,9 @@
 
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2016%2F08%2F10%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <title><![CDATA[github搭建博客]]></title>
+      <url>%2F2016%2F08%2F10%2Ffirst-article%2F</url>
+      <content type="text"><![CDATA[Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话： 快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp; powerful blog framework, powered by Node.js.# NodeJS安装 NodeJS安装网址https://nodejs.org/en/下载相应版本的nodeJS 测试安装成功后打开终端输入1$ node -v 安装hexo1$ npm install hexo -g 测试1$ hexo 创建目录并进入创建一个文件夹,cd 文件夹名/ 1$ hexo init 启动本地服务1$ hexo server 下载主题git clone下载主题文件，放在themes文件夹中 更改配置文件在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。 为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。 更改站点配置文件title:博客名author：作者language:zh-Hans(根据主题文件夹下修改)theme：next（主题文件名）deploy： type:git repo:github的仓库克隆地址duoshuo_shortname:多说评论的shortname 更改主题配置文件以我使用的next主题为例 修改SchemeScheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是： Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 即可。 设置代码高亮主题NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如： # Code Highlight theme # Available value: normal | night | night eighties | night blue | night bright # https://github.com/chriskempson/tomorrow-theme highlight_theme: normal 还有很多配置可以修改，具体参考next主题官方网址 发布1$ npm install hexo-deployer-git - -save 编译1$ hexo g 发布1$ hexo d 使用next主题遇到的坑换过主题后在本地启动服务可以正常渲染，当上传到github上以后出现只有一个框架，没有任何文章及控制台大量报错的情况 解决办法把next主题下面的source/vendors文件名改成任意其他名字，如：VEN等，之后在配置文件_config.yml,下面，把vendors: 块，里面的_internal: vendors项改成前面重命名文件夹的名称,如_internal:VEN,保存，hexo clean ,hexo g ,hexo d,再试试看，亲测有效！！！]]></content>
     </entry>
 
     
