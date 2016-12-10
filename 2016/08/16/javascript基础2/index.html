@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React-Native," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="description" content="常用字符串方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-Native入门">
-<meta property="og:url" content="http://yoursite.com/2016/09/28/reactnative_1/index.html">
+<meta property="og:title" content="javascript基础（二）">
+<meta property="og:url" content="http://yoursite.com/2016/08/16/javascript基础2/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
-<meta property="og:updated_time" content="2016-11-14T13:14:14.000Z">
+<meta property="og:description" content="常用字符串方法">
+<meta property="og:updated_time" content="2016-12-10T01:40:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native入门">
-<meta name="twitter:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="twitter:title" content="javascript基础（二）">
+<meta name="twitter:description" content="常用字符串方法">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> React-Native入门 | 来一箱9˚ </title>
+  <title> javascript基础（二） | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                React-Native入门
+                javascript基础（二）
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T00:00:00+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-08-16T00:00:00+08:00" content="2016-08-16">
+              2016-08-16
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/reactnative_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/reactnative_1/" itemprop="commentsCount"></span>
+                <a href="/2016/08/16/javascript基础2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/16/javascript基础2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,21 +350,27 @@
       
 
       
-        <h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。<br>该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。<br>RN运行时包含一个原生的主线程和一个JS线程，JS线程执行JS代码，负责界面布局和业务逻辑处理，原生线程负责界面渲染和原生组件的执行。RN里面尽量使用原生组件，避免重复造轮子。这样的好处，一是可以利用现有的大量的原生组件，降低入门门槛；二是可以达到跟原生应用一样的性能；三是通过JS封装过后的组件，可以支持跨平台。<br>JS在RN里面的作用类似于Python这样的支持调用原生C库的脚本语言，都是起着“胶水”的作用。复杂计算和底层功能都通过调用原生接口来完成，流程控制和业务逻辑则在“胶水”语言里完成。这样既提高了开发效率，又兼顾了性能。<br><a id="more"></a><br>作者：Jagger Wang<br>来源：知乎</p>
+        <p>常用字符串方法<br><a id="more"></a></p>
+<h1 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h1><h2 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h2><h3 id="字符方法"><a href="#字符方法" class="headerlink" title="字符方法"></a>字符方法</h3><h4 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h4><p>功能：返回字符串中第n个字符<br>参数：超出范围返回空字符串<br>返回值：sting中第n个字符的实际值</p>
+<h4 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt()"></a>charCodeAt()</h4><p>功能：返回字符串中第n个字符的代码<br>参数：超出范围返回NaN<br>返回值：sting中第n个字符的Unicode编码</p>
+<h3 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h3><h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h4><p>从前向后检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。</p>
+<h4 id="lastindexOf"><a href="#lastindexOf" class="headerlink" title="lastindexOf()"></a>lastindexOf()</h4><p>从后向前检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。</p>
+<h3 id="匹配方法"><a href="#匹配方法" class="headerlink" title="匹配方法"></a>匹配方法</h3><h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><p>找到一个或多个正则表达式的匹配</p>
+<h4 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h4><p>检索字符串与正则表达式匹配的子串</p>
+<h4 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h4><p>替换一个与正则表达式匹配的子串 2个参数</p>
+<h4 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h4><p>根据指定分隔符将字符串分割成多个子串，并返回成数组</p>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><h3 id="拼接方法"><a href="#拼接方法" class="headerlink" title="拼接方法"></a>拼接方法</h3><h4 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h4><p>连接字符串</p>
+<h3 id="截取方法"><a href="#截取方法" class="headerlink" title="截取方法"></a>截取方法</h3><h4 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h4><p>根据下标截取子串<br>正数：下标向后截取<br>负数：从后向前数x个，向后截取</p>
+<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><p>根据下标截取子串   负值参数转换为0</p>
+<h4 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h4><p>根据长度截取子串<br>第一个参数起始下标<br>第二个参数截取长度</p>
+<h3 id="空格处理"><a href="#空格处理" class="headerlink" title="空格处理"></a>空格处理</h3><h4 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h4><p>清除前后空格</p>
+<h4 id="trimLeft"><a href="#trimLeft" class="headerlink" title="trimLeft"></a>trimLeft</h4><p>清除前置空格</p>
+<h4 id="trimRight"><a href="#trimRight" class="headerlink" title="trimRight"></a>trimRight</h4><p>清除后置空格</p>
+<h2 id="编码方法"><a href="#编码方法" class="headerlink" title="编码方法"></a>编码方法</h2><h3 id="URI字符串编码与解码"><a href="#URI字符串编码与解码" class="headerlink" title="URI字符串编码与解码"></a>URI字符串编码与解码</h3><p>encodeURI()<br>decodeURI()</p>
+<h2 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h2><h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><h4 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h4><p>转为大写</p>
+<h4 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h4><p>转为小写</p>
 <hr>
-<p>最近React Native越来越火，它的设计初衷是实现一套代码，全平台试用，使前端走向了移动端APP的制作，也让越来越多的从事IOS、Android的同学感到恐慌，当然流畅性稍稍不如，但随着React Native的发展这个问题页终将会被解决，总的来说是技术上的突破。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew, Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
-<p>homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure>
-<p>如果你看到EACCES: permission denied这样的权限报错 运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="Watchman工具"><a href="#Watchman工具" class="headerlink" title="Watchman工具"></a>Watchman工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
-<h1 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line"><span class="built_in">cd</span> AwesomeProject</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<h1 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h1><p>以IOS端为例，找到index.ios.js<br>根据历史悠久的“传统”，我们也来写一个“Hello World”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</div><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line">class HelloWorldApp extends Component &#123;</div><div class="line">  <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注意，这里用引号括起来的<span class="string">'AwesomeProject'</span>必须和你init创建的项目名一致，箭头后面的‘HelloWorldApp’和类名一致</div><div class="line">AppRegistry.registerComponent(<span class="string">'AwesomeProject'</span>, () =&gt; HelloWorldApp);</div></pre></td></tr></table></figure></p>
-<p>⌘-R刷新</p>
-<h1 id="遇到的坑和解决办法"><a href="#遇到的坑和解决办法" class="headerlink" title="遇到的坑和解决办法"></a>遇到的坑和解决办法</h1><h2 id="项目初始化失败"><a href="#项目初始化失败" class="headerlink" title="项目初始化失败"></a>项目初始化失败</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>修复权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 777 ~/.babel.json</div></pre></td></tr></table></figure></p>
-<h2 id="跑当前程序却运行以前的程序"><a href="#跑当前程序却运行以前的程序" class="headerlink" title="跑当前程序却运行以前的程序"></a>跑当前程序却运行以前的程序</h2><h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>清除watchman监控列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">watchman watch-del-all</div></pre></td></tr></table></figure></p>
-<h2 id="引入外部http请求"><a href="#引入外部http请求" class="headerlink" title="引入外部http请求"></a>引入外部http请求</h2><h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要用xcode打开本地info.plist<br>把App Transport Security Settings 点开后的  Allow Arbitrary Loads     改成YES</p>
-<h1 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h1><p>任何组件在使用前要先引用例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
+<p>PS：纯手打。。累死我了^_^。。</p>
 
       
     </div>
@@ -386,7 +392,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -395,16 +401,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/lazyimg/" rel="next" title="图片懒加载">
-                <i class="fa fa-chevron-left"></i> 图片懒加载
+              <a href="/2016/08/15/css4/" rel="next" title="用js停止一个css3动画">
+                <i class="fa fa-chevron-left"></i> 用js停止一个css3动画
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/reactnative_2/" rel="prev" title="React-Native组件之TabBarIOS和WebView">
-                React-Native组件之TabBarIOS和WebView <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/16/javascript基础1/" rel="prev" title="javascript基础（一）">
+                javascript基础（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,10 +426,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/28/reactnative_1/"
-     data-title="React-Native入门"
+        <div class="ds-share flat" data-thread-key="2016/08/16/javascript基础2/"
+     data-title="javascript基础（二）"
      data-content=""
-     data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+     data-url="http://yoursite.com/2016/08/16/javascript基础2/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -450,8 +456,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/28/reactnative_1/"
-           data-title="React-Native入门" data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+      <div class="ds-thread" data-thread-key="2016/08/16/javascript基础2/"
+           data-title="javascript基础（二）" data-url="http://yoursite.com/2016/08/16/javascript基础2/">
       </div>
     
   </div>
@@ -553,7 +559,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native介绍"><span class="nav-number">1.</span> <span class="nav-text">React Native介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">2.2.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchman工具"><span class="nav-number">2.3.</span> <span class="nav-text">Watchman工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试安装"><span class="nav-number">3.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写Hello-World"><span class="nav-number">4.</span> <span class="nav-text">编写Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑和解决办法"><span class="nav-number">5.</span> <span class="nav-text">遇到的坑和解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化失败"><span class="nav-number">5.1.</span> <span class="nav-text">项目初始化失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑当前程序却运行以前的程序"><span class="nav-number">5.2.</span> <span class="nav-text">跑当前程序却运行以前的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入外部http请求"><span class="nav-number">5.3.</span> <span class="nav-text">引入外部http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">6.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串函数"><span class="nav-number">1.</span> <span class="nav-text">字符串函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找方法"><span class="nav-number">1.1.</span> <span class="nav-text">查找方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">字符方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#charAt"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">charAt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#charCodeAt"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">charCodeAt()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位置方法"><span class="nav-number">1.1.2.</span> <span class="nav-text">位置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">indexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lastindexOf"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">lastindexOf()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">匹配方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#match"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">match()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#search"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">search()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">replace()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">split()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作方法"><span class="nav-number">1.2.</span> <span class="nav-text">操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拼接方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">拼接方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#concat"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">concat()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截取方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">截取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#slice"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substring"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">substring()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substr"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">substr()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空格处理"><span class="nav-number">1.2.3.</span> <span class="nav-text">空格处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#trim"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">trim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trimLeft"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">trimLeft</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trimRight"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">trimRight</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编码方法"><span class="nav-number">1.3.</span> <span class="nav-text">编码方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URI字符串编码与解码"><span class="nav-number">1.3.1.</span> <span class="nav-text">URI字符串编码与解码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换方法"><span class="nav-number">1.4.</span> <span class="nav-text">转换方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大小写转换"><span class="nav-number">1.4.1.</span> <span class="nav-text">大小写转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#toUpperCase"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">toUpperCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toLowerCase"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">toLowerCase()</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

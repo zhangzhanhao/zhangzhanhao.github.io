@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React-Native," />
+  <meta name="keywords" content="hexo," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="description" content="Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：
+快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp;amp; powerful blog framework, powered by Node.js.# NodeJS安装">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-Native入门">
-<meta property="og:url" content="http://yoursite.com/2016/09/28/reactnative_1/index.html">
+<meta property="og:title" content="github搭建博客">
+<meta property="og:url" content="http://yoursite.com/2016/08/10/first-article/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
-<meta property="og:updated_time" content="2016-11-14T13:14:14.000Z">
+<meta property="og:description" content="Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：
+快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp;amp; powerful blog framework, powered by Node.js.# NodeJS安装">
+<meta property="og:updated_time" content="2016-12-10T01:32:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native入门">
-<meta name="twitter:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="twitter:title" content="github搭建博客">
+<meta name="twitter:description" content="Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：
+快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp;amp; powerful blog framework, powered by Node.js.# NodeJS安装">
 
 
 
@@ -111,7 +114,7 @@
   };
 </script>
 
-  <title> React-Native入门 | 来一箱9˚ </title>
+  <title> github搭建博客 | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +287,7 @@
             
             
               
-                React-Native入门
+                github搭建博客
               
             
           </h1>
@@ -296,8 +299,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T00:00:00+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-08-10T00:00:00+08:00" content="2016-08-10">
+              2016-08-10
             </time>
           </span>
 
@@ -326,8 +329,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/reactnative_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/reactnative_1/" itemprop="commentsCount"></span>
+                <a href="/2016/08/10/first-article/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/10/first-article/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,21 +353,33 @@
       
 
       
-        <h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。<br>该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。<br>RN运行时包含一个原生的主线程和一个JS线程，JS线程执行JS代码，负责界面布局和业务逻辑处理，原生线程负责界面渲染和原生组件的执行。RN里面尽量使用原生组件，避免重复造轮子。这样的好处，一是可以利用现有的大量的原生组件，降低入门门槛；二是可以达到跟原生应用一样的性能；三是通过JS封装过后的组件，可以支持跨平台。<br>JS在RN里面的作用类似于Python这样的支持调用原生C库的脚本语言，都是起着“胶水”的作用。复杂计算和底层功能都通过调用原生接口来完成，流程控制和业务逻辑则在“胶水”语言里完成。这样既提高了开发效率，又兼顾了性能。<br><a id="more"></a><br>作者：Jagger Wang<br>来源：知乎</p>
-<hr>
-<p>最近React Native越来越火，它的设计初衷是实现一套代码，全平台试用，使前端走向了移动端APP的制作，也让越来越多的从事IOS、Android的同学感到恐慌，当然流畅性稍稍不如，但随着React Native的发展这个问题页终将会被解决，总的来说是技术上的突破。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew, Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
-<p>homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure>
-<p>如果你看到EACCES: permission denied这样的权限报错 运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="Watchman工具"><a href="#Watchman工具" class="headerlink" title="Watchman工具"></a>Watchman工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
-<h1 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line"><span class="built_in">cd</span> AwesomeProject</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<h1 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h1><p>以IOS端为例，找到index.ios.js<br>根据历史悠久的“传统”，我们也来写一个“Hello World”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</div><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line">class HelloWorldApp extends Component &#123;</div><div class="line">  <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注意，这里用引号括起来的<span class="string">'AwesomeProject'</span>必须和你init创建的项目名一致，箭头后面的‘HelloWorldApp’和类名一致</div><div class="line">AppRegistry.registerComponent(<span class="string">'AwesomeProject'</span>, () =&gt; HelloWorldApp);</div></pre></td></tr></table></figure></p>
-<p>⌘-R刷新</p>
-<h1 id="遇到的坑和解决办法"><a href="#遇到的坑和解决办法" class="headerlink" title="遇到的坑和解决办法"></a>遇到的坑和解决办法</h1><h2 id="项目初始化失败"><a href="#项目初始化失败" class="headerlink" title="项目初始化失败"></a>项目初始化失败</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>修复权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 777 ~/.babel.json</div></pre></td></tr></table></figure></p>
-<h2 id="跑当前程序却运行以前的程序"><a href="#跑当前程序却运行以前的程序" class="headerlink" title="跑当前程序却运行以前的程序"></a>跑当前程序却运行以前的程序</h2><h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>清除watchman监控列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">watchman watch-del-all</div></pre></td></tr></table></figure></p>
-<h2 id="引入外部http请求"><a href="#引入外部http请求" class="headerlink" title="引入外部http请求"></a>引入外部http请求</h2><h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要用xcode打开本地info.plist<br>把App Transport Security Settings 点开后的  Allow Arbitrary Loads     改成YES</p>
-<h1 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h1><p>任何组件在使用前要先引用例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
+        <p>Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：</p>
+<p>快速、简单且功能强大的 Node.js 博客框架。A fast, simple &amp; powerful blog framework, powered by Node.js.# NodeJS安装<br><a id="more"></a></p>
+<h1 id="NodeJS安装"><a href="#NodeJS安装" class="headerlink" title="NodeJS安装"></a>NodeJS安装</h1><h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a>下载相应版本的nodeJS</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>安装成功后打开终端输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v</div></pre></td></tr></table></figure></p>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo -g</div></pre></td></tr></table></figure>
+<h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo</div></pre></td></tr></table></figure>
+<h2 id="创建目录并进入"><a href="#创建目录并进入" class="headerlink" title="创建目录并进入"></a>创建目录并进入</h2><p>创建一个文件夹,cd 文件夹名/</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h1 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h1><p>git clone下载主题文件，放在themes文件夹中</p>
+<h1 id="更改配置文件"><a href="#更改配置文件" class="headerlink" title="更改配置文件"></a>更改配置文件</h1><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件。</p>
+<h2 id="更改站点配置文件"><a href="#更改站点配置文件" class="headerlink" title="更改站点配置文件"></a>更改站点配置文件</h2><p>title:博客名<br>author：作者<br>language:zh-Hans(根据主题文件夹下修改)<br>theme：next（主题文件名）<br>deploy：<br> type:git<br> repo:github的仓库克隆地址<br>duoshuo_shortname:多说评论的shortname</p>
+<h2 id="更改主题配置文件"><a href="#更改主题配置文件" class="headerlink" title="更改主题配置文件"></a>更改主题配置文件</h2><p>以我使用的next主题为例</p>
+<h3 id="修改Scheme"><a href="#修改Scheme" class="headerlink" title="修改Scheme"></a>修改Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<p>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白<br>Mist - Muse 的紧凑版本，整洁有序的单栏外观<br>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 即可。</p>
+<h3 id="设置代码高亮主题"><a href="#设置代码高亮主题" class="headerlink" title="设置代码高亮主题"></a>设置代码高亮主题</h3><p>NexT 使用 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。 NexT 默认使用的是 白色的 normal 主题，可选的值有 normal，night， night blue， night bright， night eighties<br>更改 highlight_theme 字段，将其值设定成你所喜爱的高亮主题，例如：</p>
+<pre><code># Code Highlight theme
+# Available value: normal | night | night eighties |     night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: normal
+</code></pre><p>还有很多配置可以修改，具体参考next主题官方网址</p>
+<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git - -save</div></pre></td></tr></table></figure>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+<h2 id="发布-1"><a href="#发布-1" class="headerlink" title="发布"></a>发布</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+<h1 id="使用next主题遇到的坑"><a href="#使用next主题遇到的坑" class="headerlink" title="使用next主题遇到的坑"></a>使用next主题遇到的坑</h1><p>换过主题后在本地启动服务可以正常渲染，当上传到github上以后出现只有一个框架，没有任何文章及控制台大量报错的情况</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>把next主题下面的source/vendors文件名改成任意其他名字，如：VEN等，之后在配置文件_config.yml,下面，把vendors: 块，里面的_internal: vendors项改成前面重命名文件夹的名称,如_internal:VEN,保存，hexo clean ,hexo g ,hexo d,再试试看，亲测有效！！！</p>
 
       
     </div>
@@ -386,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
           
         </div>
       
@@ -395,16 +410,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/lazyimg/" rel="next" title="图片懒加载">
-                <i class="fa fa-chevron-left"></i> 图片懒加载
+              <a href="/2016/08/10/next_bg/" rel="next" title="hexo next主题换背景">
+                <i class="fa fa-chevron-left"></i> hexo next主题换背景
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/reactnative_2/" rel="prev" title="React-Native组件之TabBarIOS和WebView">
-                React-Native组件之TabBarIOS和WebView <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/11/nextcss/" rel="prev" title="hexo 主题自定义样式">
+                hexo 主题自定义样式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,10 +435,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/28/reactnative_1/"
-     data-title="React-Native入门"
+        <div class="ds-share flat" data-thread-key="2016/08/10/first-article/"
+     data-title="github搭建博客"
      data-content=""
-     data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+     data-url="http://yoursite.com/2016/08/10/first-article/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -450,8 +465,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/28/reactnative_1/"
-           data-title="React-Native入门" data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+      <div class="ds-thread" data-thread-key="2016/08/10/first-article/"
+           data-title="github搭建博客" data-url="http://yoursite.com/2016/08/10/first-article/">
       </div>
     
   </div>
@@ -553,7 +568,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native介绍"><span class="nav-number">1.</span> <span class="nav-text">React Native介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">2.2.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchman工具"><span class="nav-number">2.3.</span> <span class="nav-text">Watchman工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试安装"><span class="nav-number">3.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写Hello-World"><span class="nav-number">4.</span> <span class="nav-text">编写Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑和解决办法"><span class="nav-number">5.</span> <span class="nav-text">遇到的坑和解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化失败"><span class="nav-number">5.1.</span> <span class="nav-text">项目初始化失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑当前程序却运行以前的程序"><span class="nav-number">5.2.</span> <span class="nav-text">跑当前程序却运行以前的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入外部http请求"><span class="nav-number">5.3.</span> <span class="nav-text">引入外部http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">6.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NodeJS安装"><span class="nav-number">1.</span> <span class="nav-text">NodeJS安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网址"><span class="nav-number">1.1.</span> <span class="nav-text">网址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.2.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试-1"><span class="nav-number">2.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录并进入"><span class="nav-number">2.2.</span> <span class="nav-text">创建目录并进入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动本地服务"><span class="nav-number">2.2.1.</span> <span class="nav-text">启动本地服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载主题"><span class="nav-number">3.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改配置文件"><span class="nav-number">4.</span> <span class="nav-text">更改配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改站点配置文件"><span class="nav-number">4.1.</span> <span class="nav-text">更改站点配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改主题配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">更改主题配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Scheme"><span class="nav-number">4.2.1.</span> <span class="nav-text">修改Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置代码高亮主题"><span class="nav-number">4.2.2.</span> <span class="nav-text">设置代码高亮主题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">5.</span> <span class="nav-text">发布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">5.1.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布-1"><span class="nav-number">5.2.</span> <span class="nav-text">发布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用next主题遇到的坑"><span class="nav-number">6.</span> <span class="nav-text">使用next主题遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">6.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

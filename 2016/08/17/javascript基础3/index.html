@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React-Native," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="description" content="一些常用的数组方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-Native入门">
-<meta property="og:url" content="http://yoursite.com/2016/09/28/reactnative_1/index.html">
+<meta property="og:title" content="javascript基础（三）">
+<meta property="og:url" content="http://yoursite.com/2016/08/17/javascript基础3/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
-<meta property="og:updated_time" content="2016-11-14T13:14:14.000Z">
+<meta property="og:description" content="一些常用的数组方法">
+<meta property="og:updated_time" content="2016-12-10T01:40:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native入门">
-<meta name="twitter:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="twitter:title" content="javascript基础（三）">
+<meta name="twitter:description" content="一些常用的数组方法">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> React-Native入门 | 来一箱9˚ </title>
+  <title> javascript基础（三） | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                React-Native入门
+                javascript基础（三）
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T00:00:00+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-08-17T00:00:00+08:00" content="2016-08-17">
+              2016-08-17
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/reactnative_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/reactnative_1/" itemprop="commentsCount"></span>
+                <a href="/2016/08/17/javascript基础3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/javascript基础3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,21 +350,28 @@
       
 
       
-        <h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。<br>该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。<br>RN运行时包含一个原生的主线程和一个JS线程，JS线程执行JS代码，负责界面布局和业务逻辑处理，原生线程负责界面渲染和原生组件的执行。RN里面尽量使用原生组件，避免重复造轮子。这样的好处，一是可以利用现有的大量的原生组件，降低入门门槛；二是可以达到跟原生应用一样的性能；三是通过JS封装过后的组件，可以支持跨平台。<br>JS在RN里面的作用类似于Python这样的支持调用原生C库的脚本语言，都是起着“胶水”的作用。复杂计算和底层功能都通过调用原生接口来完成，流程控制和业务逻辑则在“胶水”语言里完成。这样既提高了开发效率，又兼顾了性能。<br><a id="more"></a><br>作者：Jagger Wang<br>来源：知乎</p>
+        <p>一些常用的数组方法<br><a id="more"></a></p>
+<h1 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h1><h2 id="空数组"><a href="#空数组" class="headerlink" title="空数组"></a>空数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var Obj = new Array();</div></pre></td></tr></table></figure>
+<h2 id="指定长度数组"><a href="#指定长度数组" class="headerlink" title="指定长度数组"></a>指定长度数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var Obj = new Array(Size);</div></pre></td></tr></table></figure>
+<h2 id="指定元素数组"><a href="#指定元素数组" class="headerlink" title="指定元素数组"></a>指定元素数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var Obj = new Array(元素1,元素2……);</div></pre></td></tr></table></figure>
+<h2 id="单维数组"><a href="#单维数组" class="headerlink" title="单维数组"></a>单维数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var Obj = [元素1,元素2……];</div></pre></td></tr></table></figure>
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a = new Array([数组序列1],[数组序列2]……);</div></pre></td></tr></table></figure>
+<h1 id="数组属性"><a href="#数组属性" class="headerlink" title="数组属性"></a>数组属性</h1><h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><p>引用数组对象的构造函数</p>
+<h2 id="length"><a href="#length" class="headerlink" title="length"></a>length</h2><p>返回数组长度</p>
+<h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h2><p>通过增加属性和方法扩展数组定义</p>
+<h1 id="操作数组"><a href="#操作数组" class="headerlink" title="操作数组"></a>操作数组</h1><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>数组末尾添加</p>
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift()"></a>unshift()</h3><p>数组头部添加</p>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat()"></a>concat()</h3><p>合并两个数组</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>删除并返回数组的最后一个元素</p>
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h3><p>删除并返回数组的第一个元素</p>
+<h2 id="子数组"><a href="#子数组" class="headerlink" title="子数组"></a>子数组</h2><h3 id="spilce"><a href="#spilce" class="headerlink" title="spilce()"></a>spilce()</h3><p>删除任意数量的项          下标 项数<br>指定位置插入指定的项       下标  0  插入的项<br>替换任意数量的项          下标  要删除的项数   要插入的项</p>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice()"></a>slice()</h3><p>从已有数组中选取部分元素构成新数组</p>
+<h2 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h2><h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>排序–例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.sort(<span class="keyword">function</span>(a,b)&#123;<span class="built_in">return</span> a-b&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse()"></a>reverse()</h3><p>点到数组中元素的顺序</p>
+<h2 id="数组转换"><a href="#数组转换" class="headerlink" title="数组转换"></a>数组转换</h2><h3 id="toSring"><a href="#toSring" class="headerlink" title="toSring()"></a>toSring()</h3><p>转换为字符串并返回</p>
 <hr>
-<p>最近React Native越来越火，它的设计初衷是实现一套代码，全平台试用，使前端走向了移动端APP的制作，也让越来越多的从事IOS、Android的同学感到恐慌，当然流畅性稍稍不如，但随着React Native的发展这个问题页终将会被解决，总的来说是技术上的突破。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew, Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
-<p>homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure>
-<p>如果你看到EACCES: permission denied这样的权限报错 运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="Watchman工具"><a href="#Watchman工具" class="headerlink" title="Watchman工具"></a>Watchman工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
-<h1 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line"><span class="built_in">cd</span> AwesomeProject</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<h1 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h1><p>以IOS端为例，找到index.ios.js<br>根据历史悠久的“传统”，我们也来写一个“Hello World”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</div><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line">class HelloWorldApp extends Component &#123;</div><div class="line">  <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注意，这里用引号括起来的<span class="string">'AwesomeProject'</span>必须和你init创建的项目名一致，箭头后面的‘HelloWorldApp’和类名一致</div><div class="line">AppRegistry.registerComponent(<span class="string">'AwesomeProject'</span>, () =&gt; HelloWorldApp);</div></pre></td></tr></table></figure></p>
-<p>⌘-R刷新</p>
-<h1 id="遇到的坑和解决办法"><a href="#遇到的坑和解决办法" class="headerlink" title="遇到的坑和解决办法"></a>遇到的坑和解决办法</h1><h2 id="项目初始化失败"><a href="#项目初始化失败" class="headerlink" title="项目初始化失败"></a>项目初始化失败</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>修复权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 777 ~/.babel.json</div></pre></td></tr></table></figure></p>
-<h2 id="跑当前程序却运行以前的程序"><a href="#跑当前程序却运行以前的程序" class="headerlink" title="跑当前程序却运行以前的程序"></a>跑当前程序却运行以前的程序</h2><h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>清除watchman监控列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">watchman watch-del-all</div></pre></td></tr></table></figure></p>
-<h2 id="引入外部http请求"><a href="#引入外部http请求" class="headerlink" title="引入外部http请求"></a>引入外部http请求</h2><h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要用xcode打开本地info.plist<br>把App Transport Security Settings 点开后的  Allow Arbitrary Loads     改成YES</p>
-<h1 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h1><p>任何组件在使用前要先引用例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
+<p>附数组去重办法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var <span class="built_in">test</span> = [1,2,3,4,5,6,7,7,1,8,8,9];</div><div class="line">		<span class="keyword">for</span> (var i = 0; i &lt; test.length; i++) &#123;</div><div class="line">			<span class="keyword">for</span> (var j=i+1; j &lt; test.length; j++) &#123;</div><div class="line">				<span class="keyword">if</span> (<span class="built_in">test</span>[i]===<span class="built_in">test</span>[j]) &#123;</div><div class="line">					test.splice(j,1);</div><div class="line">					j--;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		console.log(<span class="built_in">test</span>);</div></pre></td></tr></table></figure></p>
+<p>运用扩展数组去重<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Array.prototype.unique1 = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"> var res = [this[0]];</div><div class="line"> <span class="keyword">for</span>(var i = 1; i &lt; this.length; i++)&#123;</div><div class="line">  var repeat = <span class="literal">false</span>;</div><div class="line">  <span class="keyword">for</span>(var j = 0; j &lt; res.length; j++)&#123;</div><div class="line">   <span class="keyword">if</span>(this[i] == res[j])&#123;</div><div class="line">    repeat = <span class="literal">true</span>;</div><div class="line">    <span class="built_in">break</span>;</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>(!repeat)&#123;</div><div class="line">   res.push(this[i]);</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="built_in">return</span> res;</div><div class="line">&#125;</div><div class="line">var arr = [1, <span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, 1,1,12,3,5,6,5,5,8]</div><div class="line">console.log(arr.unique1());</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -386,7 +393,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -395,16 +402,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/lazyimg/" rel="next" title="图片懒加载">
-                <i class="fa fa-chevron-left"></i> 图片懒加载
+              <a href="/2016/08/16/javascript基础1/" rel="next" title="javascript基础（一）">
+                <i class="fa fa-chevron-left"></i> javascript基础（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/reactnative_2/" rel="prev" title="React-Native组件之TabBarIOS和WebView">
-                React-Native组件之TabBarIOS和WebView <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/17/javascript基础4/" rel="prev" title="javascript基础（四）">
+                javascript基础（四） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,10 +427,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/28/reactnative_1/"
-     data-title="React-Native入门"
+        <div class="ds-share flat" data-thread-key="2016/08/17/javascript基础3/"
+     data-title="javascript基础（三）"
      data-content=""
-     data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+     data-url="http://yoursite.com/2016/08/17/javascript基础3/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -450,8 +457,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/28/reactnative_1/"
-           data-title="React-Native入门" data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+      <div class="ds-thread" data-thread-key="2016/08/17/javascript基础3/"
+           data-title="javascript基础（三）" data-url="http://yoursite.com/2016/08/17/javascript基础3/">
       </div>
     
   </div>
@@ -553,7 +560,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native介绍"><span class="nav-number">1.</span> <span class="nav-text">React Native介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">2.2.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchman工具"><span class="nav-number">2.3.</span> <span class="nav-text">Watchman工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试安装"><span class="nav-number">3.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写Hello-World"><span class="nav-number">4.</span> <span class="nav-text">编写Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑和解决办法"><span class="nav-number">5.</span> <span class="nav-text">遇到的坑和解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化失败"><span class="nav-number">5.1.</span> <span class="nav-text">项目初始化失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑当前程序却运行以前的程序"><span class="nav-number">5.2.</span> <span class="nav-text">跑当前程序却运行以前的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入外部http请求"><span class="nav-number">5.3.</span> <span class="nav-text">引入外部http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">6.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建方法"><span class="nav-number">1.</span> <span class="nav-text">创建方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#空数组"><span class="nav-number">1.1.</span> <span class="nav-text">空数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定长度数组"><span class="nav-number">1.2.</span> <span class="nav-text">指定长度数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定元素数组"><span class="nav-number">1.3.</span> <span class="nav-text">指定元素数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单维数组"><span class="nav-number">1.4.</span> <span class="nav-text">单维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维数组"><span class="nav-number">1.5.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组属性"><span class="nav-number">2.</span> <span class="nav-text">数组属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">2.1.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#length"><span class="nav-number">2.2.</span> <span class="nav-text">length</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype"><span class="nav-number">2.3.</span> <span class="nav-text">prototype</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作数组"><span class="nav-number">3.</span> <span class="nav-text">操作数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加"><span class="nav-number">3.1.</span> <span class="nav-text">添加</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">3.1.1.</span> <span class="nav-text">push()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unshift"><span class="nav-number">3.1.2.</span> <span class="nav-text">unshift()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">3.1.3.</span> <span class="nav-text">concat()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">3.2.</span> <span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-number">3.2.1.</span> <span class="nav-text">pop()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift"><span class="nav-number">3.2.2.</span> <span class="nav-text">shift()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子数组"><span class="nav-number">3.3.</span> <span class="nav-text">子数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spilce"><span class="nav-number">3.3.1.</span> <span class="nav-text">spilce()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice"><span class="nav-number">3.3.2.</span> <span class="nav-text">slice()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组排序"><span class="nav-number">3.4.</span> <span class="nav-text">数组排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">3.4.1.</span> <span class="nav-text">sort()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse"><span class="nav-number">3.4.2.</span> <span class="nav-text">reverse()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组转换"><span class="nav-number">3.5.</span> <span class="nav-text">数组转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#toSring"><span class="nav-number">3.5.1.</span> <span class="nav-text">toSring()</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

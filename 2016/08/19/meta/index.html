@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="React-Native," />
+  <meta name="keywords" content="前端优化," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="description" content="今天看到一篇博客，整理了meta标签的使用方法,存下来一定会用到，感谢原文作者。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-Native入门">
-<meta property="og:url" content="http://yoursite.com/2016/09/28/reactnative_1/index.html">
+<meta property="og:title" content="常见meta标签以及浏览器私有meta">
+<meta property="og:url" content="http://yoursite.com/2016/08/19/meta/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
-<meta property="og:updated_time" content="2016-11-14T13:14:14.000Z">
+<meta property="og:description" content="今天看到一篇博客，整理了meta标签的使用方法,存下来一定会用到，感谢原文作者。">
+<meta property="og:updated_time" content="2016-12-10T01:42:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-Native入门">
-<meta name="twitter:description" content="React Native介绍React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。R">
+<meta name="twitter:title" content="常见meta标签以及浏览器私有meta">
+<meta name="twitter:description" content="今天看到一篇博客，整理了meta标签的使用方法,存下来一定会用到，感谢原文作者。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> React-Native入门 | 来一箱9˚ </title>
+  <title> 常见meta标签以及浏览器私有meta | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                React-Native入门
+                常见meta标签以及浏览器私有meta
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-28T00:00:00+08:00" content="2016-09-28">
-              2016-09-28
+            <time itemprop="dateCreated" datetime="2016-08-19T00:00:00+08:00" content="2016-08-19">
+              2016-08-19
             </time>
           </span>
 
@@ -310,8 +310,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
                   </a>
                 </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/28/reactnative_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/reactnative_1/" itemprop="commentsCount"></span>
+                <a href="/2016/08/19/meta/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/meta/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,21 +350,9 @@
       
 
       
-        <h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>React Native (简称RN)是Facebook于2015年四月开源的跨平台移动应用开发框架，是Facebook早先开源的Web UI框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。<br>该框架使用Javascript，类似于HTML的JSX，以及CSS来开发移动应用UI，因此熟悉Web开发的人只需很少的学习成本就可以转入移动应用开发。<br>RN运行时包含一个原生的主线程和一个JS线程，JS线程执行JS代码，负责界面布局和业务逻辑处理，原生线程负责界面渲染和原生组件的执行。RN里面尽量使用原生组件，避免重复造轮子。这样的好处，一是可以利用现有的大量的原生组件，降低入门门槛；二是可以达到跟原生应用一样的性能；三是通过JS封装过后的组件，可以支持跨平台。<br>JS在RN里面的作用类似于Python这样的支持调用原生C库的脚本语言，都是起着“胶水”的作用。复杂计算和底层功能都通过调用原生接口来完成，流程控制和业务逻辑则在“胶水”语言里完成。这样既提高了开发效率，又兼顾了性能。<br><a id="more"></a><br>作者：Jagger Wang<br>来源：知乎</p>
+        <p>今天看到一篇博客，整理了meta标签的使用方法,存下来一定会用到，感谢原文作者。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 声明文档使用的字符编码 --&gt;</div><div class="line">&lt;meta charset=<span class="string">'utf-8'</span>&gt;</div><div class="line">&lt;!-- 优先使用 IE 最新版本和 Chrome --&gt;</div><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>/&gt;</div><div class="line">&lt;!-- 页面描述 --&gt;</div><div class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"不超过150个字符"</span>/&gt;</div><div class="line">&lt;!-- 页面关键词 --&gt;</div><div class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">""</span>/&gt;</div><div class="line">&lt;!-- 网页作者 --&gt;</div><div class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"name, email@gmail.com"</span>/&gt;</div><div class="line">&lt;!-- 搜索引擎抓取 --&gt;</div><div class="line">&lt;meta name=<span class="string">"robots"</span> content=<span class="string">"index,follow"</span>/&gt;</div><div class="line">&lt;!-- 为移动设备添加 viewport --&gt;</div><div class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>/&gt;</div><div class="line">&lt;!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz --&gt;</div><div class="line"> </div><div class="line">&lt;!-- iOS 设备 begin --&gt;</div><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-title"</span> content=<span class="string">"标题"</span>&gt;</div><div class="line">&lt;!-- 添加到主屏后的标题（iOS 6 新增） --&gt;</div><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>/&gt;</div><div class="line">&lt;!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 --&gt;</div><div class="line"> </div><div class="line">&lt;meta name=<span class="string">"apple-itunes-app"</span> content=<span class="string">"app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"</span>&gt;</div><div class="line">&lt;!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） --&gt;</div><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black"</span>/&gt;</div><div class="line">&lt;!-- 设置苹果工具栏颜色 --&gt;</div><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"telphone=no, email=no"</span>/&gt;</div><div class="line">&lt;!-- 忽略页面中的数字识别为电话，忽略email识别 --&gt;</div><div class="line">&lt;!-- 启用360浏览器的极速模式(webkit) --&gt;</div><div class="line">&lt;meta name=<span class="string">"renderer"</span> content=<span class="string">"webkit"</span>&gt;</div><div class="line">&lt;!-- 避免IE使用兼容模式 --&gt;</div><div class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</div><div class="line">&lt;!-- 不让百度转码 --&gt;</div><div class="line">&lt;meta http-equiv=<span class="string">"Cache-Control"</span> content=<span class="string">"no-siteapp"</span> /&gt;</div><div class="line">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</div><div class="line">&lt;meta name=<span class="string">"HandheldFriendly"</span> content=<span class="string">"true"</span>&gt;</div><div class="line">&lt;!-- 微软的老式浏览器 --&gt;</div><div class="line">&lt;meta name=<span class="string">"MobileOptimized"</span> content=<span class="string">"320"</span>&gt;</div><div class="line">&lt;!-- uc强制竖屏 --&gt;</div><div class="line">&lt;meta name=<span class="string">"screen-orientation"</span> content=<span class="string">"portrait"</span>&gt;</div><div class="line">&lt;!-- QQ强制竖屏 --&gt;</div><div class="line">&lt;meta name=<span class="string">"x5-orientation"</span> content=<span class="string">"portrait"</span>&gt;</div><div class="line">&lt;!-- UC强制全屏 --&gt;</div><div class="line">&lt;meta name=<span class="string">"full-screen"</span> content=<span class="string">"yes"</span>&gt;</div><div class="line">&lt;!-- QQ强制全屏 --&gt;</div><div class="line">&lt;meta name=<span class="string">"x5-fullscreen"</span> content=<span class="string">"true"</span>&gt;</div><div class="line">&lt;!-- UC应用模式 --&gt;</div><div class="line">&lt;meta name=<span class="string">"browsermode"</span> content=<span class="string">"application"</span>&gt;</div><div class="line">&lt;!-- QQ应用模式 --&gt;</div><div class="line">&lt;meta name=<span class="string">"x5-page-mode"</span> content=<span class="string">"app"</span>&gt;</div><div class="line">&lt;!-- windows phone 点击无高光 --&gt;</div><div class="line">&lt;meta name=<span class="string">"msapplication-tap-highlight"</span> content=<span class="string">"no"</span>&gt;</div><div class="line">&lt;!-- iOS 图标 begin --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> href=<span class="string">"/apple-touch-icon-57x57-precomposed.png"</span>/&gt;</div><div class="line">&lt;!-- iPhone 和 iTouch，默认 57x57 像素，必须有 --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"114x114"</span> href=<span class="string">"/apple-touch-icon-114x114-precomposed.png"</span>/&gt;</div><div class="line">&lt;!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"144x144"</span> href=<span class="string">"/apple-touch-icon-144x144-precomposed.png"</span>/&gt;</div><div class="line">&lt;!-- Retina iPad，144x144 像素，可以没有，但推荐有 --&gt;</div><div class="line">&lt;!-- iOS 图标 end --&gt;</div><div class="line"> </div><div class="line">&lt;!-- iOS 启动画面 begin --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"768x1004"</span> href=<span class="string">"/splash-screen-768x1004.png"</span>/&gt;</div><div class="line">&lt;!-- iPad 竖屏 768 x 1004（标准分辨率） --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"1536x2008"</span> href=<span class="string">"/splash-screen-1536x2008.png"</span>/&gt;</div><div class="line">&lt;!-- iPad 竖屏 1536x2008（Retina） --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"1024x748"</span> href=<span class="string">"/Default-Portrait-1024x748.png"</span>/&gt;</div><div class="line">&lt;!-- iPad 横屏 1024x748（标准分辨率） --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"2048x1496"</span> href=<span class="string">"/splash-screen-2048x1496.png"</span>/&gt;</div><div class="line">&lt;!-- iPad 横屏 2048x1496（Retina） --&gt;</div><div class="line"> </div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> href=<span class="string">"/splash-screen-320x480.png"</span>/&gt;</div><div class="line">&lt;!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"640x960"</span> href=<span class="string">"/splash-screen-640x960.png"</span>/&gt;</div><div class="line">&lt;!-- iPhone/iPod Touch 竖屏 640x960 (Retina) --&gt;</div><div class="line">&lt;link rel=<span class="string">"apple-touch-startup-image"</span> sizes=<span class="string">"640x1136"</span> href=<span class="string">"/splash-screen-640x1136.png"</span>/&gt;</div><div class="line">&lt;!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) --&gt;</div><div class="line">&lt;!-- iOS 启动画面 end --&gt;</div><div class="line"> </div><div class="line">&lt;!-- iOS 设备 end --&gt;</div><div class="line">&lt;meta name=<span class="string">"msapplication-TileColor"</span> content=<span class="string">"#000"</span>/&gt;</div><div class="line">&lt;!-- Windows 8 磁贴颜色 --&gt;</div><div class="line">&lt;meta name=<span class="string">"msapplication-TileImage"</span> content=<span class="string">"icon.png"</span>/&gt;</div><div class="line">&lt;!-- Windows 8 磁贴图标 --&gt;</div><div class="line"> </div><div class="line">&lt;link rel=<span class="string">"alternate"</span> <span class="built_in">type</span>=<span class="string">"application/rss+xml"</span> title=<span class="string">"RSS"</span> href=<span class="string">"/rss.xml"</span>/&gt;</div><div class="line">&lt;!-- 添加 RSS 订阅 --&gt;</div><div class="line">&lt;link rel=<span class="string">"shortcut icon"</span> <span class="built_in">type</span>=<span class="string">"image/ico"</span> href=<span class="string">"/favicon.ico"</span>/&gt;</div><div class="line">&lt;!-- 添加 favicon icon --&gt;</div><div class="line">&lt;!-- sns 社交标签 begin --&gt;</div><div class="line">&lt;!-- 参考微博API --&gt;</div><div class="line">&lt;meta property=<span class="string">"og:type"</span> content=<span class="string">"类型"</span> /&gt;</div><div class="line">&lt;meta property=<span class="string">"og:url"</span> content=<span class="string">"URL地址"</span> /&gt;</div><div class="line">&lt;meta property=<span class="string">"og:title"</span> content=<span class="string">"标题"</span> /&gt;</div><div class="line">&lt;meta property=<span class="string">"og:image"</span> content=<span class="string">"图片"</span> /&gt;</div><div class="line">&lt;meta property=<span class="string">"og:description"</span> content=<span class="string">"描述"</span> /&gt;</div><div class="line">&lt;!-- sns 社交标签 end --&gt;</div></pre></td></tr></table></figure></p>
 <hr>
-<p>最近React Native越来越火，它的设计初衷是实现一套代码，全平台试用，使前端走向了移动端APP的制作，也让越来越多的从事IOS、Android的同学感到恐慌，当然流畅性稍稍不如，但随着React Native的发展这个问题页终将会被解决，总的来说是技术上的突破。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h2><p>Homebrew, Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure></p>
-<p>homebrew在安装软件时可能会碰到/usr/local目录不可写的权限问题。可以使用下面的命令修复：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="React-Native的命令行工具"><a href="#React-Native的命令行工具" class="headerlink" title="React Native的命令行工具"></a>React Native的命令行工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g react-native-cli</div></pre></td></tr></table></figure>
-<p>如果你看到EACCES: permission denied这样的权限报错 运行:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/<span class="built_in">local</span></div></pre></td></tr></table></figure></p>
-<h2 id="Watchman工具"><a href="#Watchman工具" class="headerlink" title="Watchman工具"></a>Watchman工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install watchman</div></pre></td></tr></table></figure>
-<h1 id="测试安装"><a href="#测试安装" class="headerlink" title="测试安装"></a>测试安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line"><span class="built_in">cd</span> AwesomeProject</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<h1 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h1><p>以IOS端为例，找到index.ios.js<br>根据历史悠久的“传统”，我们也来写一个“Hello World”：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</div><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line">class HelloWorldApp extends Component &#123;</div><div class="line">  <span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> (</div><div class="line">      &lt;Text&gt;Hello world!&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 注意，这里用引号括起来的<span class="string">'AwesomeProject'</span>必须和你init创建的项目名一致，箭头后面的‘HelloWorldApp’和类名一致</div><div class="line">AppRegistry.registerComponent(<span class="string">'AwesomeProject'</span>, () =&gt; HelloWorldApp);</div></pre></td></tr></table></figure></p>
-<p>⌘-R刷新</p>
-<h1 id="遇到的坑和解决办法"><a href="#遇到的坑和解决办法" class="headerlink" title="遇到的坑和解决办法"></a>遇到的坑和解决办法</h1><h2 id="项目初始化失败"><a href="#项目初始化失败" class="headerlink" title="项目初始化失败"></a>项目初始化失败</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>修复权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod 777 ~/.babel.json</div></pre></td></tr></table></figure></p>
-<h2 id="跑当前程序却运行以前的程序"><a href="#跑当前程序却运行以前的程序" class="headerlink" title="跑当前程序却运行以前的程序"></a>跑当前程序却运行以前的程序</h2><h3 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h3><p>清除watchman监控列表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">watchman watch-del-all</div></pre></td></tr></table></figure></p>
-<h2 id="引入外部http请求"><a href="#引入外部http请求" class="headerlink" title="引入外部http请求"></a>引入外部http请求</h2><h3 id="解决办法-2"><a href="#解决办法-2" class="headerlink" title="解决办法"></a>解决办法</h3><p>需要用xcode打开本地info.plist<br>把App Transport Security Settings 点开后的  Allow Arbitrary Loads     改成YES</p>
-<h1 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h1><p>任何组件在使用前要先引用例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import &#123; AppRegistry, Text &#125; from <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
+<p>原文：<a href="http://azq.space/blog/meta/" target="_blank" rel="external">http://azq.space/blog/meta/</a></p>
 
       
     </div>
@@ -386,7 +374,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/React-Native/" rel="tag">#React-Native</a>
+            <a href="/tags/前端优化/" rel="tag">#前端优化</a>
           
         </div>
       
@@ -395,16 +383,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/lazyimg/" rel="next" title="图片懒加载">
-                <i class="fa fa-chevron-left"></i> 图片懒加载
+              <a href="/2016/08/18/base64/" rel="next" title="base64">
+                <i class="fa fa-chevron-left"></i> base64
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/30/reactnative_2/" rel="prev" title="React-Native组件之TabBarIOS和WebView">
-                React-Native组件之TabBarIOS和WebView <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/22/lazyimg/" rel="prev" title="图片懒加载">
+                图片懒加载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,10 +408,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/09/28/reactnative_1/"
-     data-title="React-Native入门"
+        <div class="ds-share flat" data-thread-key="2016/08/19/meta/"
+     data-title="常见meta标签以及浏览器私有meta"
      data-content=""
-     data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+     data-url="http://yoursite.com/2016/08/19/meta/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -450,8 +438,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/28/reactnative_1/"
-           data-title="React-Native入门" data-url="http://yoursite.com/2016/09/28/reactnative_1/">
+      <div class="ds-thread" data-thread-key="2016/08/19/meta/"
+           data-title="常见meta标签以及浏览器私有meta" data-url="http://yoursite.com/2016/08/19/meta/">
       </div>
     
   </div>
@@ -553,7 +541,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Native介绍"><span class="nav-number">1.</span> <span class="nav-text">React Native介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Homebrew"><span class="nav-number">2.1.</span> <span class="nav-text">Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Native的命令行工具"><span class="nav-number">2.2.</span> <span class="nav-text">React Native的命令行工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchman工具"><span class="nav-number">2.3.</span> <span class="nav-text">Watchman工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试安装"><span class="nav-number">3.</span> <span class="nav-text">测试安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写Hello-World"><span class="nav-number">4.</span> <span class="nav-text">编写Hello World</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑和解决办法"><span class="nav-number">5.</span> <span class="nav-text">遇到的坑和解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化失败"><span class="nav-number">5.1.</span> <span class="nav-text">项目初始化失败</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法"><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跑当前程序却运行以前的程序"><span class="nav-number">5.2.</span> <span class="nav-text">跑当前程序却运行以前的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-1"><span class="nav-number">5.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入外部http请求"><span class="nav-number">5.3.</span> <span class="nav-text">引入外部http请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决办法-2"><span class="nav-number">5.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">6.</span> <span class="nav-text">需要注意的地方</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
