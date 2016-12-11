@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="刚开始搭建博客时就选了一个走简约风格的next主题，用了也好一段时间了，也慢慢有了审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
+<meta name="description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 主题自定义样式">
 <meta property="og:url" content="http://yoursite.com/2016/08/11/nextcss/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，用了也好一段时间了，也慢慢有了审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
-<meta property="og:updated_time" content="2016-12-10T01:34:20.000Z">
+<meta property="og:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
+<meta property="og:updated_time" content="2016-12-11T14:16:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 主题自定义样式">
-<meta name="twitter:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，用了也好一段时间了，也慢慢有了审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
+<meta name="twitter:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
 
 
 
@@ -350,7 +350,7 @@
       
 
       
-        <p>刚开始搭建博客时就选了一个走简约风格的next主题，用了也好一段时间了，也慢慢有了审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。<br><a id="more"></a></p>
+        <p>刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。<br><a id="more"></a></p>
 <h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><p>以我使用的next主题为例，具体其他主题还要找到它自己的样式文件。<br>主题文件夹下<br>source-&gt;css-&gt;_schemes-&gt;Mist<br>下面所有.styl文件都是主题的样式文件，想改哪里就先去页面找到相应的类名，再找到文件中他的样式修改。<br>例如我修改了.menu<br>首先我会找到_menu.styl文件，修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">.menu &#123;</div><div class="line">  margin-top: 20px;</div><div class="line">  padding-left:0;</div><div class="line">  text-align:center;</div><div class="line">  background:rgba(255,255,255,0.65);</div><div class="line">  margin-left:auto;</div><div class="line">  margin-right:auto;</div><div class="line">  width:600px;</div><div class="line">  border-radius:initial;</div><div class="line"></div><div class="line">  +<span class="function"><span class="title">mobile</span></span>() &#123;</div><div class="line">    margin: 20px 0 0 0;</div><div class="line">    padding: 0;</div><div class="line">    margin-left:0;</div><div class="line">    margin-right:0;</div><div class="line">    width:100%;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  br &#123; display: none; &#125;</div><div class="line"></div><div class="line">  .menu-item &#123;</div><div class="line">    margin: 0;</div><div class="line">    display:inline-block;</div><div class="line">    margin:0 10px;</div><div class="line">    +<span class="function"><span class="title">mobile</span></span>() &#123; display: block; &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <p>+mobile() {}里面的样式，是主题响应式在手机端的样式，在屏幕宽小于760是就会启用这里面的样式。<br>最终实现了菜单栏居中的样式。</p>
 
@@ -383,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/08/11/next_bg/" rel="next" title="hexo next主题换背景">
+                <i class="fa fa-chevron-left"></i> hexo next主题换背景
               </a>
             
           </div>
