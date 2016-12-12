@@ -122,9 +122,9 @@
 
     
     <entry>
-      <title><![CDATA[javascript基础（二）]]></title>
-      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%802%2F</url>
-      <content type="text"><![CDATA[常用字符串方法 字符串函数查找方法字符方法charAt()功能：返回字符串中第n个字符参数：超出范围返回空字符串返回值：sting中第n个字符的实际值 charCodeAt()功能：返回字符串中第n个字符的代码参数：超出范围返回NaN返回值：sting中第n个字符的Unicode编码 位置方法indexOf()从前向后检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 lastindexOf()从后向前检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 匹配方法match()找到一个或多个正则表达式的匹配 search()检索字符串与正则表达式匹配的子串 replace()替换一个与正则表达式匹配的子串 2个参数 split()根据指定分隔符将字符串分割成多个子串，并返回成数组 操作方法拼接方法concat()连接字符串 截取方法slice()根据下标截取子串正数：下标向后截取负数：从后向前数x个，向后截取 substring()根据下标截取子串 负值参数转换为0 substr()根据长度截取子串第一个参数起始下标第二个参数截取长度 空格处理trim清除前后空格 trimLeft清除前置空格 trimRight清除后置空格 编码方法URI字符串编码与解码encodeURI()decodeURI() 转换方法大小写转换toUpperCase()转为大写 toLowerCase()转为小写 PS：纯手打。。累死我了^_^。。]]></content>
+      <title><![CDATA[javascript基础（四）]]></title>
+      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%804%2F</url>
+      <content type="text"><![CDATA[流程语句。 循环语句while123while(条件表达式)&#123; 循环执行代码段&#125; 先检查后执行 do-while123do&#123;循环执行的代码段&#125;while(条件表达式) 先执行一次循环体，再判断 for例：123for(var i = 0;i&lt;20;i++)&#123;循环代码段&#125; for-in123for(声明变量 in 对象)&#123;代码段&#125; 枚举对象属性 跳出语句return终止函数体的运行，并返回一个值 break终止整个循环，不再进行判断 continue结束本次循环，接着去判断是否执行下次循环 选择语句if1234567if(条件一)&#123;代码段1&#125;else if(条件二)&#123;代码段2&#125;else&#123;代码段3&#125; switch12345678switch(条件表达式)&#123;case 标签1: 代码段1; break; …… default: 代码段n;&#125; 异常处理语句好像不是很常用 throw主动抛出异常 try指向需要处理的代码段 catch捕获异常 finally后期处理]]></content>
     </entry>
 
     
@@ -136,9 +136,9 @@
 
     
     <entry>
-      <title><![CDATA[javascript基础（四）]]></title>
-      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%804%2F</url>
-      <content type="text"><![CDATA[流程语句。 循环语句while123while(条件表达式)&#123; 循环执行代码段&#125; 先检查后执行 do-while123do&#123;循环执行的代码段&#125;while(条件表达式) 先执行一次循环体，再判断 for例：123for(var i = 0;i&lt;20;i++)&#123;循环代码段&#125; for-in123for(声明变量 in 对象)&#123;代码段&#125; 枚举对象属性 跳出语句return终止函数体的运行，并返回一个值 break终止整个循环，不再进行判断 continue结束本次循环，接着去判断是否执行下次循环 选择语句if1234567if(条件一)&#123;代码段1&#125;else if(条件二)&#123;代码段2&#125;else&#123;代码段3&#125; switch12345678switch(条件表达式)&#123;case 标签1: 代码段1; break; …… default: 代码段n;&#125; 异常处理语句好像不是很常用 throw主动抛出异常 try指向需要处理的代码段 catch捕获异常 finally后期处理]]></content>
+      <title><![CDATA[javascript基础（二）]]></title>
+      <url>%2F2016%2F08%2F17%2Fjavascript%E5%9F%BA%E7%A1%802%2F</url>
+      <content type="text"><![CDATA[常用字符串方法 字符串函数查找方法字符方法charAt()功能：返回字符串中第n个字符参数：超出范围返回空字符串返回值：sting中第n个字符的实际值 charCodeAt()功能：返回字符串中第n个字符的代码参数：超出范围返回NaN返回值：sting中第n个字符的Unicode编码 位置方法indexOf()从前向后检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 lastindexOf()从后向前检索 字符串，看是否有指定字符，找到返回子串首次出现的下标，没有返回-1。 匹配方法match()找到一个或多个正则表达式的匹配 search()检索字符串与正则表达式匹配的子串 replace()替换一个与正则表达式匹配的子串 2个参数 split()根据指定分隔符将字符串分割成多个子串，并返回成数组 操作方法拼接方法concat()连接字符串 截取方法slice()根据下标截取子串正数：下标向后截取负数：从后向前数x个，向后截取 substring()根据下标截取子串 负值参数转换为0 substr()根据长度截取子串第一个参数起始下标第二个参数截取长度 空格处理trim清除前后空格 trimLeft清除前置空格 trimRight清除后置空格 编码方法URI字符串编码与解码encodeURI()decodeURI() 转换方法大小写转换toUpperCase()转为大写 toLowerCase()转为小写 PS：纯手打。。累死我了^_^。。]]></content>
     </entry>
 
     
