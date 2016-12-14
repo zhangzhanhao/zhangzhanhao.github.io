@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
+<meta name="description" content="IE6中的常见BUG与相应的解决办法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 主题自定义样式">
-<meta property="og:url" content="http://yoursite.com/2016/08/11/nextcss/index.html">
+<meta property="og:title" content="css兼容性问题">
+<meta property="og:url" content="http://yoursite.com/2016/08/14/css兼容/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
-<meta property="og:updated_time" content="2016-12-11T14:16:03.000Z">
+<meta property="og:description" content="IE6中的常见BUG与相应的解决办法">
+<meta property="og:updated_time" content="2016-12-14T13:51:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 主题自定义样式">
-<meta name="twitter:description" content="刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。">
+<meta name="twitter:title" content="css兼容性问题">
+<meta name="twitter:description" content="IE6中的常见BUG与相应的解决办法">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> hexo 主题自定义样式 | 来一箱9˚ </title>
+  <title> css兼容性问题 | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                hexo 主题自定义样式
+                css兼容性问题
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-11T00:00:00+08:00" content="2016-08-11">
-              2016-08-11
+            <time itemprop="dateCreated" datetime="2016-08-14T00:00:00+08:00" content="2016-08-14">
+              2016-08-14
             </time>
           </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/11/nextcss/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/11/nextcss/" itemprop="commentsCount"></span>
+                <a href="/2016/08/14/css兼容/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/css兼容/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,9 +350,23 @@
       
 
       
-        <p>刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。<br><a id="more"></a></p>
-<h1 id="样式文件"><a href="#样式文件" class="headerlink" title="样式文件"></a>样式文件</h1><p>以我使用的next主题为例，具体其他主题还要找到它自己的样式文件。<br>主题文件夹下<br>source-&gt;css-&gt;_schemes-&gt;Mist<br>下面所有.styl文件都是主题的样式文件，想改哪里就先去页面找到相应的类名，再找到文件中他的样式修改。<br>例如我修改了.menu<br>首先我会找到_menu.styl文件，修改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">.menu &#123;</div><div class="line">  margin-top: 20px;</div><div class="line">  padding-left:0;</div><div class="line">  text-align:center;</div><div class="line">  background:rgba(255,255,255,0.65);</div><div class="line">  margin-left:auto;</div><div class="line">  margin-right:auto;</div><div class="line">  width:600px;</div><div class="line">  border-radius:initial;</div><div class="line"></div><div class="line">  +<span class="function"><span class="title">mobile</span></span>() &#123;</div><div class="line">    margin: 20px 0 0 0;</div><div class="line">    padding: 0;</div><div class="line">    margin-left:0;</div><div class="line">    margin-right:0;</div><div class="line">    width:100%;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  br &#123; display: none; &#125;</div><div class="line"></div><div class="line">  .menu-item &#123;</div><div class="line">    margin: 0;</div><div class="line">    display:inline-block;</div><div class="line">    margin:0 10px;</div><div class="line">    +<span class="function"><span class="title">mobile</span></span>() &#123; display: block; &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p>+mobile() {}里面的样式，是主题响应式在手机端的样式，在屏幕宽小于760是就会启用这里面的样式。<br>最终实现了菜单栏居中的样式。</p>
+        <p>IE6中的常见BUG与相应的解决办法<br><a id="more"></a></p>
+<h2 id="一、IE6双倍边距bug"><a href="#一、IE6双倍边距bug" class="headerlink" title="一、IE6双倍边距bug"></a>一、IE6双倍边距bug</h2><p>当页面上的元素使用float浮动时，不管是向左还是向右浮动；只要该元素带有margin像素都会使该值乘以2，例如“margin-left:10px” 在IE6中，该值就会被解析为20px。想要解决这个BUG就需要在该元素中加入display:inline 或 display:block 明确其元素类型即可解决双倍边距的BUG</p>
+<h2 id="二、IE6中3像素问题及解决办法"><a href="#二、IE6中3像素问题及解决办法" class="headerlink" title="二、IE6中3像素问题及解决办法"></a>二、IE6中3像素问题及解决办法</h2><p>当元素使用float浮动后，元素与相邻的元素之间会产生3px的间隙。诡异的是如果右侧的容器没设置高度时3px的间隙在相邻容器的内部，当设定高度后又跑到容器的相反侧了。要解决这类BUG的话，需要使布局在同一行的元素都加上float浮动。</p>
+<h2 id="三、IE6中奇数宽高的BUG"><a href="#三、IE6中奇数宽高的BUG" class="headerlink" title="三、IE6中奇数宽高的BUG"></a>三、IE6中奇数宽高的BUG</h2><p>IE6中奇数的高宽显示大小与偶数高宽显示大小存在一定的不同。其中要问题是出在奇数高宽上。要解决此类问题，只需要尽量将外部定位的div高宽写成偶数即可。</p>
+<h2 id="四、IE6中图片链接的下方有间隙"><a href="#四、IE6中图片链接的下方有间隙" class="headerlink" title="四、IE6中图片链接的下方有间隙"></a>四、IE6中图片链接的下方有间隙</h2><p>IE6中图片的下方会存在一定的间隙，尤其在图片垂直挨着图片的时候，即可看到这样的间隙。要解决此类问题，需要将img标签定义为display:block 或定义vertical-align对应的属性。也可以为img对应的样式写入font-size:0</p>
+<h2 id="五、IE6下空元素的高度BUG"><a href="#五、IE6下空元素的高度BUG" class="headerlink" title="五、IE6下空元素的高度BUG"></a>五、IE6下空元素的高度BUG</h2><p>如果一个元素中没有任何内容，当在样式中为这个元素设置了0-19px之间的高度时。此元素的高度始终为19px。</p>
+<p>解决的方法有四种:</p>
+<p>1.在元素的css中加入：overflow:hidden</p>
+<p>2.在元素中插入html注释：&lt;!– &gt;</p>
+<p>3.在元素中插入html的空白符：&nbsp;</p>
+<p>4.在元素的css中加入：font-size:0</p>
+<h2 id="六、重复文字的BUG"><a href="#六、重复文字的BUG" class="headerlink" title="六、重复文字的BUG"></a>六、重复文字的BUG</h2><p>在某些比较复杂的排版中，有时候浮动元素的最后一些字符会出现在clear清除元素的下面。</p>
+<p>解决方法如下：</p>
+<p>1.确保元素都带有display:inline</p>
+<p>2.在最后一个元素上使用“margin-right:-3px</p>
+<p>3.为浮动元素的最后一个条目加上条件注释，&lt;!–[if !IE]&gt;xxx&lt;![endif]–&gt;</p>
+<p>4.在容器的最后元素使用一个空白的div，为这个div指定不超过容器的宽度。</p>
 
       
     </div>
@@ -374,7 +388,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -383,16 +397,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/10/first-article/" rel="next" title="github搭建博客">
-                <i class="fa fa-chevron-left"></i> github搭建博客
+              <a href="/2016/08/13/hexo_talk/" rel="next" title="hexo next主题添加留言页面">
+                <i class="fa fa-chevron-left"></i> hexo next主题添加留言页面
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/11/next_bg/" rel="prev" title="hexo next主题换背景">
-                hexo next主题换背景 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/14/css1/" rel="prev" title="margin:auto的作用">
+                margin:auto的作用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -408,10 +422,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/11/nextcss/"
-     data-title="hexo 主题自定义样式"
+        <div class="ds-share flat" data-thread-key="2016/08/14/css兼容/"
+     data-title="css兼容性问题"
      data-content=""
-     data-url="http://yoursite.com/2016/08/11/nextcss/">
+     data-url="http://yoursite.com/2016/08/14/css兼容/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -438,8 +452,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/11/nextcss/"
-           data-title="hexo 主题自定义样式" data-url="http://yoursite.com/2016/08/11/nextcss/">
+      <div class="ds-thread" data-thread-key="2016/08/14/css兼容/"
+           data-title="css兼容性问题" data-url="http://yoursite.com/2016/08/14/css兼容/">
       </div>
     
   </div>
@@ -541,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#样式文件"><span class="nav-number">1.</span> <span class="nav-text">样式文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、IE6双倍边距bug"><span class="nav-number">1.</span> <span class="nav-text">一、IE6双倍边距bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、IE6中3像素问题及解决办法"><span class="nav-number">2.</span> <span class="nav-text">二、IE6中3像素问题及解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、IE6中奇数宽高的BUG"><span class="nav-number">3.</span> <span class="nav-text">三、IE6中奇数宽高的BUG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、IE6中图片链接的下方有间隙"><span class="nav-number">4.</span> <span class="nav-text">四、IE6中图片链接的下方有间隙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、IE6下空元素的高度BUG"><span class="nav-number">5.</span> <span class="nav-text">五、IE6下空元素的高度BUG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、重复文字的BUG"><span class="nav-number">6.</span> <span class="nav-text">六、重复文字的BUG</span></a></li></ol></div>
             
           </div>
         </section>

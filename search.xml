@@ -157,16 +157,16 @@
 
     
     <entry>
-      <title><![CDATA[用js停止一个css3动画]]></title>
-      <url>%2F2016%2F08%2F15%2Fcss4%2F</url>
-      <content type="text"><![CDATA[主要是用到了dom操作的classList属性,这个属性用起来十分方便，不像className属性会影响全部的类名，它可以删除，添加一个类名又不影响其他类名下的样式效果，但针对IE10以下不兼容。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;style type="text/css"&gt;.div &#123; width: 100px; height: 100px; background: blue; animation: moveto 4s infinite both;&#125; .stop &#123; animation-play-state: paused;&#125;@keyframes moveto &#123; 0% &#123; transform: translate(0px,0px); &#125; 25% &#123; transform: translate(100px,0px); &#125; 50% &#123; transform: translate(100px,100px); &#125; 75%&#123; transform: translate(0px,100px); &#125; 100%&#123; transform: translate(0px,0px); &#125;&#125;&lt;/style&gt;&lt;body&gt;&lt;div class="div" id="div"&gt;&lt;/div&gt;&lt;p style="margin-top:110px;"&gt;&lt;input type="button" id="testBtn" value="暂停"&gt;&lt;/p&gt;&lt;script type="text/javascript"&gt; var div = document.getElementById("div"), button = document.getElementById("testBtn"); if (div.classList &amp;&amp; div &amp;&amp; button) &#123; button.onclick = function() &#123; if (this.value == '暂停') &#123; div.classList.add('stop'); this.value = '播放'; &#125; else &#123; div.classList.remove('stop'); this.value = '暂停'; &#125; &#125;; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <title><![CDATA[opcity和rgba]]></title>
+      <url>%2F2016%2F08%2F15%2Fcss3%2F</url>
+      <content type="text"><![CDATA[例如我们手机微信拆红包时会出现一个半透明层上面有个红包，怎么制作这个透明层呢。。 opcity当给一个元素设置opcity时，这个元素和所在他区域内的其他元素都会变成半透明的样式，所以用这个是无法实现微信红包效果或者底部半透明层上写一个正常不变颜色的字这样的效果，但opcity可以用来实现过度隐藏效果，现在很多网站的轮播图都用到了这个效果。 rgba这个样式的前三个参数是0~255的数字，来确定颜色值，第四个参数是0~1的数字，来确定透明度。这里的透明度的设置不会影响到除它自身外的其他元素，所以用这个样式可以实现微信抢红包的界面。]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[opcity和rgba]]></title>
-      <url>%2F2016%2F08%2F15%2Fcss3%2F</url>
-      <content type="text"><![CDATA[例如我们手机微信拆红包时会出现一个半透明层上面有个红包，怎么制作这个透明层呢。。 opcity当给一个元素设置opcity时，这个元素和所在他区域内的其他元素都会变成半透明的样式，所以用这个是无法实现微信红包效果或者底部半透明层上写一个正常不变颜色的字这样的效果，但opcity可以用来实现过度隐藏效果，现在很多网站的轮播图都用到了这个效果。 rgba这个样式的前三个参数是0~255的数字，来确定颜色值，第四个参数是0~1的数字，来确定透明度。这里的透明度的设置不会影响到除它自身外的其他元素，所以用这个样式可以实现微信抢红包的界面。]]></content>
+      <title><![CDATA[用js停止一个css3动画]]></title>
+      <url>%2F2016%2F08%2F15%2Fcss4%2F</url>
+      <content type="text"><![CDATA[主要是用到了dom操作的classList属性,这个属性用起来十分方便，不像className属性会影响全部的类名，它可以删除，添加一个类名又不影响其他类名下的样式效果，但针对IE10以下不兼容。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;style type="text/css"&gt;.div &#123; width: 100px; height: 100px; background: blue; animation: moveto 4s infinite both;&#125; .stop &#123; animation-play-state: paused;&#125;@keyframes moveto &#123; 0% &#123; transform: translate(0px,0px); &#125; 25% &#123; transform: translate(100px,0px); &#125; 50% &#123; transform: translate(100px,100px); &#125; 75%&#123; transform: translate(0px,100px); &#125; 100%&#123; transform: translate(0px,0px); &#125;&#125;&lt;/style&gt;&lt;body&gt;&lt;div class="div" id="div"&gt;&lt;/div&gt;&lt;p style="margin-top:110px;"&gt;&lt;input type="button" id="testBtn" value="暂停"&gt;&lt;/p&gt;&lt;script type="text/javascript"&gt; var div = document.getElementById("div"), button = document.getElementById("testBtn"); if (div.classList &amp;&amp; div &amp;&amp; button) &#123; button.onclick = function() &#123; if (this.value == '暂停') &#123; div.classList.add('stop'); this.value = '播放'; &#125; else &#123; div.classList.remove('stop'); this.value = '暂停'; &#125; &#125;; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
     </entry>
 
     
@@ -178,6 +178,13 @@
 
     
     <entry>
+      <title><![CDATA[css兼容性问题]]></title>
+      <url>%2F2016%2F08%2F14%2Fcss%E5%85%BC%E5%AE%B9%2F</url>
+      <content type="text"><![CDATA[IE6中的常见BUG与相应的解决办法 一、IE6双倍边距bug当页面上的元素使用float浮动时，不管是向左还是向右浮动；只要该元素带有margin像素都会使该值乘以2，例如“margin-left:10px” 在IE6中，该值就会被解析为20px。想要解决这个BUG就需要在该元素中加入display:inline 或 display:block 明确其元素类型即可解决双倍边距的BUG 二、IE6中3像素问题及解决办法当元素使用float浮动后，元素与相邻的元素之间会产生3px的间隙。诡异的是如果右侧的容器没设置高度时3px的间隙在相邻容器的内部，当设定高度后又跑到容器的相反侧了。要解决这类BUG的话，需要使布局在同一行的元素都加上float浮动。 三、IE6中奇数宽高的BUGIE6中奇数的高宽显示大小与偶数高宽显示大小存在一定的不同。其中要问题是出在奇数高宽上。要解决此类问题，只需要尽量将外部定位的div高宽写成偶数即可。 四、IE6中图片链接的下方有间隙IE6中图片的下方会存在一定的间隙，尤其在图片垂直挨着图片的时候，即可看到这样的间隙。要解决此类问题，需要将img标签定义为display:block 或定义vertical-align对应的属性。也可以为img对应的样式写入font-size:0 五、IE6下空元素的高度BUG如果一个元素中没有任何内容，当在样式中为这个元素设置了0-19px之间的高度时。此元素的高度始终为19px。 解决的方法有四种: 1.在元素的css中加入：overflow:hidden 2.在元素中插入html注释：&lt;!– &gt; 3.在元素中插入html的空白符：&nbsp; 4.在元素的css中加入：font-size:0 六、重复文字的BUG在某些比较复杂的排版中，有时候浮动元素的最后一些字符会出现在clear清除元素的下面。 解决方法如下： 1.确保元素都带有display:inline 2.在最后一个元素上使用“margin-right:-3px 3.为浮动元素的最后一个条目加上条件注释，&lt;!–[if !IE]&gt;xxx&lt;![endif]–&gt; 4.在容器的最后元素使用一个空白的div，为这个div指定不超过容器的宽度。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[hexo next主题添加留言页面]]></title>
       <url>%2F2016%2F08%2F13%2Fhexo_talk%2F</url>
       <content type="text"><![CDATA[留言板使博客看起来更加人性化，增进博主与游客的互动，NexT 主题官网有给出添加标签页、分类页的方法，其实添加留言本的方式异曲同工。方式稍微会有一点不同。 添加留言本 page进入到博客的根目录，运行命令：1$ hexo new page guestbook 留言本页面中添加多说访客代码上一步中使用 hexo 命令新建了一个 page，进入到博客的source目录，里面会多了一个gusetbook文件夹，里面有一个index.md文件，打开该文件编辑：1&lt;div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"&gt;&lt;/div&gt; 这段代码加到index.md底部就行。然后要登录自己多说的站点，进入设置-&gt;自定义CSS，添加：123456789101112131415161718#ds-reset .ds-avatar img,#ds-recent-visitors .ds-avatar img &#123; width: 54px; height: 54px; /*設置圖像的長和寬，這裏要根據自己的評論框情況更改*/ border-radius: 27px; /*設置圖像圓角效果,在這裏我直接設置了超過width/2的像素，即為圓形了*/ -webkit-border-radius: 27px; /*圓角效果：兼容webkit瀏覽器*/ -moz-border-radius: 27px; box-shadow: inset 0 -1px 0 #3333sf; /*設置圖像陰影效果*/ -webkit-box-shadow: inset 0 -1px 0 #3333sf;&#125;#ds-recent-visitors .ds-avatar &#123; float: left&#125;/*隱藏多說底部版權*/#ds-thread #ds-reset .ds-powered-by &#123; display: none;&#125; 菜单设置中添加留言本找到NexT主题设置的_config.yml文件里面的menu项添加 guestbook: /guestbook 添加多语言文件的值因为这里使用的是中文，找到languages文件夹里面的zh-Hans.yml文件，menu子项中添加留言： guestbook: 留言 原文地址：http://www.jianshu.com/p/f2cfc95cab4e]]></content>
@@ -185,16 +192,16 @@
 
     
     <entry>
-      <title><![CDATA[hexo 主题自定义样式]]></title>
-      <url>%2F2016%2F08%2F11%2Fnextcss%2F</url>
-      <content type="text"><![CDATA[刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。 样式文件以我使用的next主题为例，具体其他主题还要找到它自己的样式文件。主题文件夹下source-&gt;css-&gt;_schemes-&gt;Mist下面所有.styl文件都是主题的样式文件，想改哪里就先去页面找到相应的类名，再找到文件中他的样式修改。例如我修改了.menu首先我会找到_menu.styl文件，修改1234567891011121314151617181920212223242526.menu &#123; margin-top: 20px; padding-left:0; text-align:center; background:rgba(255,255,255,0.65); margin-left:auto; margin-right:auto; width:600px; border-radius:initial; +mobile() &#123; margin: 20px 0 0 0; padding: 0; margin-left:0; margin-right:0; width:100%; &#125; br &#123; display: none; &#125; .menu-item &#123; margin: 0; display:inline-block; margin:0 10px; +mobile() &#123; display: block; &#125; &#125; +mobile() {}里面的样式，是主题响应式在手机端的样式，在屏幕宽小于760是就会启用这里面的样式。最终实现了菜单栏居中的样式。]]></content>
+      <title><![CDATA[hexo next主题换背景]]></title>
+      <url>%2F2016%2F08%2F11%2Fnext_bg%2F</url>
+      <content type="text"><![CDATA[之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。 1首先找到一个背景图片放到 hexo– themes – next – source – images 的路径下； 2hexo– themes – next – source – css – _schemes – Pisces（Mist和Muse也行），找到路径下的index.styl文件，在文件的最上方加上一代码 body { background:url(/images/你之前加的背景图片的名字);}刷新页面背景图片就出来了]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[hexo next主题换背景]]></title>
-      <url>%2F2016%2F08%2F11%2Fnext_bg%2F</url>
-      <content type="text"><![CDATA[之前用hexo在github上搭建了一个博客，next主题以简约出名，但还是想给自己的博客弄张背景。 1首先找到一个背景图片放到 hexo– themes – next – source – images 的路径下； 2hexo– themes – next – source – css – _schemes – Pisces（Mist和Muse也行），找到路径下的index.styl文件，在文件的最上方加上一代码 body { background:url(/images/你之前加的背景图片的名字);}刷新页面背景图片就出来了]]></content>
+      <title><![CDATA[hexo 主题自定义样式]]></title>
+      <url>%2F2016%2F08%2F11%2Fnextcss%2F</url>
+      <content type="text"><![CDATA[刚开始搭建博客时就选了一个走简约风格的next主题，但是千篇一律难免审美疲劳，于是今天决心改变一下。找了一下，实现了头部样式的自定义，与大家分享一下。 样式文件以我使用的next主题为例，具体其他主题还要找到它自己的样式文件。主题文件夹下source-&gt;css-&gt;_schemes-&gt;Mist下面所有.styl文件都是主题的样式文件，想改哪里就先去页面找到相应的类名，再找到文件中他的样式修改。例如我修改了.menu首先我会找到_menu.styl文件，修改1234567891011121314151617181920212223242526.menu &#123; margin-top: 20px; padding-left:0; text-align:center; background:rgba(255,255,255,0.65); margin-left:auto; margin-right:auto; width:600px; border-radius:initial; +mobile() &#123; margin: 20px 0 0 0; padding: 0; margin-left:0; margin-right:0; width:100%; &#125; br &#123; display: none; &#125; .menu-item &#123; margin: 0; display:inline-block; margin:0 10px; +mobile() &#123; display: block; &#125; &#125; +mobile() {}里面的样式，是主题响应式在手机端的样式，在屏幕宽小于760是就会启用这里面的样式。最终实现了菜单栏居中的样式。]]></content>
     </entry>
 
     
