@@ -893,6 +893,263 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/21/reactnative_9/" itemprop="url">
+                  React-Native图标、启动页、打包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-21T00:00:00+08:00" content="2016-10-21">
+              2016-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/21/reactnative_9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/21/reactnative_9/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="应用图标"><a href="#应用图标" class="headerlink" title="应用图标"></a>应用图标</h1><pre><code>上传图片至 http://makeappicon.com/ 邮箱下载
+下载文件  ios/AppIcon.appiconset 文件夹整体复制
+覆盖工程ios/工程名/Images.xcassets/AppIcon.appiconset
+重启工程
+</code></pre><h1 id="工程修改名称"><a href="#工程修改名称" class="headerlink" title="工程修改名称"></a>工程修改名称</h1><pre><code>sublime打开 ios/工程名/Info.plist
+    &lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;          
+    &lt;string&gt;zh_CN&lt;/string&gt;
+    &lt;key&gt;CFBundleDisplayName&lt;/key&gt;
+    &lt;string&gt;想要显示的名称&lt;/string&gt;
+</code></pre><h1 id="修改启动页"><a href="#修改启动页" class="headerlink" title="修改启动页"></a>修改启动页</h1><p>sublime打开 ios/工程名/Base.lproj/LaunchScreen.xib<br>文本：直接搜索修改<br>图片：替换<view></view><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;view contentMode=<span class="string">"scaleAspectFill"</span> id=<span class="string">"iN0-l3-epB"</span>&gt;</div><div class="line">        &lt;rect key=<span class="string">"frame"</span> x=<span class="string">"0.0"</span> y=<span class="string">"0.0"</span> width=<span class="string">"630"</span> height=<span class="string">"753"</span>/&gt;</div><div class="line">        &lt;autoresizingMask key=<span class="string">"autoresizingMask"</span> widthSizable=<span class="string">"YES"</span> heightSizable=<span class="string">"YES"</span>/&gt;</div><div class="line">        &lt;subviews&gt;</div><div class="line">            &lt;imageView userInteractionEnabled=<span class="string">"NO"</span> contentMode=<span class="string">"scaleToFill"</span> horizontalHuggingPriority=<span class="string">"251"</span> verticalHuggingPriority=<span class="string">"251"</span> misplaced=<span class="string">"YES"</span> image=<span class="string">"Splash.png"</span> translatesAutoresizingMaskIntoConstraints=<span class="string">"NO"</span> id=<span class="string">"5LC-cn-d0c"</span>&gt;</div><div class="line">                &lt;rect key=<span class="string">"frame"</span> x=<span class="string">"0.0"</span> y=<span class="string">"0.0"</span> width=<span class="string">"375"</span> height=<span class="string">"667"</span>/&gt;</div><div class="line">                &lt;constraints&gt;</div><div class="line">                    &lt;constraint firstAttribute=<span class="string">"width"</span> secondItem=<span class="string">"5LC-cn-d0c"</span> secondAttribute=<span class="string">"height"</span> multiplier=<span class="string">"375:667"</span> id=<span class="string">"wcc-Hi-qqW"</span>/&gt;</div><div class="line">                &lt;/constraints&gt;</div><div class="line">            &lt;/imageView&gt;</div><div class="line">        &lt;/subviews&gt;</div><div class="line">        &lt;color key=<span class="string">"backgroundColor"</span> white=<span class="string">"1"</span> alpha=<span class="string">"1"</span> colorSpace=<span class="string">"custom"</span> customColorSpace=<span class="string">"calibratedWhite"</span>/&gt;</div><div class="line">        &lt;constraints&gt;</div><div class="line">            &lt;constraint firstItem=<span class="string">"5LC-cn-d0c"</span> firstAttribute=<span class="string">"centerX"</span> secondItem=<span class="string">"iN0-l3-epB"</span> secondAttribute=<span class="string">"centerX"</span> id=<span class="string">"E9l-Ov-rY9"</span>/&gt;</div><div class="line">            &lt;constraint firstItem=<span class="string">"5LC-cn-d0c"</span> firstAttribute=<span class="string">"leading"</span> secondItem=<span class="string">"iN0-l3-epB"</span> secondAttribute=<span class="string">"leading"</span> id=<span class="string">"QjV-Kf-fsL"</span>/&gt;</div><div class="line">            &lt;constraint firstItem=<span class="string">"5LC-cn-d0c"</span> firstAttribute=<span class="string">"top"</span> secondItem=<span class="string">"iN0-l3-epB"</span> secondAttribute=<span class="string">"top"</span> id=<span class="string">"XTr-0R-xje"</span>/&gt;</div><div class="line">            &lt;constraint firstItem=<span class="string">"5LC-cn-d0c"</span> firstAttribute=<span class="string">"centerY"</span> secondItem=<span class="string">"iN0-l3-epB"</span> secondAttribute=<span class="string">"centerY"</span> id=<span class="string">"zu0-Ez-CoZ"</span>/&gt;</div><div class="line">        &lt;/constraints&gt;</div><div class="line">        &lt;nil key=<span class="string">"simulatedStatusBarMetrics"</span>/&gt;</div><div class="line">        &lt;nil key=<span class="string">"simulatedTopBarMetrics"</span>/&gt;</div><div class="line">        &lt;nil key=<span class="string">"simulatedBottomBarMetrics"</span>/&gt;</div><div class="line">        &lt;freeformSimulatedSizeMetrics key=<span class="string">"simulatedDestinationMetrics"</span>/&gt;</div><div class="line">        &lt;point key=<span class="string">"canvasLocation"</span> x=<span class="string">"675"</span> y=<span class="string">"497.5"</span>/&gt;</div><div class="line">    &lt;/view&gt;</div><div class="line"></div><div class="line">    &lt;resources&gt;</div><div class="line"> 				&lt;image name=<span class="string">"Splash.png"</span> width=<span class="string">"375"</span> height=<span class="string">"667"</span>/&gt;</div><div class="line">	&lt;/resources&gt;</div></pre></td></tr></table></figure></p>
+<p>更改两处图片名称<br>把图标放在ios目录下<br>进入 xconde-General-App Icons and Lanuch Images 小箭头<br>图片拖到第二栏空白处  重启项目</p>
+<h1 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h1><h2 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h2><p>react-native 发布流程<br>    准备工作<br>        1.苹果开发者帐号一枚<br>            <a href="https://developer.apple.com/" target="_blank" rel="external">https://developer.apple.com/</a><br>        2.蒲公英应用测试号一枚<br>            <a href="https://www.pgyer.com/" target="_blank" rel="external">https://www.pgyer.com/</a><br>    开发者中心<br>        1.登陆<br>            点击 Certificates,IDs &amp; Profiles<br>        2.Devices -&gt; ALL-&gt;添加设备UDID<br>        3.Identifiers -&gt; App IDs -&gt; 添加APP ID也就是bounld ID<br>        4.最下面 Provisioning Profiles -&gt; Distribution-&gt;添加描述文件－&gt;点击添加-&gt;Ad Hoc-&gt;继续-&gt;选中之前添加的App ID-&gt;继续－&gt;选中证书-&gt;继续－&gt;选择设备-&gt;继续-&gt;添加描述文件名称－进入到下载描述文件页，点击下载</p>
+<p>导入xcode后调整上栏运行环境为  Generic IOS Device<br>选择product下的Archive</p>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>没有亲自测试但找了两个网站</p>
+<h3 id="React—native-Android环境搭建和开发配置（Mac）"><a href="#React—native-Android环境搭建和开发配置（Mac）" class="headerlink" title="React—native+Android环境搭建和开发配置（Mac）"></a>React—native+Android环境搭建和开发配置（Mac）</h3><p><a href="http://blog.csdn.net/pcaxb/article/details/52046438" target="_blank" rel="external">http://blog.csdn.net/pcaxb/article/details/52046438</a></p>
+<h3 id="React-Native安卓项目打包APK"><a href="#React-Native安卓项目打包APK" class="headerlink" title="React Native安卓项目打包APK"></a>React Native安卓项目打包APK</h3><p><a href="http://www.jianshu.com/p/32a99c273be1" target="_blank" rel="external">http://www.jianshu.com/p/32a99c273be1</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/20/reactnative_8/" itemprop="url">
+                  React-Native自有函数及API-Animated
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T00:00:00+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/20/reactnative_8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/20/reactnative_8/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>整理一些自有函数和Animated的使用。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/20/reactnative_8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/19/reactnative_7/" itemprop="url">
                   React-Native广告页制作
                 </a>
@@ -1238,255 +1495,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/11/mockjs/" itemprop="url">
-                  MockJS
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T00:00:00+08:00" content="2016-10-11">
-              2016-10-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/11/mockjs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/mockjs/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>使用mockjs来模拟数据。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/11/mockjs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/10/reactnative_4/" itemprop="url">
-                  React-Native-API之Dimensions
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-10T00:00:00+08:00" content="2016-10-10">
-              2016-10-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/10/reactnative_4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/reactnative_4/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Dimensions用于获取用户设备屏幕的宽高，这样在一些地方的布局中就可以根据百分比来调整位置。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/10/reactnative_4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1527,7 +1540,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
