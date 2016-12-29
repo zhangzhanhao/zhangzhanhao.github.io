@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端优化," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="在我们访问一个网站时，常常会遇到网站内的图片加载速度非常缓慢，从而影响到我们浏览网页时的用户体验">
+<meta name="description" content="昨天被问到原型，似懂非懂，讲不出来，在网上找了两篇文章苦读，先转一篇简单一点的。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="base64">
-<meta property="og:url" content="http://yoursite.com/2016/08/18/base64/index.html">
+<meta property="og:title" content="浅谈Js原型的理解">
+<meta property="og:url" content="http://yoursite.com/2016/12/29/浅谈原型/index.html">
 <meta property="og:site_name" content="来一箱9˚">
-<meta property="og:description" content="在我们访问一个网站时，常常会遇到网站内的图片加载速度非常缓慢，从而影响到我们浏览网页时的用户体验">
-<meta property="og:updated_time" content="2016-12-10T01:41:37.000Z">
+<meta property="og:description" content="昨天被问到原型，似懂非懂，讲不出来，在网上找了两篇文章苦读，先转一篇简单一点的。。。">
+<meta property="og:updated_time" content="2016-12-29T15:19:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="base64">
-<meta name="twitter:description" content="在我们访问一个网站时，常常会遇到网站内的图片加载速度非常缓慢，从而影响到我们浏览网页时的用户体验">
+<meta name="twitter:title" content="浅谈Js原型的理解">
+<meta name="twitter:description" content="昨天被问到原型，似懂非懂，讲不出来，在网上找了两篇文章苦读，先转一篇简单一点的。。。">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> base64 | 来一箱9˚ </title>
+  <title> 浅谈Js原型的理解 | 来一箱9˚ </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                base64
+                浅谈Js原型的理解
               
             
           </h1>
@@ -296,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-18T00:00:00+08:00" content="2016-08-18">
-              2016-08-18
+            <time itemprop="dateCreated" datetime="2016-12-29T00:00:00+08:00" content="2016-12-29">
+              2016-12-29
             </time>
           </span>
 
@@ -310,8 +310,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/转载/" itemprop="url" rel="index">
+                    <span itemprop="name">转载</span>
                   </a>
                 </span>
 
@@ -326,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/18/base64/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/base64/" itemprop="commentsCount"></span>
+                <a href="/2016/12/29/浅谈原型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/29/浅谈原型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,10 +350,16 @@
       
 
       
-        <p>在我们访问一个网站时，常常会遇到网站内的图片加载速度非常缓慢，从而影响到我们浏览网页时的用户体验<br><a id="more"></a><br>Base64是网络上最常见的用于传输8Bit字节代码的编码方式之一，大家可以查看RFC2045～RFC2049，上面有MIME的详细规范。Base64编码可用于在HTTP环境下传递较长的标识信息。例如，在Java Persistence系统Hibernate中，就采用了Base64来将一个较长的唯一标识符（一般为128-bit的UUID）编码为一个字符串，用作HTTP表单和HTTP GET URL中的参数。在其他应用程序中，也常常需要把二进制数据编码为适合放在URL（包括隐藏表单域）中的形式。此时，采用Base64编码具有不可读性，即所编码的数据不会被人用肉眼所直接看到。       —转自百度百科</p>
+        <p>昨天被问到原型，似懂非懂，讲不出来，在网上找了两篇文章苦读，先转一篇简单一点的。。。<br><a id="more"></a></p>
 <hr>
-<p>我们可以把图片转换成base64编码，再进行传输，这样就会是图片加载变快提升用户体验。</p>
-<p>我常用的网站<a href="http://tool.css-js.com/base64.html" target="_blank" rel="external">http://tool.css-js.com/base64.html</a></p>
+<p>作者：JabinZhang</p>
+<hr>
+<h1 id="一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！"><a href="#一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！" class="headerlink" title="一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！"></a>一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！</h1><p>在参考了多方面的资料后，发现解释都太过专业，对于很多还没有接触过面向对象<br>    语言的小白来说，有理解不了里面的专有名词！如果你没学过c++或者Java之类的更接触底层的语言，那就不要太深究，理解会用自然可以了，当接触到更多语言时慢慢的会理解越来越深刻！</p>
+<p>下面我就举例分享一下prototype的概念！知道对于初学者知道这些就足够了！<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name)&#123;</div><div class="line">	this.name=name;</div><div class="line">	this.showMe=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		alert(this.name);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">var one=new Person(<span class="string">'JavaScript'</span>);</div><div class="line">one.showMe();   //JavaScript</div></pre></td></tr></table></figure></p>
+<p>分析一下，上面这个例子！我们可以知道 People的类型是一个对象！<br>按照javascript的说法，function定义的这个Person就是一个Object(对象),而且还是一个很特殊的对象，这个使用function定义的对象与使用new操作符生成的对象之间有一个重要的区别。这个区别就是function定义的对象有一个prototype属性，使用new生成的对象就没有这个prototype属性，我们一般称为普通对象！<br>我们需要理解记忆以下的逻辑顺序：<br>Person是一个对象，它有一个prototype的原型属性（因为所有的对象都一prototype原型！）prototype属性有自己的prototype对象，而pototype对象肯定也有自己的constuct属性，construct属性有自己的constuctor对象，神奇的事情要发生了，这最后一个constructor对象就是我们构造出来的function函数本身！</p>
+<h1 id="二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话："><a href="#二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话：" class="headerlink" title="二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话："></a>二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> Person(name)&#123;</div><div class="line">	this.name=name;</div><div class="line">	this.showMe=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		alert(this.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">var one=new Person(<span class="string">'js'</span>);</div><div class="line"></div><div class="line">alert(one.prototype)  //undefined  //证明了new出来的普通对象是没有原型的！</div><div class="line">alert(typeof Person.prototype); //object //证明了，我们构造的Function的原型的类型就是一个对象！</div><div class="line">alert(Person.prototype.constructor); //<span class="keyword">function</span> Person(name)&#123;...&#125;; //证明了我们刚才绕了一圈的东西又绕了回来！</div><div class="line"></div><div class="line">//简单一句话，任何对象都有prototype原型！仅此而已！</div></pre></td></tr></table></figure>
+<h1 id="三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！"><a href="#三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！" class="headerlink" title="三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！"></a>三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！</h1><p>我们可以通过给原型添加属性和方法来给给对象添加属性或方法！<br>    Hero.prototype.name;<br>    Hero.prototype.sayMe = function(){“添加对象的方法其实就是添加函数”}<br>    让我们再深一步：当我们给对象添加了同名的属性或方法时会发生什么？<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">Hero</span></span>()&#123;</div><div class="line">	this.name=<span class="string">"zhangwuji"</span>;</div><div class="line">	this.sayMe=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		alert(<span class="string">"this is zhangwuji."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//通过原型增加的属性或方法！</div><div class="line">Hero.prototype.name=<span class="string">"zhouzhiruo"</span>;</div><div class="line">Hero.prototype.sayMe=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	alert(<span class="string">"this is zhouzhiruo."</span>);</div><div class="line">&#125;</div><div class="line">var hero = new Hero();</div><div class="line">alert(hero.name); //output zhangwuji</div><div class="line">hero.sayMe(); //output this is zhangwuji.</div><div class="line"></div><div class="line">//delete hero.name;</div><div class="line">alert(hero.name); //output zhouzhiruo</div></pre></td></tr></table></figure></p>
+<p>我们验证了这个例子得到得到了一些结论：<br>当函数对象本身的属性或方法与原型的属性或方法同名的时候：<br>    1、默认调用的是函数对象本身的属性或方法.<br>    2、通过原型增加的属性或方法的确是存在的.<br>    3、函数对象本身的属性或方法的优先级要高于原型的属性或方法.</p>
 
       
     </div>
@@ -375,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端优化/" rel="tag">#前端优化</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -384,17 +390,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/17/javascript基础2/" rel="next" title="javascript基础（二）">
-                <i class="fa fa-chevron-left"></i> javascript基础（二）
+              <a href="/2016/11/21/this指向/" rel="next" title="this的值到底是什么">
+                <i class="fa fa-chevron-left"></i> this的值到底是什么
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/19/meta/" rel="prev" title="常见meta标签以及浏览器私有meta">
-                常见meta标签以及浏览器私有meta <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,10 +411,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/18/base64/"
-     data-title="base64"
+        <div class="ds-share flat" data-thread-key="2016/12/29/浅谈原型/"
+     data-title="浅谈Js原型的理解"
      data-content=""
-     data-url="http://yoursite.com/2016/08/18/base64/">
+     data-url="http://yoursite.com/2016/12/29/浅谈原型/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -439,8 +441,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/18/base64/"
-           data-title="base64" data-url="http://yoursite.com/2016/08/18/base64/">
+      <div class="ds-thread" data-thread-key="2016/12/29/浅谈原型/"
+           data-title="浅谈Js原型的理解" data-url="http://yoursite.com/2016/12/29/浅谈原型/">
       </div>
     
   </div>
@@ -542,7 +544,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！"><span class="nav-number">1.</span> <span class="nav-text">一、js中的原型毫无疑问一个难点，学习如果不深入很容易就晕了！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话："><span class="nav-number">2.</span> <span class="nav-text">二、这样绕人的逻辑，总想一探究竟，要记得这是一种规定的逻辑思维，我们要做的是慢慢接受这种逻辑思维！我们不理论研究，用实例说话：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！"><span class="nav-number">3.</span> <span class="nav-text">三、下面我们不免有了疑问，学这么绕的东西干什么，它给我们最实际的用处就是我们可以用原型来创建对象的属性和方法！我们不用它不也是可以创建属性和方法！这里是有区别的，既然不一样就有存在的价值！</span></a></li></ol></div>
             
           </div>
         </section>
